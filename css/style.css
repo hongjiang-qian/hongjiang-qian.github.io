@@ -17,12 +17,12 @@ html {
 body {
   padding: 50px 0;
   margin: 0;
-  font: 14px/1.5 "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #555;
+  font: 14px/1.5 "Verdana", Thhoma, Helvetica, Arial, sans-serif;
+  color: #333;
   font-weight: 300;
 }
 .wrapper {
-  width: 680px;
+  width: 780px;
   margin: 0 auto;
   background: #dedede;
   border-radius: 8px;
@@ -82,7 +82,7 @@ strong {
 }
 #header .nav {
   float: right;
-  font-family: "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Verdana", Thhoma, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
 }
 #header .nav ul {
@@ -257,7 +257,7 @@ article header .icon:before {
   text-align: center;
 }
 article header time {
-  font: 0.9em "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 0.9em "Verdana", Thhoma, Helvetica, Arial, sans-serif;
   margin-bottom: 5px;
   display: block;
   line-height: 1;
@@ -492,7 +492,7 @@ article footer .tags:before {
 #pagination a {
   display: block;
   padding: 5px 10px;
-  font-family: "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Verdana", Thhoma, Helvetica, Arial, sans-serif;
   background: #069;
   color: #fff;
   text-decoration: none;
@@ -624,7 +624,7 @@ article footer .tags:before {
     top: auto;
     left: auto;
     margin: 15px auto 0;
-    width: 680px;
+    width: 780px;
   }
 }
 @media screen and (max-width: 740px) {
@@ -640,7 +640,7 @@ article footer .tags:before {
   }
 }
 .widgets-bottom {
-  width: 680px;
+  width: 780px;
   margin: 15px auto 0;
   border-radius: 8px;
   -webkit-box-shadow: rgba(0,0,0,0.2) 0 0 0 1px, rgba(0,0,0,0.2) 0 1px 3px;
@@ -655,7 +655,7 @@ article footer .tags:before {
   }
 }
 #footer {
-  width: 680px;
+  width: 780px;
   margin: 20px auto 0;
   padding: 20px 0 0;
   font-size: 0.875em;
