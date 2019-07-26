@@ -17,8 +17,8 @@ html {
 body {
   padding: 50px 0;
   margin: 0;
-  font: 14px/1.5 "Verdana", Thhoma, Helvetica, Arial, sans-serif;
-  color: #333;
+  font: 10px/1.5 "Georiga", Tahoma, Helvetica, Arial, sans-serif;
+  color: #555;
   font-weight: 300;
 }
 .wrapper {
@@ -82,7 +82,7 @@ strong {
 }
 #header .nav {
   float: right;
-  font-family: "Verdana", Thhoma, Helvetica, Arial, sans-serif;
+  font-family: "Georiga", Tahoma, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
 }
 #header .nav ul {
@@ -108,7 +108,7 @@ strong {
   margin: 0;
   color: #61778b;
   width: 300px;
-  font-size: 0.9em;
+  font-size: 1em;
   font-style: italic;
 }
 article {
@@ -257,15 +257,15 @@ article header .icon:before {
   text-align: center;
 }
 article header time {
-  font: 0.9em "Verdana", Thhoma, Helvetica, Arial, sans-serif;
+  font: 0.9em "Georiga", Tahoma, Helvetica, Arial, sans-serif;
   margin-bottom: 5px;
   display: block;
   line-height: 1;
 }
 article header .title {
-  font-size: 76%/1.6em;
+  font-size: 1.5em;
   font-weight: normal;
-  line-height: 1.6em;
+  line-height: 1.2;
   margin: 0;
   padding: 0;
   text-shadow: rgba(255,255,255,0.9) 0 1px 0;
@@ -279,7 +279,7 @@ article header .title a:hover {
 article .entry {
   font-size: 15px;
   text-align: justify;
-  line-height: 1.6em;
+  line-height: 1.6;
 }
 article .entry h1,
 article .entry h2,
@@ -290,7 +290,7 @@ article .entry h6 {
   color: #222;
   padding: 0;
   margin: 0 0 20px;
-  line-height: 1.6em;
+  line-height: 1.2;
 }
 article .entry p,
 article .entry ul,
@@ -306,10 +306,10 @@ article .entry p {
 article .entry h1,
 article .entry h2,
 article .entry h3 {
-  line-height: 1.6em;
+  line-height: 1.1;
 }
 article .entry h1 {
-  font-size: 1.4em;
+  font-size: 1.75em;
 }
 article .entry h2 {
   color: #393939;
@@ -492,7 +492,7 @@ article footer .tags:before {
 #pagination a {
   display: block;
   padding: 5px 10px;
-  font-family: "Verdana", Thhoma, Helvetica, Arial, sans-serif;
+  font-family: "Georiga", Tahoma, Helvetica, Arial, sans-serif;
   background: #069;
   color: #fff;
   text-decoration: none;
