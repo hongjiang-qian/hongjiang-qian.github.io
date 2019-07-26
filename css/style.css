@@ -22,7 +22,7 @@ body {
   font-weight: 300;
 }
 .wrapper {
-  width: 780px;
+  width: 680px;
   margin: 0 auto;
   background: #dedede;
   border-radius: 8px;
@@ -263,9 +263,9 @@ article header time {
   line-height: 1;
 }
 article header .title {
-  font-size: 1.5em;
+  font-size: 76%/1.6em;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.6em;
   margin: 0;
   padding: 0;
   text-shadow: rgba(255,255,255,0.9) 0 1px 0;
@@ -279,7 +279,7 @@ article header .title a:hover {
 article .entry {
   font-size: 15px;
   text-align: justify;
-  line-height: 1.6;
+  line-height: 1.6em;
 }
 article .entry h1,
 article .entry h2,
@@ -290,7 +290,7 @@ article .entry h6 {
   color: #222;
   padding: 0;
   margin: 0 0 20px;
-  line-height: 1.2;
+  line-height: 1.6em;
 }
 article .entry p,
 article .entry ul,
@@ -306,10 +306,10 @@ article .entry p {
 article .entry h1,
 article .entry h2,
 article .entry h3 {
-  line-height: 1.1;
+  line-height: 1.6em;
 }
 article .entry h1 {
-  font-size: 1.75em;
+  font-size: 1.4em;
 }
 article .entry h2 {
   color: #393939;
@@ -624,7 +624,7 @@ article footer .tags:before {
     top: auto;
     left: auto;
     margin: 15px auto 0;
-    width: 780px;
+    width: 680px;
   }
 }
 @media screen and (max-width: 740px) {
@@ -640,7 +640,7 @@ article footer .tags:before {
   }
 }
 .widgets-bottom {
-  width: 780px;
+  width: 680px;
   margin: 15px auto 0;
   border-radius: 8px;
   -webkit-box-shadow: rgba(0,0,0,0.2) 0 0 0 1px, rgba(0,0,0,0.2) 0 1px 3px;
@@ -655,7 +655,7 @@ article footer .tags:before {
   }
 }
 #footer {
-  width: 780px;
+  width: 680px;
   margin: 20px auto 0;
   padding: 20px 0 0;
   font-size: 0.875em;
