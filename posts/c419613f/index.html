@@ -4,19 +4,27 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>Archives | Generator</title>
+  <title>Stopping Times | Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="Hongjiang Qian">
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Generator">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+    <meta name="description" content="For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities.
+DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
+  
+  <meta name="description" content="For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
+<meta name="keywords" content="Stopping time,Optimal time,Hittine time">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stopping Times">
+<meta property="og:url" content="http://yoursite.com/posts/c419613f/index.html">
 <meta property="og:site_name" content="Generator">
+<meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-26T15:33:48.935Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Generator">
+<meta name="twitter:title" content="Stopping Times">
+<meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -57,77 +65,48 @@
   </nav>
   <div class="clearfix"></div>
 </header>
-    <div class="content">
-
-
-
-
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrapper">
-        
-        <h2 class="archives-title archives-year">
-          <a href="/archives/2019">2019</a>
-        </h2>
-        
-        <div class="archives">
-    
-    <article class="post">
+    <div class="content"><article class="post">
   <header>
-    <a href="/posts/c419613f/">
+    
+      <div class="icon"></div>
+      <a href="/posts/c419613f/">
   <time datetime="2019-07-26T15:26:01.000Z">
-    Jul 26
+    2019-07-26
   </time>
 </a>
     
+    
   
-    <h1 class="title"><a href="/posts/c419613f/">Stopping Times</a></h1>
+    <h1 class="title">Stopping Times</h1>
   
 
   </header>
-</article>
   
+  <div class="entry">
     
-    
-    <article class="post">
-  <header>
-    <a href="/posts/adbd1f8e/">
-  <time datetime="2019-07-25T19:18:08.000Z">
-    Jul 25
-  </time>
-</a>
-    
-  
-    <h1 class="title"><a href="/posts/adbd1f8e/">Test-math</a></h1>
-  
+      <p>For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities.</p>
+<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>For a measurable space $(\Omega,\mathcal{F})$ equipped with a filtration ${\mathcal{F}_s}$, a random time $T$ is a stopping time of the filtration if ${w,T(w)\leq t} \in \mathcal{F}_t$ for every $t\leq 0$.</p>
 
-  </header>
-</article>
-  
     
+  </div>
+  <footer>
     
-    <article class="post">
-  <header>
-    <a href="/posts/4a17b156/">
-  <time datetime="2019-07-25T17:38:05.975Z">
-    Jul 25
-  </time>
-</a>
-    
-  
-    <h1 class="title"><a href="/posts/4a17b156/">Hello World</a></h1>
-  
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/Hittine-time/">Hittine time</a>, <a class="tags-link" href="/tags/Optimal-time/">Optimal time</a>, <a class="tags-link" href="/tags/Stopping-time/">Stopping time</a>
+  </div>
 
-  </header>
+      
+  <div class="share">
+    
+  </div>
+  <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
+
+    
+    <div class="clearfix"></div>
+  </footer>
 </article>
-  
-  
-    </div></section>
-  
 
 </div>
   </div>
@@ -182,6 +161,44 @@
 </div>
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": { 
+        preferredFont: "TeX", 
+        availableFonts: ["STIX","TeX"], 
+        linebreaks: { automatic:true }, 
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) 
+    },
+    tex2jax: { 
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
+        processEscapes: true, 
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {  
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, 
+        Macros: { href: "{}" } 
+    },
+    messageStyle: "none"
+    }); 
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 </footer>
   <script src="//lib.sinaapp.com/js/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
