@@ -17,7 +17,7 @@ html {
 body {
   padding: 50px 0;
   margin: 0;
-  font: 10px/1.5 "Georiga", Tahoma, Helvetica, Arial, sans-serif;
+  font: 1em/1.5 "Georiga", Tahoma, Helvetica, Arial, sans-serif;
   color: #555;
   font-weight: 300;
 }
@@ -108,7 +108,7 @@ strong {
   margin: 0;
   color: #61778b;
   width: 300px;
-  font-size: 1em;
+  font-size: 0.8125em;
   font-style: italic;
 }
 article {
@@ -277,7 +277,7 @@ article header .title a:hover {
   color: #069;
 }
 article .entry {
-  font-size: 15px;
+  font-size: 0.95em;
   text-align: justify;
   line-height: 1.6;
 }
@@ -372,7 +372,7 @@ article .entry pre {
   overflow-x: auto;
 }
 article .entry code {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 article .entry pre {
   padding: 10px 30px;
