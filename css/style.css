@@ -17,8 +17,8 @@ html {
 body {
   padding: 50px 0;
   margin: 0;
-  font: 1em/1.5 "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #555;
+  font: 1em/1.5 "Verdana", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #333;
   font-weight: 300;
 }
 .wrapper {
@@ -35,7 +35,7 @@ footer {
   display: block;
 }
 a {
-  color: #069;
+  color: #039;
   text-decoration: none;
 }
 p {
@@ -82,7 +82,7 @@ strong {
 }
 #header .nav {
   float: right;
-  font-family: "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Verdana", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
 }
 #header .nav ul {
@@ -257,7 +257,7 @@ article header .icon:before {
   text-align: center;
 }
 article header time {
-  font: 0.9em "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 0.9em "Verdana", Helvetica Neue, Helvetica, Arial, sans-serif;
   margin-bottom: 5px;
   display: block;
   line-height: 1;
@@ -274,7 +274,7 @@ article header .title a {
   color: #222;
 }
 article header .title a:hover {
-  color: #069;
+  color: #039;
 }
 article .entry {
   font-size: 0.9em;
@@ -309,7 +309,7 @@ article .entry h3 {
   line-height: 1.1;
 }
 article .entry h1 {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 article .entry h2 {
   color: #393939;
@@ -372,7 +372,7 @@ article .entry pre {
   overflow-x: auto;
 }
 article .entry code {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 article .entry pre {
   padding: 10px 30px;
@@ -442,7 +442,7 @@ article .entry .text-lt {
   text-decoration: line-through;
 }
 article footer {
-  font-size: 0.8em;
+  font-size: 0.9em;
   border-top: 1px solid #aaa;
   padding: 10px 0 0 0;
   margin-top: 10px;
@@ -492,8 +492,8 @@ article footer .tags:before {
 #pagination a {
   display: block;
   padding: 5px 10px;
-  font-family: "Droid Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
-  background: #069;
+  font-family: "Verdana", Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: #039;
   color: #fff;
   text-decoration: none;
 }
@@ -545,7 +545,7 @@ article footer .tags:before {
   font-size: 1.1em;
 }
 #sidebar {
-  line-height: 1.4em;
+  line-height: 1.5em;
   background: #dedede;
 }
 #sidebar .widget {
