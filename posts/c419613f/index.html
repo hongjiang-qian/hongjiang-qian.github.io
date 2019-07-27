@@ -21,7 +21,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-27T13:48:16.788Z">
+<meta property="og:updated_time" content="2019-07-27T13:52:07.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping Times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
@@ -85,8 +85,8 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped with">
   <div class="entry">
     
       <p>For this article, I will mainly demonstrate the definition of stopping time, optimal time and hitting time and their propertities.</p>
-<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>For a measurable space $(\Omega,\mathcal{F})$ equipped with a filtration $\{\mathcal{F}<em>t\}$<br><br>a random time $T$ is a stopping time of the filtration if ${w,T(w)\leq t} \in \mathcal{F}_t$ for every $t \geq 0$.<br><br>a random time $T$ is a optimal time of the filtration if $\{w,T(w)&lt; t\} \in \mathcal{F}</em>{t}$ for every $t \geq 0$.<br></p>
-<p><strong>Remark</strong>: Every stopping time is optimal and the two concepts concide if the filtration is right-continuous. Since $\{T&lt;t \}=\cup_{n=1}^{\infty} \{ T\leq t-(1/n) \} \in \mathcal{F_t}$, so the stopping time is optimal. For the next claim, suppose $T$ is a optimal time and the filtration is right-continuous, then for every positive integer $m$, we have $\{T\leq t\} = \cap_{n=m}^{\infty} \{ T &lt; t+(1/n)\} \in \mathcal{F}<em>{t+\frac</em>{1}{m}}$, therefore $\{T \leq t\} \in \mathcal{F}<em>{t^{+}} = \mathcal{F}</em>{t} $. </p>
+<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>For a measurable space $(\Omega,\mathcal{F})$ equipped with a filtration $\{\mathcal{F}_t\}$&lt;/br&gt;<br>a random time $T$ is a stopping time of the filtration if ${w,T(w)\leq t} \in \mathcal{F}_t$ for every $t \geq 0$.&lt;/br&gt;<br>a random time $T$ is a optimal time of the filtration if $\{w,T(w)&lt; t\} \in \mathcal{F}_{t}$ for every $t \geq 0$.&lt;/br&gt;</p>
+<p><strong>Remark</strong>: Every stopping time is optimal and the two concepts concide if the filtration is right-continuous. Since $\{T&lt;t \}=\cup_{n=1}^{\infty} \{ T\leq t-(1/n) \} \in \mathcal{F_t}$, so the stopping time is optimal. For the next claim, suppose $T$ is a optimal time and the filtration is right-continuous, then for every positive integer $m$, we have $\{T\leq t\} = \cap_{n=m}^{\infty} \{ T &lt; t+(1/n)\} \in \mathcal{F}_{t+\frac{1}{m}}$, therefore $\{T \leq t\} \in \mathcal{F}_{t^{+}} = \mathcal{F}_{t} $. </p>
 
     
   </div>
@@ -240,23 +240,21 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
 </script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
