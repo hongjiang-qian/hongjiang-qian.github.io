@@ -263,9 +263,9 @@ article header time {
   line-height: 1;
 }
 article header .title {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.1;
   margin: 0;
   padding: 0;
   text-shadow: rgba(255,255,255,0.9) 0 1px 0;
@@ -279,7 +279,7 @@ article header .title a:hover {
 article .entry {
   font-size: 0.9em;
   text-align: justify;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 article .entry h1,
 article .entry h2,
@@ -290,7 +290,7 @@ article .entry h6 {
   color: #222;
   padding: 0;
   margin: 0 0 20px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 article .entry p,
 article .entry ul,
@@ -309,7 +309,7 @@ article .entry h3 {
   line-height: 1.1;
 }
 article .entry h1 {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 article .entry h2 {
   color: #393939;
