@@ -21,7 +21,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T00:27:41.618Z">
+<meta property="og:updated_time" content="2019-07-28T00:43:08.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping Times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
@@ -90,8 +90,9 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <p>Now, consider a stochastic process $X$ with right-continuous paths, which is adapted to a filtration $\{\mathcal{F}_t\}$. For $\Gamma \in \mathcal{B}(\mathbb{R}^d)$ of the state space, we could define the <strong>Hitting time</strong> as follows: <script type="math/tex">H_{\Gamma}(w)=inf\{t\geq 0; X_t(w)\in \Gamma\}</script>.<br><a id="more"></a></p>
 <h3 id="Some-Propertities-of-Stopping-time"><a href="#Some-Propertities-of-Stopping-time" class="headerlink" title="Some Propertities of Stopping time"></a>Some Propertities of Stopping time</h3><p><strong>Lemma 1:</strong> If $T$ is optional and $\theta &gt;0$ constant, then $T+\theta$ is a stopping time.</p>
 <p>Proof: If $0\leq t&lt;\theta$, then $\{T+\theta &lt;t\}$ is empty, which is in $\mathcal{F}_t$; if $t\geq \theta$, then $\{T+\theta &lt; t\}=\{T&lt; t-\theta\}\in\mathcal{F}_{(t-\theta)^{+}}\subseteq\mathcal{F}_t$.</p>
-<p><strong>Lemma 2</strong></p>
-
+<p><strong>Lemma 2</strong> If $T,S$ are stopping times, then so are $T\wedge S$, $T\vee S$, $T+S$.</p>
+<p>Proof: we only consider the third case. For $t&gt;0$, $\{T+S&gt;t\}=\{T=0,S&gt;t\} \cup\{0<t<t, t+s>t\}\cup\{T&gt;t, S=0\}\cup\{T\geq t, S&gt;0\}$. Since the first, third and fourth events are in $\mathcal{F}_t$, then consider the second item,</t<t,></p>
+<script type="math/tex; mode=display">\{0<T<t, T+S>t\}= \bigcup_{r\in Q^{+}}_{0<t<t}\{t<T<r,S>t-r\}</script>
     
   </div>
   <footer>
@@ -244,6 +245,21 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
