@@ -263,9 +263,9 @@ article header time {
   line-height: 1;
 }
 article header .title {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: normal;
-  line-height: 1.1;
+  line-height: 1.5em;
   margin: 0;
   padding: 0;
   text-shadow: rgba(255,255,255,0.9) 0 1px 0;
@@ -277,9 +277,9 @@ article header .title a:hover {
   color: #069;
 }
 article .entry {
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-align: justify;
-  line-height: 1.4;
+  line-height: 1.5em;
 }
 article .entry h1,
 article .entry h2,
@@ -290,7 +290,7 @@ article .entry h6 {
   color: #222;
   padding: 0;
   margin: 0 0 20px;
-  line-height: 1.1;
+  line-height: 1.5em;
 }
 article .entry p,
 article .entry ul,
@@ -306,10 +306,10 @@ article .entry p {
 article .entry h1,
 article .entry h2,
 article .entry h3 {
-  line-height: 1.1;
+  line-height: 1.4em;
 }
 article .entry h1 {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 article .entry h2 {
   color: #393939;
@@ -372,7 +372,7 @@ article .entry pre {
   overflow-x: auto;
 }
 article .entry code {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 article .entry pre {
   padding: 10px 30px;
@@ -442,7 +442,7 @@ article .entry .text-lt {
   text-decoration: line-through;
 }
 article footer {
-  font-size: 0.9em;
+  font-size: 0.8em;
   border-top: 1px solid #aaa;
   padding: 10px 0 0 0;
   margin-top: 10px;
