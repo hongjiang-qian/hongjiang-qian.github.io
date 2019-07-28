@@ -83,8 +83,8 @@
   <div class="entry">
     
       <p>For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities.</p>
-<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>For a measurable space $(\Omega,\mathcal{F})$ equipped with a filtration $\{\mathcal{F}_t\}$<br>a random time $T$ is a <a href="https://en.wikipedia.org/wiki/Stopping_time" target="_blank" rel="noopener">Stopping time</a> of the filtration if ${w,T(w)\leq t} \in \mathcal{F}_t$ for every $t \geq 0$;<br>a random time $T$ is a <strong>optional time</strong> of the filtration if $\{w,T(w)&lt; t\} \in \mathcal{F}_{t}$ for every $t \geq 0$.</p>
-<p><strong>Remark</strong>: Every stopping time is optimal and the two concepts concide if the filtration is right-continuous. Since $\{T&lt;t \}=\cup_{n=1}^{\infty} \{ T\leq t-(1/n) \} \in \mathcal{F_t}$, so the stopping time is optional. For the next claim, suppose $T$ is a optional time and the filtration is right-continuous, then for every positive integer $m$, we have $\{T\leq t\} = \cap_{n=m}^{\infty} \{ T &lt; t+(1/n)\} \in \mathcal{F}_{t+\frac{1}{m}}$, therefore $\{T \leq t\} \in \mathcal{F}_{t^{+}} = \mathcal{F}_{t} $. </p>
+<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>For a measurable space $(\Omega,\mathcal{F})$ equipped with a filtration $\{\mathcal{F}_t\}$<br>a random time $T$ is a <u><a href="https://en.wikipedia.org/wiki/Stopping_time" target="_blank" rel="noopener">Stopping time</a></u> of the filtration if $\{w,T(w)\leq t\} \in \mathcal{F}_t$ for every $t \geq 0$;<br>a random time $T$ is a <strong>optional time</strong> of the filtration if $\{w,T(w)&lt; t\} \in \mathcal{F}_{t}$ for every $t \geq 0$.</p>
+<p><strong>Remark</strong>: Every stopping time is optimal and the two concepts concide if the filtration is right-continuous. Since $\{T&lt;t \}=\cup_{n=1}^{\infty} \{ T\leq t-(1/n) \} \in \mathcal{F_t}$, so the stopping time is optional. For the next claim, suppose $T$ is a optional time and the filtration is right-continuous, then for every positive integer $m$, we have $\{T\leq t\} = \cap_{n=m}^{\infty} \{ T &lt; t+(1/n)\} \in \mathcal{F}_{t+\frac{1}{m}}$, therefore $\{T\leq t\}\in \mathcal{F}_{t^{+}} = \mathcal{F}_{t} $. </p>
 <p>Now, consider a stochastic process $X$ with right-continuous paths, which is adapted to a filtration $\{\mathcal{F}_t\}$. For $\Gamma \in \mathcal{B}(\mathbb{R}^d)$ of the state space, we could define the <strong>Hitting time</strong> as follows: <script type="math/tex">H_{\Gamma}(w)=inf\{t\geq 0; X_t(w)\in \Gamma\}</script>.<br>
     
   </div>
@@ -241,21 +241,6 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
