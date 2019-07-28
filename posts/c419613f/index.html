@@ -21,7 +21,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T01:06:50.258Z">
+<meta property="og:updated_time" content="2019-07-28T01:07:47.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping Times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
@@ -92,11 +92,11 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <p>Proof: If $0\leq t&lt;\theta$, then $\{T+\theta &lt;t\}$ is empty, which is in $\mathcal{F}_t$; if $t\geq \theta$, then $\{T+\theta &lt; t\}=\{T&lt; t-\theta\}\in\mathcal{F}_{(t-\theta)^{+}}\subseteq\mathcal{F}_t$.</p>
 <p><strong>Lemma 2</strong> If $T,S$ are stopping times, then so are $T\wedge S$, $T\vee S$, $T+S$.</p>
 <p>Proof: we only consider the third case. For $t&gt;0$, $\{ T+S&gt;t \} =\{ T=0,S&gt;t\} \cup \{0<t<t, t+s>t\} \cup \{ T&gt;t, S=0\} \cup \{ T\geq t,S&gt;0 \}$. Since the first, third and fourth events are in $\mathcal{F}_t$, then consider the second item,</t<t,></p>
-<script type="math/tex; mode=display">\{0<T<t, T+S>t\}=\bigcup_{\substack{r\in Q^{+}\\r<T<t} \{t<T<r,S>t-r\}</script><p><strong>Lemma 3</strong> Let $\{T_n\}_{n=1}^{\infty}$ be a sequence of optional times, then the random times</p>
+<script type="math/tex; mode=display">\{0<T<t, T+S>t\}=\cup_{\substack{r\in Q^{+}\\r<T<t} \{t<T<r,S>t-r\}</script><p><strong>Lemma 3</strong> Let $\{T_n\}_{n=1}^{\infty}$ be a sequence of optional times, then the random times</p>
 <script type="math/tex; mode=display">sup_{n\geq 1}T_n,\quad inf_{n\geq 1}T_n,\quad \varlimsup_{n\rightarrow \infty}T_n,\quad \varliminf_{n\rightarrow \infty}T_n</script><p>are all optional. Furthermore, if the $T_n$’s are stopping times, then so is $sup_{n\geq 1}T_n$</p>
 <p>Proof: since </p>
 <script type="math/tex; mode=display">
-\big{ sup_{n\geq 1} T_n \leq t \big}=\bigcap_{n=1}^{\infty} \{T_n \leq t\}</script><p>$$<br>\big{ inf_{n\geq 1} T_n &lt; t \big}=\bigcup_{n=1}^{\infty} \{T_n &lt; t\}</p>
+\{sup_{n\geq 1} T_n \leq t \}=\cap_{n=1}^{\infty} \{T_n \leq t\}</script><p>$$<br>\big{ inf_{n\geq 1} T_n &lt; t \big}=\bigcup_{n=1}^{\infty} \{T_n &lt; t\}</p>
 <p>$$.</p>
 
     
