@@ -21,7 +21,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T02:14:15.673Z">
+<meta property="og:updated_time" content="2019-07-28T02:16:28.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping Times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
@@ -93,8 +93,10 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <p><strong>Lemma 2:</strong> If $T,S$ are stopping times, then so are $T\wedge S$, $T\vee S$, $T+S$.</p>
 <p>Proof: we only consider the third case. For $t&gt;0$,</p>
 <script type="math/tex; mode=display">
-\{T+S>t\}=&\cup \{T=0, S>t\} &\cup \{0<T<t,T+S>t\}\\
-&\cup \{T>t, S=0\} &\cup \{T>t,S>0\}</script><p>Since the first, third and fourth events are in $\mathcal{F}_t$, then we only need to consider the second item,</p>
+\\begin{align}
+    \{T+S>t\}=&\cup \{T=0, S>t\} &\cup \{0<T<t,T+S>t\}\\
+&\cup \{T>t, S=0\} &\cup \{T>t,S>0\}
+\end{align}</script><p>Since the first, third and fourth events are in $\mathcal{F}_t$, then we only need to consider the second item,</p>
 <script type="math/tex; mode=display">
 \{ 0<T<t,T+S>t\}= \cup_{r\in Q^{+} \\r<T<t} \{t<T<r,S>t-r\}</script><p><strong>Lemma 3:</strong> Let $\{T_n\}_{n=1}^{\infty}$ be a sequence of optional times, then the random times</p>
 <script type="math/tex; mode=display">\sup\limits_{n\geq 1}T_n,\quad \inf\limits_{n\geq 1}T_n,\quad \varlimsup_{n \to \infty}T_n,\quad \varliminf_{n\to \infty}T_n</script><p>are all optional. Furthermore, if the $T_n$’s are stopping times, then so is $\sup\limits_{n\geq 1}T_n$.</p>
@@ -253,6 +255,21 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
