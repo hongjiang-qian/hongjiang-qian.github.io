@@ -21,7 +21,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-31T02:16:18.336Z">
+<meta property="og:updated_time" content="2019-07-31T02:20:18.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping Times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
@@ -91,19 +91,19 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>For a measurable space $(\Omega,\mathcal{F})$ equipped with a filtration $\{\mathcal{F}_t\}$<br>a random time $T$ is a <u><a href="https://en.wikipedia.org/wiki/Stopping_time" target="_blank" rel="noopener">Stopping time</a></u> of the filtration if $\{w,T(w)\leq t\} \in \mathcal{F}_t$ for every $t \geq 0$;<br>a random time $T$ is a Optional time of the filtration if $\{w,T(w)&lt; t\} \in \mathcal{F}_{t}$ for every $t \geq 0$.</p>
 <p><strong>Remark</strong>: Every stopping time is optimal and the two concepts concide if the filtration is right-continuous. Since $\{T&lt;t \}=\cup_{n=1}^{\infty} \{ T\leq t-(1/n) \} \in \mathcal{F_t}$, so the stopping time is optional. For the next claim, suppose $T$ is a optional time and the filtration is right-continuous, then for every positive integer $m$, we have $\{T\leq t\} = \cap_{n=m}^{\infty} \{ T &lt; t+(1/n)\} \in \mathcal{F}_{t+\frac{1}{m}}$, therefore $\{T\leq t\}\in \mathcal{F}_{t^{+}} = \mathcal{F}_{t} $. </p>
 <p>Now, consider a stochastic process $X$ with right-continuous paths, which is adapted to a filtration $\{\mathcal{F}_t\}$. For $\Gamma \in \mathcal{B}(\mathbb{R}^d)$ of the state space, we could define the <u><a href="https://en.wikipedia.org/wiki/Hitting_time" target="_blank" rel="noopener">Hitting time</a></u> as follows: <script type="math/tex">H_{\Gamma}(w)=inf\{t\geq 0; X_t(w)\in \Gamma\}</script>.<br><a id="more"></a></p>
-<h3 id="Some-Propertities-of-Stopping-time"><a href="#Some-Propertities-of-Stopping-time" class="headerlink" title="Some Propertities of Stopping time"></a>Some Propertities of Stopping time</h3><table><tr><td bgcolor="#C6EAFA">**Lemma 1:** If $T$ is optional and $\theta >0$ constant, then $T+\theta$ is a stopping time.</td></tr></table>
+<h3 id="Some-Propertities-of-Stopping-time"><a href="#Some-Propertities-of-Stopping-time" class="headerlink" title="Some Propertities of Stopping time"></a>Some Propertities of Stopping time</h3><table><tr><td bgcolor="#C6EAFA"><b>Lemma 1</b>:** If $T$ is optional and $\theta >0$ constant, then $T+\theta$ is a stopping time.</td></tr></table>
 
 <p>Proof: If $0\leq t&lt;\theta$, then $\{T+\theta &lt;t\}$ is empty, which is in $\mathcal{F}_t$; if $t\geq \theta$, then $\{T+\theta &lt; t\}=\{T&lt; t-\theta\}\in\mathcal{F}_{(t-\theta)^{+}}\subseteq\mathcal{F}_t$.</p>
-<table><tr><td bgcolor="#C6EAFA">**Lemma 2:** If $T,S$ are stopping times, then so are $T\wedge S$, $T\vee S$, $T+S$.</td></tr></table>
+<table><tr><td bgcolor="#C6EAFA"><b>Lemma 2</b>:** If $T,S$ are stopping times, then so are $T\wedge S$, $T\vee S$, $T+S$.</td></tr></table>
 
-<p>Proof: we only consider the third case. For $t&gt;0$,</p>
+<p><strong>Proof:</strong> we only consider the third case. For $t&gt;0$,</p>
 <script type="math/tex; mode=display">
 \begin{align}
     \{T+S>t\}=&\cup\{T=0, S>t\} \cup\{0<T<t,T+S>t\}\\
 &\cup \{T>t, S=0\} \cup\{T>t,S>0\}
 \end{align}</script><p>Since the first, third and fourth events are in $\mathcal{F}_t$, then we only need to consider the second item,</p>
 <script type="math/tex; mode=display">
-\{ 0<T<t,T+S>t\}= \cup_{r\in Q^{+} \\r<T<t} \{t<T<r,S>t-r\}</script><table><tr><td bgcolor="#C6EAFA">**Lemma 3:** Let $\{T_n\}_{n=1}^{\infty}$ be a sequence of optional times, then the random times
+\{ 0<T<t,T+S>t\}= \cup_{r\in Q^{+} \\r<T<t} \{t<T<r,S>t-r\}</script><table><tr><td bgcolor="#C6EAFA"><b>Lemma 3</b>: Let $\{T_n\}_{n=1}^{\infty}$ be a sequence of optional times, then the random times
 $$ \sup\limits_{n\geq 1}T_n,\quad \inf\limits_{n\geq 1}T_n,\quad \varlimsup_{n \to \infty}T_n,\quad \varliminf_{n\to \infty}T_n
 $$
 are all optional. Furthermore, if the $T_n$'s are stopping times, then so is $\sup\limits_{n\geq 1}T_n$.</td></tr></table>
@@ -113,13 +113,7 @@ are all optional. Furthermore, if the $T_n$'s are stopping times, then so is $\s
 \begin{align}
     \{\sup_{n\geq 1} T_n \leq t \}&=\cap_{n=1}^{\infty} \{T_n \leq t\} \\
     \{\inf_{n\geq 1} T_n < t\}&=\cup_{n=1}^{\infty} \{T_n < t\}
-\end{align}</script><table><tr><td bgcolor="#C6EAFA">这里的背景色是：Aquamarine，  十六进制颜色值：#7FFFD4， rgb(127, 255, 212)</td></tr></table>
-
-
-
-
-
-
+\end{align}</script>
     
   </div>
   <footer>
@@ -302,6 +296,21 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
