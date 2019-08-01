@@ -21,7 +21,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-31T23:52:10.812Z">
+<meta property="og:updated_time" content="2019-08-01T00:38:40.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping Times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
@@ -103,7 +103,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 &\cup \{T>t, S=0\} \cup\{T>t,S>0\}
 \end{align}</script><p>Since the first, third and fourth events are in $\mathcal{F}_t$, then we only need to consider the second item,</p>
 <script type="math/tex; mode=display">
-\{ 0<T<t,T+S>t\}= \cup_{r\in Q^{+} \\r<T<t} \{t<T<r,S>t-r\}</script><table><tr><td bgcolor="#B0C4DE"><b>Lemma 3</b>: Let $\{T_n\}_{n=1}^{\infty}$ be a sequence of optional times, then the random times
+\{ 0<T<t,T+S>t\}= \bigcup_{r\in Q^{+} \\r<T<t} \{t<T<r,S>t-r\}</script><table><tr><td bgcolor="#B0C4DE"><b>Lemma 3</b>: Let $\{T_n\}_{n=1}^{\infty}$ be a sequence of optional times, then the random times
 $$ \sup\limits_{n\geq 1}T_n,\quad \inf\limits_{n\geq 1}T_n,\quad \varlimsup_{n \to \infty}T_n,\quad \varliminf_{n\to \infty}T_n
 $$
 are all optional. Furthermore, if the $T_n$'s are stopping times, then so is $\sup\limits_{n\geq 1}T_n$.</td></tr></table>
@@ -114,16 +114,19 @@ are all optional. Furthermore, if the $T_n$'s are stopping times, then so is $\s
     \{\sup_{n\geq 1} T_n \leq t \}&=\cap_{n=1}^{\infty} \{T_n \leq t\} \\
     \{\inf_{n\geq 1} T_n < t\}&=\cup_{n=1}^{\infty} \{T_n < t\}
 \end{align}</script><hr>
-<p>Until now, we’ve already know the definition of stopping time and some basic propertities about it. But how can we measure the information accumulated up to a stopping time $T$? </p>
+<p>Until now, we’ve already know the definition of stopping time and some basic propertities about it. But how can we measure the information accumulated up to a stopping time $T$, i.e. how to define the $\sigma$-algebra $\mathcal{F}_T$ ? </p>
 <h3 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h3><p>Let $T$ be a stopping time of the filtration $\mathcal{F}_t$, then </p>
 <script type="math/tex; mode=display">
-\mathcal{F_T}=\lbig{A \in \mathcal{F}| A\cap \{T\leq t\} \in \mathcal{F}_t, for t\geq 0 \rbig}</script><table><tr><td bgcolor="#B0C4DE"><b>Lemma 4</b>: For any two stopping times $T$ and $S$ and for any $A\in \mathcal{F}_S$, we have $A\cap\{S\leq T\}\in \mathcal{F}_T$. In particular, if $S\leq T$, we have $\mathcal{F}_S \subseteq \mathcal{F}_T$</td></tr></table>
+\mathcal{F_T}=\left\{ A \in \mathcal{F} | A\cap \{T\leq t\} \in \mathcal{F}_t, \text{ for } t\geq 0 \right\}</script><table><tr><td bgcolor="#B0C4DE"><b>Lemma 4</b>: For any two stopping times $T$ and $S$ and for any $A\in \mathcal{F}_S$, we have $A\cap\{S\leq T\}\in \mathcal{F}_T$. In particular, if $S\leq T$, we have $\mathcal{F}_S \subseteq \mathcal{F}_T$</td></tr></table>
 
+<p><strong>Proof:</strong> For every stopping time $T$ and positive constant $t$, $T\wedge t(w)=T(w)\mathbb{1}_{ \{T(w)\leq t\} }+t\times\mathbb{1}_{\{T(w)&gt;t\}}$, since $T$ is $\mathcal{F}_T$-measurable and $\mathcal{F}_T \subseteq \mathcal{F}_t$ when $T(w)\leq t$, therefore we could get $T\wedge t(w)$ is $\mathcal{F}_t$-measurable. Then</p>
+<script type="math/tex; mode=display">
+A\cap \{S\leq T\}\cap \{T\leq t\} =[A\cap\{S\leq t\}]\cap \{T\leq t\}\cap \{S\wedge t \leq T\wedge t\} \in \mathcal{F}_t</script><p>In particular, if $\{S\leq T\}$, then for every $A\in \mathcal{F}_S$, we have $A\cap \{S\leq T\} = A \in \mathcal{F}_T$, hence $\mathcal{F}_S\subseteq \mathcal{F}_T$. </p>
+<table><tr><td bgcolor="#B0C4DE"><b>Lemma 5</b>: Let $T$ and $S$ be stopping times, then $\mathcal{F}_{T\wedge S}=\mathcal{F}_{T}\cap \mathcal{F}_{S}$. And each of the events
+$$
+\{T<s\}\{s<t\},\{t\leq s\},\{s\leq t\}, \{t="S\}" $$ belongs to $\mathcal{f}_t\cap\mathcal{f}_s$ < td></s\}\{s<t\},\{t\leq></td></tr></table>
 
-
-
-
-
+<p><strong>Proof:</strong></p>
 
     
   </div>
