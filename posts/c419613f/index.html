@@ -14,14 +14,14 @@
 DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
   
   <meta name="description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
-<meta name="keywords" content="Stopping time,Optional time,Hittine time">
+<meta name="keywords" content="Stopping time,Optional time,Hitting time">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stopping Times">
 <meta property="og:url" content="http://yoursite.com/posts/c419613f/index.html">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T00:38:40.517Z">
+<meta property="og:updated_time" content="2019-08-01T00:55:42.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping Times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
@@ -119,12 +119,10 @@ are all optional. Furthermore, if the $T_n$'s are stopping times, then so is $\s
 <script type="math/tex; mode=display">
 \mathcal{F_T}=\left\{ A \in \mathcal{F} | A\cap \{T\leq t\} \in \mathcal{F}_t, \text{ for } t\geq 0 \right\}</script><table><tr><td bgcolor="#B0C4DE"><b>Lemma 4</b>: For any two stopping times $T$ and $S$ and for any $A\in \mathcal{F}_S$, we have $A\cap\{S\leq T\}\in \mathcal{F}_T$. In particular, if $S\leq T$, we have $\mathcal{F}_S \subseteq \mathcal{F}_T$</td></tr></table>
 
-<p><strong>Proof:</strong> For every stopping time $T$ and positive constant $t$, $T\wedge t(w)=T(w)\mathbb{1}_{ \{T(w)\leq t\} }+t\times\mathbb{1}_{\{T(w)&gt;t\}}$, since $T$ is $\mathcal{F}_T$-measurable and $\mathcal{F}_T \subseteq \mathcal{F}_t$ when $T(w)\leq t$, therefore we could get $T\wedge t(w)$ is $\mathcal{F}_t$-measurable. Then</p>
+<p><strong>Proof:</strong> For every stopping time $T$ and positive constant $t$, $T\wedge t(w)=T(w)\mathbb{1}_{ \{T(w)\leq t\} }+t\mathbb{1}_{\{T(w)&gt;t\}}$, since $T$ is $\mathcal{F}_T$-measurable and $\mathcal{F}_T \subseteq \mathcal{F}_t$ when $T(w)\leq t$, therefore we could get $T\wedge t(w)$ is $\mathcal{F}_t$-measurable. Then</p>
 <script type="math/tex; mode=display">
 A\cap \{S\leq T\}\cap \{T\leq t\} =[A\cap\{S\leq t\}]\cap \{T\leq t\}\cap \{S\wedge t \leq T\wedge t\} \in \mathcal{F}_t</script><p>In particular, if $\{S\leq T\}$, then for every $A\in \mathcal{F}_S$, we have $A\cap \{S\leq T\} = A \in \mathcal{F}_T$, hence $\mathcal{F}_S\subseteq \mathcal{F}_T$. </p>
-<table><tr><td bgcolor="#B0C4DE"><b>Lemma 5</b>: Let $T$ and $S$ be stopping times, then $\mathcal{F}_{T\wedge S}=\mathcal{F}_{T}\cap \mathcal{F}_{S}$. And each of the events
-$$
-\{T<s\}\{s<t\},\{t\leq s\},\{s\leq t\}, \{t="S\}" $$ belongs to $\mathcal{f}_t\cap\mathcal{f}_s$ < td></s\}\{s<t\},\{t\leq></td></tr></table>
+<table><tr><td bgcolor="#B0C4DE"><b>Lemma 5</b>: Let $T$ and $S$ be stopping times, then $\mathcal{F}_{T\wedge S}=\mathcal{F}_{T}\cap \mathcal{F}_{S}$. And each of the events $\{T$$<$$s\}$, $\{s$$<$$t\}$, $\{t\leq s\}$,$\{s \leq t\}$, $\{t="S\}$" belongs to $\mathcal{f}_t\cap\mathcal{f}_s$. < td></$$s\}$,></td></tr></table>
 
 <p><strong>Proof:</strong></p>
 
@@ -139,7 +137,7 @@ $$
 
       
   <div class="tags">
-    <a class="tags-link" href="/tags/Hittine-time/">Hittine time</a>, <a class="tags-link" href="/tags/Optional-time/">Optional time</a>, <a class="tags-link" href="/tags/Stopping-time/">Stopping time</a>
+    <a class="tags-link" href="/tags/Hitting-time/">Hitting time</a>, <a class="tags-link" href="/tags/Optional-time/">Optional time</a>, <a class="tags-link" href="/tags/Stopping-time/">Stopping time</a>
   </div>
 
       
@@ -202,7 +200,7 @@ $$
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Hittine-time/" style="font-size: 10px;">Hittine time</a> <a href="/tags/Optional-time/" style="font-size: 10px;">Optional time</a> <a href="/tags/Stopping-time/" style="font-size: 10px;">Stopping time</a>
+    <a href="/tags/Hitting-time/" style="font-size: 10px;">Hitting time</a> <a href="/tags/Optional-time/" style="font-size: 10px;">Optional time</a> <a href="/tags/Stopping-time/" style="font-size: 10px;">Stopping time</a>
   </div>
 </div>
 
