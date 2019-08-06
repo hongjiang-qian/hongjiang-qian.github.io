@@ -21,7 +21,7 @@ DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T20:55:21.514Z">
+<meta property="og:updated_time" content="2019-08-06T21:18:22.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stopping times">
 <meta name="twitter:description" content="For this article, I will mainly demonstrate the definition of stopping time, optional time and hitting time and their propertities. DefinitionFor a measurable space $(\Omega,\mathcal{F})$ equipped wit">
@@ -126,7 +126,7 @@ are all optional. Furthermore, if the $T_n$'s are stopping times, then so is $\s
 2. Both $T$ and $T\wedge S$ are $\mathcal{F}_T$-measurable and $\mathcal{F}_{T\wedge S}=\mathcal{F}_{T}\cap \mathcal{F}_{S}$. Also each of the events $\{T< S\}, \{S< T\}, \{T\leq S\}, \{S \leq T\}, \{T=S\}$ belongs to $\mathcal{F}_T\cap\mathcal{F}_S$;
 <br>
 <br>
-3. If the process $X$ is progressively measurable then $X(T)$ is $\mathcal{F}_T$-measurable on the event $\{T<\infty\}$ < td></\infty\}$></td></tr></table>
+3. If the process $X$ is [progressively measurable](progressively measurable process) then $X(T)$ is $\mathcal{F}_T$-measurable on the event $\{T<\infty\}$ < td></\infty\}$></td></tr></table>
 
 <p><strong>Proof:</strong> </p>
 <ol>
@@ -137,6 +137,10 @@ are all optional. Furthermore, if the $T_n$'s are stopping times, then so is $\s
 A\cap \{S< T\} =\bigcup_{n\geq 1} A\cap \{S+\frac{1}{n}\leq T\}</script><p>For the right hand-side, since $A\cap \{S+\frac{1}{n}\leq T\}= A\cap \{S\leq T-\frac{1}{n}\} \in \mathcal{F}_{T-\frac{1}{n}} \subseteq \mathcal{F}_T$, then we have $A\cap \{S&lt; T\} \in \mathcal{F}_T$.</p>
 </li>
 <li><p>(a) Since $\{T\leq s\}\cap \{T\leq t\} =\{T\leq s\wedge t\} \in \mathcal{F}_t,\; \forall s$, according to the definition of stopping time, we have $T$ is $\mathcal{F}_T$-measurable. Similarily, $S\wedge T$ is $\mathcal{F}_{S\wedge T} \subseteq \mathcal{F}_{T}$-measurable.</p>
+</li>
+<li><p>To prove $X(T)$ is $\mathcal{F}_T$-measurable, we need to show that for any $B\in\mathcal{B}(\mathbb{R}^d)$, $\{X_T \in B,T&lt; \infty\} \cap \{T\leq  t\}\in\mathcal{F}_t$. At first, we claim that $w\mapsto X(T(w)\wedge t,w)\in \mathcal{F}_t$ since we could view it as the composition</p>
+<script type="math/tex; mode=display">
+w\longmapsto (T(w)\wedge t,w)\longmapsto X(T(w)\wedge t,w)</script><p>The fisrt step $w\longmapsto (T(w)\wedge t, w)$ is measurable as a map from $(\Omega, \mathcal{F}_t)$ into the product space $([0,t]\times \Omega, \mathcal{B}_{[0,t]}\otimes \mathcal{F}_t)$ since as proved in (1.(a)) that $w\longmapsto T(w)\wedge t$ is measurable from $\mathcal{F}_t$ into $\mathcal{B}_{[0,t]}$ and the other component is the identity map which is measurable. The second step of the compostion is measurable by the progressively measurable of X from $([0,t]\times \Omega, \mathcal{B}_{[0,t]}\otimes \mathcal{F}_t$ into $(\mathbb{R}^d,\mathcal{B}_{\mathbb{R}^d})$.<br>Therefore, $\{X_T \in B,T&lt; \infty\} \cap \{T\leq t\}= \{X_{T\wedge t}\in B\}\cap \{T\leq t\}\in\mathcal{F}_t$.</p>
 </li>
 </ol>
 
