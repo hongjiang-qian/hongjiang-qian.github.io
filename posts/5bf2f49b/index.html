@@ -11,20 +11,20 @@
   
   
     <meta name="description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification.
-A filtration) on a probability space is a collection of $\sigma$">
+A filtration on a probability space is a collection of $\sigma$-">
   
-  <meta name="description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration) on a probability space is a collection of $\sigma$">
+  <meta name="description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration on a probability space is a collection of $\sigma$-">
 <meta name="keywords" content="Filtration,Stochastic Processes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Filtration and stochastic processes">
 <meta property="og:url" content="http://yoursite.com/posts/5bf2f49b/index.html">
 <meta property="og:site_name" content="Generator">
-<meta property="og:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration) on a probability space is a collection of $\sigma$">
+<meta property="og:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration on a probability space is a collection of $\sigma$-">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-07T01:47:45.554Z">
+<meta property="og:updated_time" content="2019-08-07T01:50:09.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filtration and stochastic processes">
-<meta name="twitter:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration) on a probability space is a collection of $\sigma$">
+<meta name="twitter:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration on a probability space is a collection of $\sigma$-">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -88,7 +88,7 @@ A filtration) on a probability space is a collection of $\sigma$">
   <div class="entry">
     
       <p>This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification.</p>
-<p>A <a href="https://en.wikipedia.org/wiki/Filtration_(probability_theory" target="_blank" rel="noopener">filtration</a>) on a probability space is a collection of $\sigma$-fields $\{\mathcal{F}_t: t\in \mathbb{R}^{+}\}$ satisfying:</p>
+<p>A <em>filtration</em> on a probability space is a collection of $\sigma$-fields $\{\mathcal{F}_t: t\in \mathbb{R}^{+}\}$ satisfying:</p>
 <script type="math/tex; mode=display">
 \mathcal{F}_S \subseteq \mathcal{F}_t \subseteq \mathcal{F} \text{ for all } 0\leq s \leq t <\infty</script><p>Given a filtration$\mathcal{F}_t$, we could add a last member to it by defining:</p>
 <script type="math/tex; mode=display">\mathcal{F}_{\infty}=\sigma(\bigcup_{0\leq t<\infty} \mathcal{F}_t)</script><p>A stochastic process $X=\{X_t, t\in \mathbb{R}^{+}\}$ is adapted to the filtration $\{\mathcal{F}_t\}$ if $X_t$ is $\mathcal{F}_t$-measurable for $0\leq t \leq \infty$. The smallest filtration that one process adapted to is thef filtration that it generates, i.e.</p>
@@ -292,6 +292,21 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
