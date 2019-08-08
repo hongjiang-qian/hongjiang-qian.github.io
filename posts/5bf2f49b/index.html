@@ -21,7 +21,7 @@ A filtration on a probability space is a collection of $\sigma$-">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration on a probability space is a collection of $\sigma$-">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-07T01:50:09.274Z">
+<meta property="og:updated_time" content="2019-08-08T02:33:40.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filtration and stochastic processes">
 <meta name="twitter:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration on a probability space is a collection of $\sigma$-">
@@ -100,7 +100,24 @@ A filtration on a probability space is a collection of $\sigma$-">
 <li>Right-continuous: $X_t(w)=\lim_{s\searrow t}X_s(w)$ for all $t\in \mathbb{R}^{+}$;</li>
 <li>The existence of left limits: $X_{t-}(w)=\lim_{s\nearrow t}X_s(w)$ exists in $\mathbb{R}^{d}$ for all $t&gt;0$</li>
 </ul>
-<p>To be finished……</p>
+<p>Similarily,we could define <em>left-continuous with right limits</em> (shortly LCRL, also named “caglad” in French).</p>
+<p>Next two lemmas show some technical benefits of path regularity.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Lemma 1</b> Let $X$ be adapted to the filtration $\{\mathcal{F}_t\}$ and suppose $X$ either left- or right- continuous. Then $X$ is [progressively measurable](). 
+</td></tr></table>
+
+<p>Before we prove Lemma 1, we give the definiton of “measurable” and “<a href="https://en.wikipedia.org/wiki/Progressively_measurable_process" target="_blank" rel="noopener">progressively measurable</a>“. </p>
+<ul>
+<li>A process $X$ is <em>measurable</em> if $X$ is $\mathcal{B}(\mathbb{R}_{+})\otimes \mathcal{F}$-measurable as a function of $\mathbb{R}_{+}\times \Omega$ into $\mathbb{R}^d$ (that is for any Borel set $B \in \mathcal{B}(\mathbb{R}^d)$, $\{(t,w):X(t,w)\in B\} \in \mathcal{B}(\mathbb{R}_{+})\otimes \mathcal{F}$. </li>
+<li>A process $X$ is <em>progressively measurable</em> if the restriction of the function X to $[0,T]\times \Omega$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable for each T (more expilicitly, for any $B\in \mathcal{B}_{\mathbb{R}^d}$, the event $\{(t,w)\in [0,T]\times \Omega: X(t,w)\in B\}\in \mathcal{B}_{[0,T]}\otimes\mathcal{F}_T$).</li>
+</ul>
+<p><strong>Proof:</strong><br>We would like to prove $X$ is progressively measurable, i.e. for each fixed T, we need to show $X$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable. The idea is use step function which is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable to approximate $X$. Then we could get the progressively measurability for X.</p>
+<p>Suppose $X$ is right-continuous. Fix $T&lt;\infty$, define the step function as following:</p>
+<script type="math/tex; mode=display">
+X_n(t,w)=X(0,w)\cdot 1_{0}(t)+\sum_{k=0}^{2^n-1}X\bigl(\frac{(k+1)T}{2^n},w\bigr)\cdot 1_{(\frac{kT}{2^{-n}},\frac{(k+1)T}{2^{-n}})}(t)</script><p>Since $X_n$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-meaurable as a sum of products of $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-meaurable functions. By the right-continuity, $X_n(t,w)\rightarrow X(t,w)$ as $n\rightarrow \infty$, then we could get $X$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-meaurable.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Lemma 2</b> 
+
+</td></tr></table>
+
 
     
   </div>
