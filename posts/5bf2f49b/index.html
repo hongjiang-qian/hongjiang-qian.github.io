@@ -21,7 +21,7 @@ A filtration on a probability space is a collection of $\sigma$-">
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration on a probability space is a collection of $\sigma$-">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-08T02:33:40.358Z">
+<meta property="og:updated_time" content="2019-08-10T12:46:19.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filtration and stochastic processes">
 <meta name="twitter:description" content="This article I will demonstrate some basic definitions about Stochastic Processes, such as Filtration, indistinguishable, modification. A filtration on a probability space is a collection of $\sigma$-">
@@ -107,17 +107,24 @@ A filtration on a probability space is a collection of $\sigma$-">
 
 <p>Before we prove Lemma 1, we give the definiton of “measurable” and “<a href="https://en.wikipedia.org/wiki/Progressively_measurable_process" target="_blank" rel="noopener">progressively measurable</a>“. </p>
 <ul>
-<li>A process $X$ is <em>measurable</em> if $X$ is $\mathcal{B}(\mathbb{R}_{+})\otimes \mathcal{F}$-measurable as a function of $\mathbb{R}_{+}\times \Omega$ into $\mathbb{R}^d$ (that is for any Borel set $B \in \mathcal{B}(\mathbb{R}^d)$, $\{(t,w):X(t,w)\in B\} \in \mathcal{B}(\mathbb{R}_{+})\otimes \mathcal{F}$. </li>
-<li>A process $X$ is <em>progressively measurable</em> if the restriction of the function X to $[0,T]\times \Omega$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable for each T (more expilicitly, for any $B\in \mathcal{B}_{\mathbb{R}^d}$, the event $\{(t,w)\in [0,T]\times \Omega: X(t,w)\in B\}\in \mathcal{B}_{[0,T]}\otimes\mathcal{F}_T$).</li>
+<li><p>A process $X$ is <em>measurable</em> if $X$ is $\mathcal{B}(\mathbb{R}_{+})\otimes \mathcal{F}$-measurable as a function of $\mathbb{R}_{+}\times \Omega$ into $\mathbb{R}^d$ (that is for any Borel set $B \in \mathcal{B}(\mathbb{R}^d)$, $\{(t,w):X(t,w)\in B\} \in \mathcal{B}(\mathbb{R}_{+})\otimes \mathcal{F}$.</p>
+</li>
+<li><p>A process $X$ is <em>progressively measurable</em> if the restriction of the function X to $[0,T]\times \Omega$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable for each T (more expilicitly, for any $B\in \mathcal{B}_{\mathbb{R}^d}$, the event $\{(t,w)\in [0,T]\times \Omega: X(t,w)\in B\}\in \mathcal{B}_{[0,T]}\otimes\mathcal{F}_T$).</p>
+</li>
 </ul>
-<p><strong>Proof:</strong><br>We would like to prove $X$ is progressively measurable, i.e. for each fixed T, we need to show $X$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable. The idea is use step function which is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable to approximate $X$. Then we could get the progressively measurability for X.</p>
+<p><strong>Proof:</strong></p>
+<p>We would like to prove $X$ is progressively measurable, i.e. for each fixed T, we need to show $X$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable. The idea is use step function which is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-measurable to approximate $X$. Then we could get the progressively measurability for X.</p>
 <p>Suppose $X$ is right-continuous. Fix $T&lt;\infty$, define the step function as following:</p>
 <script type="math/tex; mode=display">
 X_n(t,w)=X(0,w)\cdot 1_{0}(t)+\sum_{k=0}^{2^n-1}X\bigl(\frac{(k+1)T}{2^n},w\bigr)\cdot 1_{(\frac{kT}{2^{-n}},\frac{(k+1)T}{2^{-n}})}(t)</script><p>Since $X_n$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-meaurable as a sum of products of $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-meaurable functions. By the right-continuity, $X_n(t,w)\rightarrow X(t,w)$ as $n\rightarrow \infty$, then we could get $X$ is $\mathcal{B}_{[0,T]}\otimes \mathcal{F}_T$-meaurable.</p>
-<table><tr><td bgcolor="#B0C4DE"><b>Lemma 2</b> 
-
+<table><tr><td bgcolor="#B0C4DE"><b>Lemma 2 </b> 
+Suppose X and Y are right-continuous processes defined on the same probability space. Suppose $P\{X_t=Y_t\}=1$ for all $t$ in some dense countable subset $S$ of $\mathbb{R}^{+}$. Then $X$ and $Y$ are indistinguisable. 
 </td></tr></table>
 
+<p><strong>Proof:</strong></p>
+<p>Let $\Omega_0=\{\cap_{s\in S} \{w:X_s(w)=Y_s(w)\}\}$. By assumption, $P(\Omega_0)=1$. Fix $w\in \Omega_0$, for any given $t\in \mathbb{R}^{+}$, since $S$ is dense, then there exists a sequence $s_n\in S$ s.t. $s_n \searrow t$. According to right-continuity, we have </p>
+<script type="math/tex; mode=display">
+X_t(w)=\lim_{n\rightarrow \infty} X_{s_n}(w)=\lim_{n\rightarrow \infty} Y_{s_n}(w)=Y_t(w)</script><p>Therefore $X_t(w)=Y_t(w)$ for all $t\in \mathbb{R}^{+}$ and $w\in \Omega_0$. Thus $X$ and $Y$ are indistinguishable.</p>
 
     
   </div>
