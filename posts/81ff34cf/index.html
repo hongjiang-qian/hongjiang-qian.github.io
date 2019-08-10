@@ -4,19 +4,30 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>Tag: Stochastic Processes | Generator</title>
+  <title>Gronwall Inequality | Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="Hongjiang Qian">
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Generator">
-<meta property="og:url" content="http://yoursite.com/tags/Stochastic-Processes/index.html">
+    <meta name="description" content="I’ll demonstrate a vital important inequality named Gronwall inequality which is used very often in stochastic process theory.
+Gronwall Inequality 
+Let $v(t)$ be a nonnegative function such that 
+$$
+v">
+  
+  <meta name="description" content="I’ll demonstrate a vital important inequality named Gronwall inequality which is used very often in stochastic process theory. Gronwall Inequality  Let $v(t)$ be a nonnegative function such that  $$ v">
+<meta name="keywords" content="Gronall Inequality">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gronwall Inequality">
+<meta property="og:url" content="http://yoursite.com/posts/81ff34cf/index.html">
 <meta property="og:site_name" content="Generator">
+<meta property="og:description" content="I’ll demonstrate a vital important inequality named Gronwall inequality which is used very often in stochastic process theory. Gronwall Inequality  Let $v(t)$ be a nonnegative function such that  $$ v">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-10T13:13:30.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Generator">
+<meta name="twitter:title" content="Gronwall Inequality">
+<meta name="twitter:description" content="I’ll demonstrate a vital important inequality named Gronwall inequality which is used very often in stochastic process theory. Gronwall Inequality  Let $v(t)$ be a nonnegative function such that  $$ v">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -60,41 +71,62 @@
   </nav>
   <div class="clearfix"></div>
 </header>
-    <div class="content">
-
-
-<h2 class="archives-title tag"><span>Stochastic Processes</span></h2>
-
-
-
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrapper">
-        
-        <div class="archives">
-    
-    <article class="post">
+    <div class="content"><article class="post">
   <header>
-    <a href="/posts/5bf2f49b/">
-  <time datetime="2019-08-03T14:12:23.000Z">
-    Aug 03
+    
+      <div class="icon"></div>
+      <a href="/posts/81ff34cf/">
+  <time datetime="2019-08-04T02:00:33.000Z">
+    2019-08-03
   </time>
 </a>
     
+    
   
-    <h1 class="title"><a href="/posts/5bf2f49b/">Filtration and stochastic processes</a></h1>
+    <h1 class="title">Gronwall Inequality</h1>
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>I’ll demonstrate a vital important inequality named Gronwall inequality which is used very often in stochastic process theory.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Gronwall Inequality</b> 
+Let $v(t)$ be a nonnegative function such that 
+$$
+v(t)\leq C+A\int_{0}^{t}v(s)ds
+$$
+where $0\leq t\leq T$.Then we have $v(t)\leq Cexp{At}$  for all $0\leq t\leq T$。
+</td></tr></table>
+
+<p><strong>Proof:</strong><br>Let$w(t)=\int_{0}^{t}v(s)ds$, then we could get $w’(t)\leq C+Aw(t)$, i.e. $w’(t)-Aw(t)\leq C$. Multiply $exp(-At)$ to both side of ineqaulity, we get</p>
+<script type="math/tex; mode=display">
+w'(t)e^{-At}-Aw(t)e^{-At} \leq C</script><p>That is $w(t)e^{-At}\leq C$, therefore we could get $w(t)\leq \frac{C}{A}(exp(At)-1)$, then $v(t)\leq Cexp(At)$.</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/Inequalities/">Inequalities</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/Gronall-Inequality/">Gronall Inequality</a>
+  </div>
+
+      
+  <div class="share">
+    
+  </div>
+  <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
+
+    
+    <div class="clearfix"></div>
+  </footer>
 </article>
-  
-  
-    </div></section>
-  
 
 </div>
   </div>
