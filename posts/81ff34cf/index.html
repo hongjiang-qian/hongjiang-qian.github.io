@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-12T01:10:18.196Z">
+<meta property="og:updated_time" content="2019-08-12T01:11:10.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Some Probability Inequalities">
 <meta name="twitter:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
@@ -128,20 +128,17 @@ $$(E\lvert\xi\rvert^{s})^{1\over s} \leq (E\lvert\xi\rvert^{t})^{1\over t}$$
 </td></tr></table>
 
 <p><strong>Proof: </strong><br>To prove this, let $\eta = \lvert \xi \rvert^s$, then applying Jensen’s Inequality to $g(x)=x^r, \text{ where } r=\frac{t}{s}$, then we obtain<br>$\lvert E\eta \rvert^r \leq E\lvert \eta \rvert^r$, i.e.</p>
-<script type="math/tex; mode=display">(E\lvert \xi \rvert)^{\frac{t}{s}} \leq E\lvert \xi^s \rvert$$.
-
-In the following we are going to demonstrate Young's Inequality, Holder's Inequality and Minkowski's Inequality. I always put them together since we are going to use Young's ineqaulity to prove Holder's Inequality, and to use Holder's Inequality to prove Minkowski's Inequality. It will be very helpful to remember them by this way.
-
-For Young‘s Inequality, I will skip its proof (you could refer [this](https://math.stackexchange.com/questions/566169/a-proof-of-youngs-inequality)) and only state it.
-
-<table><tr><td bgcolor=#B0C4DE><b>Young's Inequality: </b> 
+<script type="math/tex; mode=display">
+(E\lvert \xi \rvert)^{\frac{t}{s}} \leq E\lvert \xi^s \rvert</script><p>In the following we are going to demonstrate Young’s Inequality, Holder’s Inequality and Minkowski’s Inequality. I always put them together since we are going to use Young’s ineqaulity to prove Holder’s Inequality, and to use Holder’s Inequality to prove Minkowski’s Inequality. It will be very helpful to remember them by this way.</p>
+<p>For Young‘s Inequality, I will skip its proof (you could refer <a href="https://math.stackexchange.com/questions/566169/a-proof-of-youngs-inequality" target="_blank" rel="noopener">this</a>) and only state it.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Young's Inequality: </b> 
 For $a>0, b>0$ and $p \text{ and } q$ are real numbers greater than 1 satisfying $1/p+1/q=1$, then $ab\leq \frac{a^p}{p}+\frac{b^q}{q}$.
 </td></tr></table>
 
 
-<table><tr><td bgcolor=#B0C4DE><b>Holder's Inequality: </b> 
-Let $1< p <\infty, 1< q< \infty$ and $(1/p)+(1/q)=1$. If $E\lvert \xi \rvert^p < \infty$ and $E\lvert \eta \rvert^q <\infty$, then $E\lvert \xi\eta \rvert <\infty$ and 
-$$E\vert \xi\eta \rvert \leq (E\lvert \xi \rvert^p)^{\frac{1}{p}}(E\lvert \xi \rvert^q)^{\frac{1}{q}}</script><p>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Holder's Inequality: </b> 
+Let $1< p <\infty, 1< q< \infty$ and $(1 p)+(1 q)="1$." if $e\lvert \xi \rvert^p < \eta \rvert^q <\infty$, then \xi\eta \rvert <\infty$ $$e\vert \leq (e\lvert \rvert^p)^{\frac{1}{p}}(e\lvert \rvert^q)^{\frac{1}{q}}$$ td></\infty,></td></tr></table>
+
 <p><strong>Proof: </strong></p>
 <table><tr><td bgcolor="#B0C4DE"><b>Minkowski's Inequality:  </b> 
 If $E\lvert \xi \rvert^p < \infty$ and $E\lvert \eta \rvert^q <\infty$, $1\leq p <\infty$, then we have $e\lvert \xi + \eta \rvert^p <\infty$ and $$(e\lvert +\eta \rvert^p)^{\frac{1}{p}}\leq e(\lvert \xi\rvert^p)^{\frac{1}{p}} \eta\rvert^p)^{\frac{1}{p}}$$ < td></\infty$,></td></tr></table>
@@ -342,6 +339,21 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
