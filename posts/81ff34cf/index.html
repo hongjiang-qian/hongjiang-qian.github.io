@@ -10,21 +10,20 @@
     <meta name="author" content="Hongjiang Qian">
   
   
-    <meta name="description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory which are used very often when we are going to prove something, like to prove convergence.
-Gronwall Ine">
+    <meta name="description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
   
-  <meta name="description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory which are used very often when we are going to prove something, like to prove convergence. Gronwall Ine">
-<meta name="keywords" content="Gronwall Inequality,Chebyshev&#39;s Inequality,The Cauchy-Bunyakovskii Inequality,Jesen&#39;s Inequality,Lyapunov&#39;s Inequality,Holder&#39;s Inequality,Minkovski&#39;s Inequality">
+  <meta name="description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
+<meta name="keywords" content="Gronwall Inequality,Chebyshev&#39;s Inequality,Jesen&#39;s Inequality,Lyapunov&#39;s Inequality,Holder&#39;s Inequality,Minkovski&#39;s Inequality">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Some Probability Inequalities">
 <meta property="og:url" content="http://yoursite.com/posts/81ff34cf/index.html">
 <meta property="og:site_name" content="Generator">
-<meta property="og:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory which are used very often when we are going to prove something, like to prove convergence. Gronwall Ine">
+<meta property="og:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-11T00:44:24.866Z">
+<meta property="og:updated_time" content="2019-08-12T01:08:15.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Some Probability Inequalities">
-<meta name="twitter:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory which are used very often when we are going to prove something, like to prove convergence. Gronwall Ine">
+<meta name="twitter:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -87,18 +86,67 @@ Gronwall Ine">
   
   <div class="entry">
     
-      <p>This article, I will mainly demonstrate some vital important inequalities in  probability theory which are used very often when we are going to prove something, like to prove convergence.</p>
-<table><tr><td bgcolor="#B0C4DE"><b>Gronwall Inequality</b> 
-Let $v(t)$ be a nonnegative function such that 
+      <p>This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergence.</p>
+<a id="more"></a>
+<table><tr><td bgcolor="#B0C4DE"><b>Gronwall Inequality: </b> 
+Let $v(t)$ be a <strong>nonnegative</strong> function such that 
 $$
 v(t)\leq C+A\int_{0}^{t}v(s)ds
 $$
 where $0\leq t\leq T$.Then we have $v(t)\leq Cexp{At}$  for all $0\leq t\leq T$。
 </td></tr></table>
 
-<p><strong>Proof:</strong><br>Let$w(t)=\int_{0}^{t}v(s)ds$, then we could get $w’(t)\leq C+Aw(t)$, i.e. $w’(t)-Aw(t)\leq C$. Multiply $exp(-At)$ to both side of ineqaulity, we get</p>
+<p><strong>Proof:</strong></p>
+<p>Let $w(t)=\int_{0}^{t}v(s)ds$, then we could get $w’(t)\leq C+Aw(t)$, i.e. $w’(t)-Aw(t)\leq C$. Multiply $exp(-At)$ to both side of ineqaulity, we get</p>
 <script type="math/tex; mode=display">
-w'(t)e^{-At}-Aw(t)e^{-At} \leq C</script><p>That is $w(t)e^{-At}\leq C$, therefore we could get $w(t)\leq \frac{C}{A}(exp(At)-1)$, then $v(t)\leq Cexp(At)$.</p>
+w'(t)e^{-At}-Aw(t)e^{-At} \leq C</script><p>That is $w(t)e^{-At}\leq C$, therefore we could get $w(t)\leq \frac{C}{A}(exp(At)-1)$, then $v(t)\leq C exp(At)$.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Chebyshev's Inequality: </b> 
+Let $\xi$ be a <strong>nonnegative</strong> random variable. Then for every $\varepsilon >0$, we have
+$$
+P(\xi\geq \varepsilon) \leq \frac{E\xi}{\varepsilon}
+$$
+</td></tr></table>
+
+<p><strong>Proof:</strong></p>
+<p>$E\xi \geq E[\xi\cdot I_{\{\xi \geq \varepsilon\}}] \geq \varepsilon EI_{\{\xi\geq \varepsilon\} } =\varepsilon P(\xi \geq \varepsilon)$</p>
+<p>The following variant of Chebyshev’s inequalities hold: if $\xi$ is any random variable then</p>
+<script type="math/tex; mode=display">P(\xi \geq \varepsilon) \leq \frac{E\xi^2}{\varepsilon^2}</script><p>and </p>
+<script type="math/tex; mode=display">P(\lvert \xi-E\xi \rvert \geq \varepsilon)\leq \frac{\text{var} \xi^2}{\varepsilon^2}</script><table><tr><td bgcolor="#B0C4DE"><b>Jesen's Inequality</b> 
+Let $\varphi$ be a Borel convex function and $E\lvert\xi \rvert < \infty$, then
+$$
+\varphi(E\xi) \leq E\varphi(\xi)
+$$ 
+</td></tr></table>
+
+<p><strong>Proof: </strong></p>
+<p>since $\varphi$ is convex, then for each $x_0 \in \mathbb{R}$, there exists $\lambda(x_0)$ s.t.</p>
+<script type="math/tex; mode=display">\varphi(x) \geq \varphi(x_0)+(x-x_0)\lambda(x_0)</script><p>for all $x \in \mathbb{R}$. Then let $x=\xi$, $x_0=E\xi$, then we have</p>
+<script type="math/tex; mode=display">\varphi(\xi)\geq \varphi(E\xi)+(\xi-E\xi)\lambda(E\xi)</script><p>therefore, we could get $E\varphi(\xi)\geq \varphi(E\xi)$.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Lyapunnov's Inequality </b> 
+For $0< s< t$,
+$$(E\lvert\xi\rvert^{s})^{1\over s} \leq (E\lvert\xi\rvert^{t})^{1\over t}$$
+</td></tr></table>
+
+<p><strong>Proof: </strong><br>To prove this, let $\eta = \lvert \xi \rvert^s$, then applying Jensen’s Inequality to $g(x)=x^r, \text{ where } r=\frac{t}{s}$, then we obtain<br>$\lvert E\eta \rvert^r \leq E\lvert \eta \rvert^r$, i.e.</p>
+<script type="math/tex; mode=display">(E\lvert \xi \rvert)^{\frac{t}{s}} \leq E\lvert \xi^s \rvert$$.
+
+In the following we are going to demonstrate Young's Inequality, Holder's Inequality and Minkowski's Inequality. I always put them together since we are going to use Young's ineqaulity to prove Holder's Inequality, and to use Holder's Inequality to prove Minkowski's Inequality. It will be very helpful to remember them by this way.
+
+For Young‘s Inequality, I will skip its proof (you could refer [this](https://math.stackexchange.com/questions/566169/a-proof-of-youngs-inequality)) and only state it.
+
+<table><tr><td bgcolor=#B0C4DE><b>Young's Inequality: </b> 
+For $a>0, b>0$ and $p \text{ and } q$ are real numbers greater than 1 satisfying $1/p+1/q=1$, then $ab\leq \frac{a^p}{p}+\frac{b^q}{q}$.
+</td></tr></table>
+
+
+<table><tr><td bgcolor=#B0C4DE><b>Holder's Inequality: </b> 
+Let $1< p <\infty, 1< q< \infty$ and $(1/p)+(1/q)=1$. If $E\lvert \xi \rvert^p < \infty$ and $E\lvert \eta \rvert^q <\infty$, then $E\lvert \xi\eta \rvert <\infty$ and 
+$$E\vert \xi\eta \rvert \leq (E\lvert \xi \rvert^p)^{\frac{1}{p}}(E\lvert \xi \rvert^q)^{\frac{1}{q}}</script><p>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><strong>Proof: </strong></p>
+<table><tr><td bgcolor="#B0C4DE"><b>Minkowski's Inequality:  </b> 
+If $E\lvert \xi \rvert^p < \infty$ and $E\lvert \eta \rvert^q <\infty$, $1\leq p <\infty$, then we have $e\lvert \xi + \eta \rvert^p <\infty$ and $$(e\lvert +\eta \rvert^p)^{\frac{1}{p}}\leq e(\lvert \xi\rvert^p)^{\frac{1}{p}} \eta\rvert^p)^{\frac{1}{p}}$$ < td></\infty$,></td></tr></table>
+
+<p><strong>Proof: </strong></p>
 
     
   </div>
@@ -111,7 +159,7 @@ w'(t)e^{-At}-Aw(t)e^{-At} \leq C</script><p>That is $w(t)e^{-At}\leq C$, therefo
 
       
   <div class="tags">
-    <a class="tags-link" href="/tags/Chebyshev-s-Inequality/">Chebyshev's Inequality</a>, <a class="tags-link" href="/tags/Gronwall-Inequality/">Gronwall Inequality</a>, <a class="tags-link" href="/tags/Holder-s-Inequality/">Holder's Inequality</a>, <a class="tags-link" href="/tags/Jesen-s-Inequality/">Jesen's Inequality</a>, <a class="tags-link" href="/tags/Lyapunov-s-Inequality/">Lyapunov's Inequality</a>, <a class="tags-link" href="/tags/Minkovski-s-Inequality/">Minkovski's Inequality</a>, <a class="tags-link" href="/tags/The-Cauchy-Bunyakovskii-Inequality/">The Cauchy-Bunyakovskii Inequality</a>
+    <a class="tags-link" href="/tags/Chebyshev-s-Inequality/">Chebyshev's Inequality</a>, <a class="tags-link" href="/tags/Gronwall-Inequality/">Gronwall Inequality</a>, <a class="tags-link" href="/tags/Holder-s-Inequality/">Holder's Inequality</a>, <a class="tags-link" href="/tags/Jesen-s-Inequality/">Jesen's Inequality</a>, <a class="tags-link" href="/tags/Lyapunov-s-Inequality/">Lyapunov's Inequality</a>, <a class="tags-link" href="/tags/Minkovski-s-Inequality/">Minkovski's Inequality</a>
   </div>
 
       
@@ -186,7 +234,7 @@ w'(t)e^{-At}-Aw(t)e^{-At} \leq C</script><p>That is $w(t)e^{-At}\leq C$, therefo
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Chebyshev-s-Inequality/" style="font-size: 10px;">Chebyshev's Inequality</a> <a href="/tags/Filtration/" style="font-size: 10px;">Filtration</a> <a href="/tags/Gronwall-Inequality/" style="font-size: 10px;">Gronwall Inequality</a> <a href="/tags/Hitting-time/" style="font-size: 10px;">Hitting time</a> <a href="/tags/Holder-s-Inequality/" style="font-size: 10px;">Holder's Inequality</a> <a href="/tags/Jesen-s-Inequality/" style="font-size: 10px;">Jesen's Inequality</a> <a href="/tags/Lyapunov-s-Inequality/" style="font-size: 10px;">Lyapunov's Inequality</a> <a href="/tags/Minkovski-s-Inequality/" style="font-size: 10px;">Minkovski's Inequality</a> <a href="/tags/Optional-time/" style="font-size: 10px;">Optional time</a> <a href="/tags/Stochastic-Processes/" style="font-size: 10px;">Stochastic Processes</a> <a href="/tags/Stopping-time/" style="font-size: 10px;">Stopping time</a> <a href="/tags/The-Cauchy-Bunyakovskii-Inequality/" style="font-size: 10px;">The Cauchy-Bunyakovskii Inequality</a>
+    <a href="/tags/Chebyshev-s-Inequality/" style="font-size: 10px;">Chebyshev's Inequality</a> <a href="/tags/Filtration/" style="font-size: 10px;">Filtration</a> <a href="/tags/Gronwall-Inequality/" style="font-size: 10px;">Gronwall Inequality</a> <a href="/tags/Hitting-time/" style="font-size: 10px;">Hitting time</a> <a href="/tags/Holder-s-Inequality/" style="font-size: 10px;">Holder's Inequality</a> <a href="/tags/Jesen-s-Inequality/" style="font-size: 10px;">Jesen's Inequality</a> <a href="/tags/Lyapunov-s-Inequality/" style="font-size: 10px;">Lyapunov's Inequality</a> <a href="/tags/Minkovski-s-Inequality/" style="font-size: 10px;">Minkovski's Inequality</a> <a href="/tags/Optional-time/" style="font-size: 10px;">Optional time</a> <a href="/tags/Stochastic-Processes/" style="font-size: 10px;">Stochastic Processes</a> <a href="/tags/Stopping-time/" style="font-size: 10px;">Stopping time</a>
   </div>
 </div>
 
