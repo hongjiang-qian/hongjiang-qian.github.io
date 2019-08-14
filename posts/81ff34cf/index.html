@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>Some Probability Inequalities | Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Hongjiang Qian">
+  
+  
+    <meta name="description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
+  
+  <meta name="description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
+<meta name="keywords" content="Gronwall Inequality,Chebyshev&#39;s Inequality,Jesen&#39;s Inequality,Lyapunov&#39;s Inequality,Holder&#39;s Inequality,Minkowski&#39;s Inequality">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Some Probability Inequalities">
+<meta property="og:url" content="http://yoursite.com/posts/81ff34cf/index.html">
+<meta property="og:site_name" content="Generator">
+<meta property="og:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-14T00:48:59.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Some Probability Inequalities">
+<meta name="twitter:description" content="This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergen">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+  
+</head>
+
+<link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+
+<style id="inline-css" type="text/css">
+#backtoTop{background-color:#eee;border-radius:100%;bottom:10%;height:48px;position:fixed;right:-100px;width:48px;transition:0.5s;-webkit-transition:0.5s}
+#backtoTop.button--show{right:10px}
+.per{font-size:16px;height:48px;line-height:48px;position:absolute;text-align:center;top:0;width:48px;color:#555;cursor:pointer}
+.per: before{content:attr(data-percent)}
+.per:hover: before{content:"\f0a6";font-family:FontAwesome;font-size:20px}
+</style></html>
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Generator</a></h1>
+    <p><a href="/">Write what you&#39;ve down and make your work available.</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/Reading">Reading</a></li>
+      
+        <li><a href="/About">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/posts/81ff34cf/">
+  <time datetime="2019-08-04T02:00:33.000Z">
+    2019-08-03
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">Some Probability Inequalities</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>This article, I will mainly demonstrate some vital important inequalities in  probability theory and in analysis which are used very often when we are going to prove something, like to prove convergence.</p>
+<a id="more"></a>
+<table><tr><td bgcolor="#B0C4DE"><b>Gronwall Inequality: </b> 
+Let $v(t)$ be a <strong>nonnegative</strong> function such that 
+$$
+v(t)\leqslant C+A\int_{0}^{t}v(s)ds
+$$
+where $0\leqslant t\leqslant T$.Then we have $v(t)\leqslant Cexp{At}$  for all $0\leqslant t\leqslant T$。
+</td></tr></table>
+
+<p><strong>Proof:</strong></p>
+<p>Let $w(t)=\int_{0}^{t}v(s)ds$, then we could get $w’(t)\leqslant C+Aw(t)$, i.e. $w’(t)-Aw(t)\leqslant C$. Multiply $exp(-At)$ to both side of ineqaulity, we get</p>
+<script type="math/tex; mode=display">
+w'(t)e^{-At}-Aw(t)e^{-At} \leqslant C</script><p>That is $w(t)e^{-At}\leqslant C$, therefore we could get $w(t)\leqslant \frac{C}{A}(exp(At)-1)$, then $v(t)\leqslant C exp(At)$.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Chebyshev's Inequality: </b> 
+Let $\xi$ be a <strong>nonnegative</strong> random variable. Then for every $\varepsilon >0$, we have
+$$
+P(\xi\geqslant \varepsilon) \leqslant \frac{E\xi}{\varepsilon}
+$$
+</td></tr></table>
+
+<p><strong>Proof:</strong></p>
+<p>$E\xi \geqslant E[\xi\cdot I_{\{\xi \geqslant \varepsilon\}}] \geqslant \varepsilon EI_{\{\xi\geqslant \varepsilon\} } =\varepsilon P(\xi \geqslant \varepsilon)$</p>
+<p>The following variant of Chebyshev’s inequalities hold: if $\xi$ is any random variable then</p>
+<script type="math/tex; mode=display">P(\xi \geqslant \varepsilon) \leqslant \frac{E\xi^2}{\varepsilon^2}</script><p>and </p>
+<script type="math/tex; mode=display">P(\lvert \xi-E\xi \rvert \geqslant \varepsilon)\leqslant \frac{\text{var} \xi^2}{\varepsilon^2}</script><table><tr><td bgcolor="#B0C4DE"><b>Jesen's Inequality</b> 
+Let $\varphi$ be a Borel convex function and $E\lvert\xi \rvert < \infty$, then
+$$
+\varphi(E\xi) \leqslant E\varphi(\xi)
+$$ 
+</td></tr></table>
+
+<p><strong>Proof: </strong></p>
+<p>since $\varphi$ is convex, then for each $x_0 \in \mathbb{R}$, there exists $\lambda(x_0)$ s.t.</p>
+<script type="math/tex; mode=display">\varphi(x) \geqslant \varphi(x_0)+(x-x_0)\lambda(x_0)</script><p>for all $x \in \mathbb{R}$. Then let $x=\xi$, $x_0=E\xi$, then we have</p>
+<script type="math/tex; mode=display">\varphi(\xi)\geqslant \varphi(E\xi)+(\xi-E\xi)\lambda(E\xi)</script><p>therefore, we could get $E\varphi(\xi)\geqslant \varphi(E\xi)$.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Lyapunnov's Inequality </b> 
+For $0< s< t$,
+$$(E\lvert\xi\rvert^{s})^{1\over s} \leq (E\lvert\xi\rvert^{t})^{1\over t}$$
+</td></tr></table>
+
+<p><strong>Proof: </strong><br>To prove this, let $\eta = \lvert \xi \rvert^s$, then applying Jensen’s Inequality to $g(x)=x^r, \text{ where } r=\frac{t}{s}$, then we obtain<br>$\lvert E\eta \rvert^r \leqslant E\lvert \eta \rvert^r$, i.e.</p>
+<script type="math/tex; mode=display">
+(E\lvert \xi \rvert)^{\frac{t}{s}} \leq E\lvert \xi^s \rvert</script><p>In the following we are going to demonstrate Young’s Inequality, Holder’s Inequality and Minkowski’s Inequality. I always put them together since we are going to use Young’s ineqaulity to prove Holder’s Inequality, and to use Holder’s Inequality to prove Minkowski’s Inequality. It will be very helpful to remember them by this way.</p>
+<p>For Young‘s Inequality, I will skip its proof (you could refer <a href="https://math.stackexchange.com/questions/566169/a-proof-of-youngs-inequality" target="_blank" rel="noopener">this</a>) and only state it.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Young's Inequality: </b> 
+For $a>0, b>0$ and $p \text{ and } q$ are real numbers greater than 1 satisfying $1/p+1/q=1$, then $ab\leqslant \frac{a^p}{p}+\frac{b^q}{q}$.
+</td></tr></table>
+
+
+<table><tr><td bgcolor="#B0C4DE"><b>Holder's Inequality: </b> 
+Let $1< p <\infty, 1< q< \infty$ and $(1 p)+(1 q)="1$." if $e\lvert \xi \rvert^p < \eta \rvert^q <\infty$, then \xi\eta \rvert <\infty$ $$e\vert \leqslant (e\lvert \rvert^p)^{\frac{1}{p}}(e\lvert \rvert^q)^{\frac{1}{q}}$$ td></\infty,></td></tr></table>
+
+<p><strong>Proof: </strong></p>
+<ul>
+<li>If $E\lvert \xi \rvert^p=0 \text{ or } E\lvert \eta \rvert^q=0 $, it is obvious.</li>
+<li>Let $E\lvert \xi \rvert^p&gt;0, E\lvert \eta \rvert^q&gt;0$, then let <script type="math/tex; mode=display">
+\tilde{\xi} =\frac{\xi}{(E\lvert \xi \rvert^p)^{\frac{1}{p}}}, \tilde{\eta}=\frac{\eta}{(E\lvert \xi \rvert^q)^{\frac{1}{q}}}</script>According to Young’s Inequality, we have $\lvert \xi\eta \rvert \leqslant \frac{\lvert \tilde{\xi}\rvert^p}{p} +\frac{\lvert\tilde{\eta}\rvert^q}{q}$. Hence we obtain</li>
+</ul>
+<script type="math/tex; mode=display">E\lvert \tilde{\xi} \tilde{\eta}\rvert \leqslant \frac{E\lvert\tilde{\xi}\rvert^p}{p}+\frac{E\lvert\tilde{\eta}\rvert^q}{q}=\frac{1}{p}+\frac{1}{q}=1</script><p>This establishes Holder’s Inequality.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Minkowski's Inequality:  </b> 
+If $E\lvert \xi \rvert^p < \infty$ and $E\lvert \eta \rvert^q <\infty$, $1\leqslant p <\infty$, then we have $e\lvert \xi + \eta \rvert^p <\infty$ and $$(e\lvert +\eta \rvert^p)^{\frac{1}{p}}\leqslant e(\lvert \xi\rvert^p)^{\frac{1}{p}} \eta\rvert^p)^{\frac{1}{p}}$$ < td></\infty$,></td></tr></table>
+
+<p><strong>Proof: </strong></p>
+<p>To Prove Minkowski’s Inequality, at first we have $(a+b)^p \leq 2^{p-1}(a^p+b^p)$, then we obtain $E\lvert \xi+\eta\rvert^p\leq \infty$. </p>
+<ul>
+<li>If $p=1$, it is obvious.</li>
+<li>Let $p&gt;1$, then $\lvert \xi+\eta\rvert^p = \lvert \xi+\eta\rvert\cdot \lvert \xi+\eta\rvert^{p-1}\leqslant \lvert \xi\rvert\cdot \lvert \xi+\eta\rvert^{p-1}+\lvert \eta\rvert \cdot \lvert \xi+\eta\rvert^{p-1}$. The only thing we need to do is applying Holder’s Inequality to both $\lvert \xi\rvert\cdot \lvert \xi+\eta\rvert^{p-1}$ and $\lvert \eta\rvert \cdot \lvert \xi+\eta\rvert^{p-1}$, finally we could get Minkowski’s Inequality.</li>
+</ul>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/Probability/">Probability</a>, <a class="categories-link" href="/categories/Probability/Inequality/">Inequality</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/Chebyshev-s-Inequality/">Chebyshev's Inequality</a>, <a class="tags-link" href="/tags/Gronwall-Inequality/">Gronwall Inequality</a>, <a class="tags-link" href="/tags/Holder-s-Inequality/">Holder's Inequality</a>, <a class="tags-link" href="/tags/Jesen-s-Inequality/">Jesen's Inequality</a>, <a class="tags-link" href="/tags/Lyapunov-s-Inequality/">Lyapunov's Inequality</a>, <a class="tags-link" href="/tags/Minkowski-s-Inequality/">Minkowski's Inequality</a>
+  </div>
+
+      
+  <div class="share">
+    
+  </div>
+  <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  
+  <div id="sidebar" class="widgets-right">
+  
+<div class="widget category">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Probability/Inequality/">Inequality</a><small>1</small></li>
+  
+    <li><a href="/categories/Probability/">Probability</a><small>3</small></li>
+  
+    <li><a href="/categories/Stochastic-Calculus-Notes/">Stochastic Calculus Notes</a><small>2</small></li>
+  
+    <li><a href="/categories/Stochastic-Control-Notes/">Stochastic Control Notes</a><small>0</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/posts/5abe79c7/">Random Variable and Random Elements</a>
+      </li>
+    
+      <li>
+        <a href="/posts/24251726/">Expectation</a>
+      </li>
+    
+      <li>
+        <a href="/posts/81ff34cf/">Some Probability Inequalities</a>
+      </li>
+    
+      <li>
+        <a href="/posts/5bf2f49b/">Filtration and stochastic processes</a>
+      </li>
+    
+      <li>
+        <a href="/posts/c419613f/">Stopping times</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Blogrolls</h3>
+  <ul class="entry">
+  
+    
+    <li><a href="https://almostsure.wordpress.com" target="_blank">Almost Sure</a></li>
+  
+    
+    <li><a href="https://fabricebaudoin.wordpress.com" target="_blank">Research and Lecture notes</a></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Flag_counter</h3>
+  <ul class="blogroll list-unstyled">
+    <a href="https://info.flagcounter.com/Nnms"><img src="https://s04.flagcounter.com/count2/Nnms/bg_C6EAFA/txt_000000/border_C6EAFA/columns_2/maxflags_20/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+  </ul>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/Chebyshev-s-Inequality/" style="font-size: 10px;">Chebyshev's Inequality</a> <a href="/tags/Filtration/" style="font-size: 10px;">Filtration</a> <a href="/tags/Gronwall-Inequality/" style="font-size: 10px;">Gronwall Inequality</a> <a href="/tags/Hitting-time/" style="font-size: 10px;">Hitting time</a> <a href="/tags/Holder-s-Inequality/" style="font-size: 10px;">Holder's Inequality</a> <a href="/tags/Integrable/" style="font-size: 10px;">Integrable</a> <a href="/tags/Jesen-s-Inequality/" style="font-size: 10px;">Jesen's Inequality</a> <a href="/tags/Lebesgue-Integral/" style="font-size: 10px;">Lebesgue Integral</a> <a href="/tags/Lyapunov-s-Inequality/" style="font-size: 10px;">Lyapunov's Inequality</a> <a href="/tags/Minkowski-s-Inequality/" style="font-size: 10px;">Minkowski's Inequality</a> <a href="/tags/Optional-time/" style="font-size: 10px;">Optional time</a> <a href="/tags/Random-Elements/" style="font-size: 10px;">Random Elements</a> <a href="/tags/Random-Variable/" style="font-size: 10px;">Random Variable</a> <a href="/tags/Stochastic-Processes/" style="font-size: 10px;">Stochastic Processes</a> <a href="/tags/Stopping-time/" style="font-size: 10px;">Stopping time</a> <a href="/tags/Uniformly-Integrable/" style="font-size: 10px;">Uniformly Integrable</a>
+  </div>
+</div>
+
+
+</div>
+  
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2019 <a href="/">Hongjiang Qian</a>
+  
+</div>
+</footer>
+  <script src="//lib.sinaapp.com/js/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+
+
+
+<script>
+var bigfa_scroll = {
+    drawCircle: function(id, percentage, color) {
+        var width = jQuery(id).width();
+        var height = jQuery(id).height();
+        var radius = parseInt(width / 2.20);
+        var position = width;
+        var positionBy2 = position / 2;
+        var bg = jQuery(id)[0];
+        id = id.split("#");
+        var ctx = bg.getContext("2d");
+        var imd = null;
+        var circ = Math.PI * 2;
+        var quart = Math.PI / 2;
+        ctx.clearRect(0, 0, width, height);
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineCap = "square";
+        ctx.closePath();
+        ctx.fill();
+        ctx.lineWidth = 3;
+        imd = ctx.getImageData(0, 0, position, position);
+        var draw = function(current, ctxPass) {
+            ctxPass.putImageData(imd, 0, 0);
+            ctxPass.beginPath();
+            ctxPass.arc(positionBy2, positionBy2, radius, -(quart), ((circ) * current) - quart, false);
+            ctxPass.stroke();
+        }
+        draw(percentage / 100, ctx);
+    },
+    backToTop: function($this) {
+        $this.click(function() {
+            jQuery("body,html").animate({
+                scrollTop: 0
+            },
+            800);
+            return false;
+        });
+    },
+    scrollHook: function($this, color) {
+        color = color ? color: "#000000";
+        $this.scroll(function() {
+            var docHeight = (jQuery(document).height() - jQuery(window).height()),
+            $windowObj = $this,
+            $per = jQuery(".per"),
+            percentage = 0;
+            defaultScroll = $windowObj.scrollTop();
+            percentage = parseInt((defaultScroll / docHeight) * 100);
+            var backToTop = jQuery("#backtoTop");
+            if (backToTop.length > 0) {
+                if ($windowObj.scrollTop() > 200) {
+                    backToTop.addClass("button--show");
+                } else {
+                    backToTop.removeClass("button--show");
+                }
+                $per.attr("data-percent", percentage);
+                bigfa_scroll.drawCircle("#backtoTopCanvas", percentage, color);
+            }
+        });
+    }
+}
+jQuery(document).ready(function() {
+    jQuery("body").append('<div id="backtoTop" data-action="gototop"><canvas id="backtoTopCanvas" width="48" height="48"></canvas><div class="per"></div></div>');
+    var T = bigfa_scroll;
+    T.backToTop(jQuery("#backtoTop"));
+    T.scrollHook(jQuery(window), "#336699");
+});
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
