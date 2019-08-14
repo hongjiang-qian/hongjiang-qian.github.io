@@ -4,19 +4,28 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>Category: Inequality | Generator</title>
+  <title>Expectation | Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="Hongjiang Qian">
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Generator">
-<meta property="og:url" content="http://yoursite.com/categories/Probability/Inequality/index.html">
+    <meta name="description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
+  
+  <meta name="description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
+<meta name="keywords" content="Lebesgue Integral,Integrable,Uniformly Integrable">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Expectation">
+<meta property="og:url" content="http://yoursite.com/posts/24251726/index.html">
 <meta property="og:site_name" content="Generator">
+<meta property="og:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/1.png">
+<meta property="og:updated_time" content="2019-08-14T01:22:39.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Generator">
+<meta name="twitter:title" content="Expectation">
+<meta name="twitter:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
+<meta name="twitter:image" content="http://yoursite.com/images/1.png">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -60,41 +69,68 @@
   </nav>
   <div class="clearfix"></div>
 </header>
-    <div class="content">
-
-
-<h2 class="archives-title category"><span>Inequality</span></h2>
-
-
-
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrapper">
-        
-        <div class="archives">
-    
-    <article class="post">
+    <div class="content"><article class="post">
   <header>
-    <a href="/posts/81ff34cf/">
-  <time datetime="2019-08-04T02:00:33.000Z">
-    Aug 03
+    
+      <div class="icon"></div>
+      <a href="/posts/24251726/">
+  <time datetime="2019-08-14T00:51:23.000Z">
+    2019-08-13
   </time>
 </a>
     
+    
   
-    <h1 class="title"><a href="/posts/81ff34cf/">Some Probability Inequalities</a></h1>
+    <h1 class="title">Expectation</h1>
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Convergence Theorem, the definition of uniformly integrable and the sufficient and necessary condition for a random variable to be uniformly integrable.</p>
+<a id="more"></a>
+<p><img src="/images/1.png" alt="Mindmap For Expectations"></p>
+<p>At first, we will start with the simple case, that is when $\xi$ is a simple random variable ($\xi$ only takes finite many values).<br>Let $(\Omega, \mathcal{F},P)$ be a finite probability space and $\xi$ is a simple random variable, i.e. $\xi=\sum_{k=1}^{n}x_kI_{A_k}(w)$, then we define</p>
+<script type="math/tex; mode=display">E\xi=\sum_{k=1}^{n}x_k P(A_k)</script><p>Next, we will define the expectation for a nonnegative random variable $\xi$. Then $\exists\xi_n\geq 0$ simple random varibales such that $\xi_n \uparrow\xi$ for each $w\in \Omega$. Since $E\xi_n \leq E\xi_{n+1}$, we have</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Definition 1</b> 
+The Lebesgue integral of the <strong>nonnegative</strong> random variable $\xi$ or its expectation is 
+$$E\xi\equiv \lim_nE\xi_n$$
+</td></tr></table>
+
+<p>This definition is consistent according the following lemam 1, i.e. the limit is independent of the choice of the approximating sequence $\{\xi_n\}$. That is if $\xi_n \uparrow \xi$ and $\eta_m \uparrow \eta$ where $\{\eta_m\}$ is simple random variables, then we will have $\lim_n E\xi_n=\lim_m E\eta_m$.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Lemma 1</b>
+
+Let $\eta \text{ and }\xi_n$ be simple random variables, and $\xi_n\uparrow \xi \geq \eta$, then we will have $\lim_n E\xi_n \geq E\eta$.
+</td></tr></table>
+
+
+<p><strong>Proof:</strong> To be finished….</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/Probability/">Probability</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/Integrable/">Integrable</a>, <a class="tags-link" href="/tags/Lebesgue-Integral/">Lebesgue Integral</a>, <a class="tags-link" href="/tags/Uniformly-Integrable/">Uniformly Integrable</a>
+  </div>
+
+      
+  <div class="share">
+    
+  </div>
+  <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
+
+    
+    <div class="clearfix"></div>
+  </footer>
 </article>
-  
-  
-    </div></section>
-  
 
 </div>
   </div>
