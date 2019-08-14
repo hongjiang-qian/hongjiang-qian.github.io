@@ -105,11 +105,13 @@
   <h3 class="title">Categories</h3>
   <ul class="entry">
   
-    <li><a href="/categories/Inequalities/">Inequalities</a><small>1</small></li>
+    <li><a href="/categories/Inequalities/">Inequalities</a><small>0</small></li>
   
-    <li><a href="/categories/Probability/">Probability</a><small>0</small></li>
+    <li><a href="/categories/Probability/Inequality/">Inequality</a><small>1</small></li>
   
-    <li><a href="/categories/Inequalities/Probability/">Probability</a><small>1</small></li>
+    <li><a href="/categories/Probability/">Probability</a><small>1</small></li>
+  
+    <li><a href="/categories/Inequalities/Probability/">Probability</a><small>0</small></li>
   
     <li><a href="/categories/Stochastic-Calculus-Notes/">Stochastic Calculus Notes</a><small>2</small></li>
   
@@ -267,21 +269,6 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
