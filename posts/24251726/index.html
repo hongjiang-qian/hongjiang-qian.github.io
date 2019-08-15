@@ -21,7 +21,7 @@
 <meta property="og:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/1.png">
-<meta property="og:updated_time" content="2019-08-14T01:24:24.948Z">
+<meta property="og:updated_time" content="2019-08-15T00:45:07.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Expectation">
 <meta name="twitter:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
@@ -90,6 +90,8 @@
     
       <p>This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Convergence Theorem, the definition of uniformly integrable and the sufficient and necessary condition for a random variable to be uniformly integrable.</p>
 <a id="more"></a>
+<center>Part I</center>
+
 <p>At first, we will start with the simple case, that is when $\xi$ is a simple random variable ($\xi$ only takes finite many values).<br>Let $(\Omega, \mathcal{F},P)$ be a finite probability space and $\xi$ is a simple random variable, i.e. $\xi=\sum_{k=1}^{n}x_kI_{A_k}(w)$, then we define</p>
 <script type="math/tex; mode=display">E\xi=\sum_{k=1}^{n}x_k P(A_k)</script><p>Next, we will define the expectation for a nonnegative random variable $\xi$. Then $\exists\xi_n\geq 0$ simple random varibales such that $\xi_n \uparrow\xi$ for each $w\in \Omega$. Since $E\xi_n \leq E\xi_{n+1}$, we have</p>
 <table><tr><td bgcolor="#B0C4DE"><b>Definition 1</b> 
@@ -104,8 +106,23 @@ Let $\eta \text{ and }\xi_n$ be simple random variables, and $\xi_n\uparrow \xi 
 </td></tr></table>
 
 
-<p><strong>Proof:</strong> To be finished….</p>
-<p><img src="/images/1.png" alt="Mindmap For Expectations"></p>
+<p><strong>Proof:</strong> </p>
+<p>Let $\varepsilon &gt;0$ and $A_n=\{w: \xi_n \geq \eta -\varepsilon\}$ then $A_n \uparrow \Omega$ and $\xi_n =\xi_n I_{A_n} +\xi_n I_{\bar{A_n}} \geq \xi_n I_{A_n} \geq (\eta-\varepsilon) I_{A_n}$. Therefore, we have</p>
+<script type="math/tex; mode=display">
+E\xi_n \geq E(\eta -\varepsilon) I_{A_n} =E\eta I_{A_n} -\varepsilon P(A_n)
+= E\eta -E\eta I_{\bar{A_n}} -\varepsilon P(A_n) \geq E\eta -CP(\bar{A_n})-\varepsilon</script><p>where $C=max_{w}\eta(w)$, then we get the results.</p>
+<p>Remark: The expectation $E\xi$ of the nonnegative random variable $\xi$ satisfies </p>
+<script type="math/tex; mode=display">E\xi= \sup_{\{s\in S: s\leq \xi \}}Es</script><p>where $S=\{s\}$ is the set of simple random variables.</p>
+<p>Now, we extend our defintion of expectation to general random variables.</p>
+<table><tr><td bgcolor="#B0C4DE"><b>Definition 2</b>
+The expectation $E\xi$ of random variable $\xi$ <strong>exists</strong> or is defined if $min(E\xi^{+},E\xi^{-})< \infty$. In this case, define
+
+$$E\xi=E\xi^{+}+E\xi^{-}$$
+we say $E\xi $ is finite if both $E\xi^{+}$ and $E\xi^{-}$ are finite.
+</td></tr></table>
+
+<p>Remark: since the expectation of a random variable is actually Lebesgue integral, so the definition of expectation is just following how to define Lebesgue integral, i.e. step function $\rightarrow$ nonnegative measurable function $\rightarrow$ general measurable function.</p>
+<h2 id="Part-II"><a href="#Part-II" class="headerlink" title="Part II"></a><center>Part II</center></h2><p><img src="/images/1.png" alt="Mindmap For Expectations"></p>
 
     
   </div>
@@ -309,21 +326,6 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
