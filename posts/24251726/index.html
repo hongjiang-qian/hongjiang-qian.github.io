@@ -21,7 +21,7 @@
 <meta property="og:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/1.png">
-<meta property="og:updated_time" content="2019-08-15T00:45:07.367Z">
+<meta property="og:updated_time" content="2019-08-15T01:18:09.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Expectation">
 <meta name="twitter:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
@@ -92,6 +92,7 @@
 <a id="more"></a>
 <center>Part I</center>
 
+
 <p>At first, we will start with the simple case, that is when $\xi$ is a simple random variable ($\xi$ only takes finite many values).<br>Let $(\Omega, \mathcal{F},P)$ be a finite probability space and $\xi$ is a simple random variable, i.e. $\xi=\sum_{k=1}^{n}x_kI_{A_k}(w)$, then we define</p>
 <script type="math/tex; mode=display">E\xi=\sum_{k=1}^{n}x_k P(A_k)</script><p>Next, we will define the expectation for a nonnegative random variable $\xi$. Then $\exists\xi_n\geq 0$ simple random varibales such that $\xi_n \uparrow\xi$ for each $w\in \Omega$. Since $E\xi_n \leq E\xi_{n+1}$, we have</p>
 <table><tr><td bgcolor="#B0C4DE"><b>Definition 1</b> 
@@ -122,7 +123,28 @@ we say $E\xi $ is finite if both $E\xi^{+}$ and $E\xi^{-}$ are finite.
 </td></tr></table>
 
 <p>Remark: since the expectation of a random variable is actually Lebesgue integral, so the definition of expectation is just following how to define Lebesgue integral, i.e. step function $\rightarrow$ nonnegative measurable function $\rightarrow$ general measurable function.</p>
-<h2 id="Part-II"><a href="#Part-II" class="headerlink" title="Part II"></a><center>Part II</center></h2><p><img src="/images/1.png" alt="Mindmap For Expectations"></p>
+<center>Part II</center>
+
+<p>The next part I will only state some properties about expectation and skip its proof. </p>
+<ul>
+<li>Let $c$ be a constant and $E\xi $ exists, then $E(c\xi)$ exists and $E(c\xi)=cE\xi$.</li>
+<li>Let $\xi \leq \eta$, then $E\xi \leq E\eta$ with the understanding that if $-\infty &lt; E\xi$ then $-\infty &lt; E\eta$ and $E\xi &lt; E\eta$ or if $E\eta&lt;\infty $ then $E\xi&lt; \infty $ and $E\xi \leq E\eta$.</li>
+<li>If $E\xi$ exists then $\lvert E\xi \rvert \leq E\lvert \xi \rvert$.</li>
+<li>If $E\xi$ exists then $E(\xi I_{A})$ exists for each $A\in \mathcal{F}$; if $E\xi $ is finite, then $E(\xi I_{A})$ is finite.</li>
+<li>If $\xi \text{ and } \eta$ are nonnegative random variables, or such that $E\lvert \xi \rvert &lt;\infty$ and $E\lvert \eta \rvert &lt;\infty$, then $E(\xi+\eta)=E\xi+E\eta$.</li>
+</ul>
+<p>We say that a property holds “<strong>P-almost surely</strong>“ if $\exists$ a set $\mathcal{N}\in \mathcal{F}$ with $P(\mathcal{N})=0$ such that the property holds for every point $w \in \Omega \setminus \mathcal{N}$.</p>
+<ul>
+<li>If $\xi=0 $(a.s.) then $E\xi =0$.</li>
+<li>If $\xi=\eta $ (a.s.) and $E\lvert \xi\rvert &lt;\infty$, then $E\eta &lt;\infty$ and $E\xi=E\eta$.</li>
+<li>Let $\xi\geq 0$ and $E\xi=0$, then $\xi=0$ (a.s.)</li>
+<li>Let $\xi \text{ and }\eta$ be such that $E\lvert \xi \rvert$, $E\lvert \eta\rvert$ and $E(\xi I_{A})\leq E(\eta I_{A})$ for all $A\in \mathcal{F}$, then $\xi\leq \eta$ (a.s.)</li>
+<li>Let $\xi$ be an extended random variable (that is $\xi \in \bar{\mathbb{R}}=[-\infty,+\infty]$) and $E\lvert \xi\rvert &lt;\infty$, then $\lvert \xi \rvert &lt;\infty$.</li>
+</ul>
+<center>Part III</center>
+
+<p>The last part we will consider some fundamental theorems on <strong>taking limits</strong> under the expectation sign.</p>
+<p><img src="/images/1.png" alt="Mindmap For Expectations"></p>
 
     
   </div>
@@ -326,6 +348,21 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
