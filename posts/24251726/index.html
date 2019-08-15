@@ -21,7 +21,7 @@
 <meta property="og:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/1.png">
-<meta property="og:updated_time" content="2019-08-15T01:40:57.702Z">
+<meta property="og:updated_time" content="2019-08-15T01:42:50.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Expectation">
 <meta name="twitter:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
@@ -90,7 +90,9 @@
     
       <p>This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Convergence Theorem, the definition of uniformly integrable and the sufficient and necessary condition for a random variable to be uniformly integrable.</p>
 <a id="more"></a>
-<p><center>Part I</center><br>//<br>At first, we will start with the simple case, that is when $\xi$ is a simple random variable ($\xi$ only takes finite many values).<br>Let $(\Omega, \mathcal{F},P)$ be a finite probability space and $\xi$ is a simple random variable, i.e. $\xi=\sum_{k=1}^{n}x_kI_{A_k}(w)$, then we define</p>
+<p><center>Part I</center></p>
+<hr>
+<p>At first, we will start with the simple case, that is when $\xi$ is a simple random variable ($\xi$ only takes finite many values).<br>Let $(\Omega, \mathcal{F},P)$ be a finite probability space and $\xi$ is a simple random variable, i.e. $\xi=\sum_{k=1}^{n}x_kI_{A_k}(w)$, then we define</p>
 <script type="math/tex; mode=display">E\xi=\sum_{k=1}^{n}x_k P(A_k)</script><p>Next, we will define the expectation for a nonnegative random variable $\xi$. Then $\exists\xi_n\geq 0$ simple random varibales such that $\xi_n \uparrow\xi$ for each $w\in \Omega$. Since $E\xi_n \leq E\xi_{n+1}$, we have</p>
 <table><tr><td bgcolor="#B0C4DE"><b>Definition 1</b> 
 The Lebesgue integral of the <strong>nonnegative</strong> random variable $\xi$ or its expectation is 
@@ -120,7 +122,9 @@ we say $E\xi $ is finite if both $E\xi^{+}$ and $E\xi^{-}$ are finite.
 </td></tr></table>
 
 <p>Remark: since the expectation of a random variable is actually Lebesgue integral, so the definition of expectation is just following how to define Lebesgue integral, i.e. step function $\rightarrow$ nonnegative measurable function $\rightarrow$ general measurable function.</p>
-<p><center>Part II</center><br>//<br>The next part I will only state some properties about expectation and skip its proof. </p>
+<p><center>Part II</center></p>
+<hr>
+<p>The next part I will only state some properties about expectation and skip its proof. </p>
 <ul>
 <li>Let $c$ be a constant and $E\xi $ exists, then $E(c\xi)$ exists and $E(c\xi)=cE\xi$.</li>
 <li>Let $\xi \leq \eta$, then $E\xi \leq E\eta$ with the understanding that if $-\infty &lt; E\xi$ then $-\infty &lt; E\eta$ and $E\xi &lt; E\eta$ or if $E\eta&lt;\infty $ then $E\xi&lt; \infty $ and $E\xi \leq E\eta$.</li>
@@ -136,7 +140,8 @@ we say $E\xi $ is finite if both $E\xi^{+}$ and $E\xi^{-}$ are finite.
 <li>Let $\xi \text{ and }\eta$ be such that $E\lvert \xi \rvert$, $E\lvert \eta\rvert$ and $E(\xi I_{A})\leq E(\eta I_{A})$ for all $A\in \mathcal{F}$, then $\xi\leq \eta$ (a.s.)</li>
 <li>Let $\xi$ be an extended random variable (that is $\xi \in \bar{\mathbb{R}}=[-\infty,+\infty]$) and $E\lvert \xi\rvert &lt;\infty$, then $\lvert \xi \rvert &lt;\infty$.</li>
 </ul>
-<p><center>Part III</center><br>//</p>
+<p><center>Part III</center></p>
+<hr>
 <p>The last part we will consider some fundamental theorems on <strong>taking limits</strong> under the expectation sign.</p>
 <table><tr><td bgcolor="#B0C4DE"><b> Monotone Convergence Theorem</b>
 If $\xi_n\geq \eta$ for all $n\geq 1$, $E\eta >-\infty$ and $\xi_n\uparrow\xi$, then $E\xi_n\uparrow E\xi$.
@@ -360,21 +365,6 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
