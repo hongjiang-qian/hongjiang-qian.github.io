@@ -610,7 +610,7 @@ article footer .tags:before {
 }
 .widgets-right {
   width: 200px;
-  position: relative;
+  position: absolute;
   top: 160px;
   left: 50%;
   margin-left: 350px;
