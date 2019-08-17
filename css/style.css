@@ -107,8 +107,8 @@ strong {
 #header p {
   margin: 0;
   color: #61778b;
-  width: 300px;
-  font-size: 0.8125em;
+  width: 500px;
+  font-size: 0.85em;
   font-style: italic;
 }
 article {
@@ -515,7 +515,7 @@ article footer .tags:before {
 }
 .archives-title {
   font-weight: normal;
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-bottom: 10px;
   padding: 0 30px;
   text-shadow: 0 0 1px #fff;
@@ -569,7 +569,7 @@ article footer .tags:before {
   }
 }
 #sidebar .widget .entry {
-  font-size: 0.75em;
+  font-size: 0.73em;
   padding: 13px 5px 13px 15px;
 }
 #sidebar .widget .entry a:hover {
@@ -658,7 +658,7 @@ article footer .tags:before {
   width: 680px;
   margin: 20px auto 0;
   padding: 20px 0 0;
-  font-size: 0.875em;
+  font-size: 0.8em;
   color: #ccc;
   overflow: hidden;
   text-align: center;
