@@ -44,7 +44,7 @@ p {
 }
 strong {
   color: #222;
-  font-weight: 700;
+  font-weight: 500;
 }
 .content {
   background: -webkit-linear-gradient(#fafafa, #dedede 700px);
@@ -477,6 +477,22 @@ article footer .categories:before {
 }
 article footer .tags:before {
   content: '\f02b';
+}
+.alignleft a {
+  display: inline-block;
+  line-height: 1em;
+  padding: 6px 15px;
+  border-radius: 15px;
+  background: #6c7989;
+  color: color-grey;
+  text-shadow: 0 1px #fff;
+  text-decoration: none;
+}
+.alignleft a:hover {
+  background: #069;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px #00527a;
 }
 #comment {
   padding: 0 20px 20px;
