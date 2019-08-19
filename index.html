@@ -132,7 +132,11 @@
 
   <div class="entry">
     
-      <p>This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Convergence Theorem, the definition of uniformly integrable and the sufficient and necessary condition for a random variable to be uniformly integrable.</p>
+      <p>This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Convergence Theorem.</p>
+<p><center>Part I</center></p>
+<hr>
+<p>At first, we will start with the simple case, that is when $\xi$ is a simple random variable ($\xi$ only takes finite many values).<br>Let $(\Omega, \mathcal{F},P)$ be a finite probability space and $\xi$ is a simple random variable, i.e. $\xi=\sum_{k=1}^{n}x_kI_{A_k}(w)$, then we define</p>
+<script type="math/tex; mode=display">E\xi=\sum_{k=1}^{n}x_k P(A_k)</script>
     
   </div>
 
@@ -483,21 +487,6 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
