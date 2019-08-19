@@ -21,7 +21,7 @@
 <meta property="og:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/1.png">
-<meta property="og:updated_time" content="2019-08-15T01:48:24.470Z">
+<meta property="og:updated_time" content="2019-08-19T01:23:08.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Expectation">
 <meta name="twitter:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
@@ -150,6 +150,17 @@ If $\xi_n\geq \eta$ for all $n\geq 1$, $E\eta >-\infty$ and $\xi_n\uparrow\xi$, 
 </td></tr></table>
 
 <p><strong>Proof:</strong> </p>
+<ul>
+<li><ol>
+<li>suppose $\eta \geq 0$, for each $k\geq 1$, let $\{\xi_k^{n}\}_{n\geq 1}$be a subsequence of simple functions that $\xi_{k}^{(n)} \uparrow, n\rightarrow \infty$. Let $\zeta^{(n)} =max_{1\leq k\leq n} \xi_{k}^{(n)}$.<br>Then we have<script type="math/tex; mode=display">
+\zeta^{(n-1)} \leq \zeta_{(n)} = max_{1\leq k\leq n} \xi_{k}^{(n)} \leq max_{1\leq k\leq n} \xi_k =\xi_n</script>Let $\zeta=\lim_n \zeta^{(n)}$, since $\xi_{k}^{(n)} \leq \zeta^{(n)}\leq \xi_n$, then $\xi_k\leq \zeta\leq \xi, \text{ as } n\rightarrow \infty$.<br>Therefore $\xi=\zeta$. Since $\zeta^{(n)}$ are simple and $\zeta^{(n)}\uparrow \zeta$, then $E\xi=E\zeta =\lim E\zeta^{(n)} \leq \lim E\xi_n$.\\<br>On the other hand, since $\xi_{n}\leq \xi_{n+1}\leq \xi$, then $\lim E\xi_n \leq E\xi$.\\<br>Consequently, $\lim E\xi_n =E\xi$.</li>
+</ol>
+</li>
+<li><ol>
+<li>Let $\eta$ be any random variable with $E\eta &gt;-\infty$, if $E\eta =\infty$, then $E\xi_n=E\xi=\infty$. If $E\eta &lt;\infty$, then it is clear that $0\leq \xi_n-\eta \leq \xi-\eta$ for $w\in \Omega$, therefore we have $E(\xi_n-\eta) \uparrow E(\xi-\eta)$. Consequently we have $E\xi_n \uparrow E\xi$ due to $E\eta &lt;\infty$.</li>
+</ol>
+</li>
+</ul>
 <table><tr><td bgcolor="#B0C4DE"><b> Fatou's Lemma:  </b>
 <br>
 (a) If $\xi_n\geq \eta$ for all $n\geq 1$, $E\eta >-\infty$, then 
@@ -370,21 +381,6 @@ jQuery(document).ready(function() {
     T.backToTop(jQuery("#backtoTop"));
     T.scrollHook(jQuery(window), "#336699");
 });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
