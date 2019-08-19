@@ -21,7 +21,7 @@
 <meta property="og:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/1.png">
-<meta property="og:updated_time" content="2019-08-19T01:34:56.765Z">
+<meta property="og:updated_time" content="2019-08-19T01:42:35.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Expectation">
 <meta name="twitter:description" content="This article I will demonstrate the definition of expectation of a random variable and state three very important Theorems (Lemma), i.e. Monotone Convergence Theorem, Fatou’s Lemma and Dominated Conve">
@@ -149,7 +149,7 @@ we say $E\xi $ is finite if both $E\xi^{+}$ and $E\xi^{-}$ are finite.
 If $\xi_n\geq \eta$ for all $n\geq 1$, $E\eta >-\infty$ and $\xi_n\uparrow\xi$, then $E\xi_n\uparrow E\xi$.
 </td></tr></table>
 
-<p><strong>Proof:</strong> </p>
+<p>Proof:<br></p>
 <ul>
 <li>suppose $\eta \geq 0$, for each $k\geq 1$, let $\{\xi_k^{n}\}_{n\geq 1}$be a subsequence of simple functions that $\xi_{k}^{(n)} \uparrow, n\rightarrow \infty$. Let $\zeta^{(n)} =max_{1\leq k\leq n} \xi_{k}^{(n)}$.<br>Then we have<script type="math/tex; mode=display">
 \zeta^{(n-1)} \leq \zeta_{(n)} = max_{1\leq k\leq n} \,\xi_{k}^{(n)} \leq max_{1\leq k\leq n} \,\xi_k =\xi_n</script>Let $\zeta=\lim_n \zeta^{(n)}$, since $\xi_{k}^{(n)} \leq \zeta^{(n)}\leq \xi_n$, then $\xi_k\leq \zeta\leq \xi, \text{ as } n\rightarrow \infty$. Therefore $\xi=\zeta$. Since $\zeta^{(n)}$ are simple and $\zeta^{(n)}\uparrow \zeta$, then $E\xi=E\zeta =\lim E\zeta^{(n)} \leq \lim E\xi_n$.<br>On the other hand, since $\xi_{n}\leq \xi_{n+1}\leq \xi$, then $\lim E\xi_n \leq E\xi$.<br>Consequently, $\lim E\xi_n =E\xi$.</li>
@@ -163,7 +163,7 @@ $$
 <br>
 (b) If $\lvert \xi_n\rvert \leq \eta$ for all $n\geq 1$ and $E\eta <\infty$, then $$ e \varliminf \xi_n \leq \varlimsup e\varlimsup \xi_n$$ < td></\infty$,></td></tr></table>
 
-<p>Proof: \\<br>(a)Let $\zeta_n=\inf_{m\geq n} \xi_m$, then </p>
+<p>Proof: <br><br>(a)Let $\zeta_n=\inf_{m\geq n} \xi_m$, then </p>
 <script type="math/tex; mode=display">
 E\varliminf \xi_n = \lim_{n} \inf_{m\geq n}\xi_m =\lim_{n}\zeta_n</script><p>Since $\zeta_n \uparrow \varliminf \xi_n$ and $\zeta_n \geq \eta$ for all $ n\geq 1$, then according to Monotone Convergecen theorem, we have</p>
 <script type="math/tex; mode=display">
@@ -171,7 +171,10 @@ E\varliminf \xi_n =E\lim_{n} \zeta_n =\lim_n E\zeta_n =\varliminf_n E\zeta_n \le
 <table><tr><td bgcolor="#B0C4DE"><b> Dominated Convergence Theorem:  </b>
 Let $\lvert\xi_n\rvert \leq \eta, E\eta <\infty$ and $\xi_n \rightarrow \xi$ (a.s.), then $ e \lvert \xi \rvert <\infty$ $$e\xi_n $$ $$e \xi_n -\xi 0$$ as $n\rightarrow 0$. < td></\infty$></td></tr></table>
 
-<p><strong>Proof:</strong> </p>
+<p>Proof:<br></p>
+<p>(a) By Fatou’s Lemma, we have</p>
+<script type="math/tex; mode=display">E \varliminf \xi_n \leq \varliminf E \xi_n \leq \varlimsup E \xi_n \leq E\varlimsup \xi_n</script><p>Since $\xi_n \rightarrow \xi$ (a.s.), we have $\varliminf \xi_n =\varlimsup \xi_n =\xi $ (a.s.), therefore $E\xi=E\varliminf \xi_n=E\varlimsup \xi_n$</p>
+<p>(b)since $\vert \xi_n-\xi \rvert \leq 2\eta$ and $\lvert \xi_n-\xi \rvert \rightarrow 0$ (a.s.), then we have $\lim_{n\rightarrow 0} E\lverr\xi_n -\xi \rvert =0$.</p>
 <p><img src="/images/1.png" alt="Mindmap For Expectations"></p>
 
     
