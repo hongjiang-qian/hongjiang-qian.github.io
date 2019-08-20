@@ -23,7 +23,7 @@ A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="Part I   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-20T17:05:54.830Z">
+<meta property="og:updated_time" content="2019-08-20T17:21:25.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Variable and Random Elements">
 <meta name="twitter:description" content="Part I   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in">
@@ -117,6 +117,7 @@ Let $\mathscr{E}$ be a system of sets such that $\sigma(\mathscr{E})=\mathscr{B}
 Proof:<br>
 
 - The necessity("$\Rightarrow$") is obvious;
+
 - For the sufficient part, we will use <strong>the principle of appropriate sets</strong> (the appropriate sets are sets satisfying the property we would like to prove).
 Let $\mathscr{D}=\{D: D\in \mathscr{B}(\mathbb{R}) \text{ satisfying } \xi^{-1}(D)\in \mathscr{F}\}$. we could easily show that the operation "form the inverse image" preserve the set theoretic  operations of union, intersection and complement: i.e.
 $$
@@ -139,19 +140,19 @@ $$
 
 Therefore we have $\mathscr{D}=\mathscr{B(\mathbb{R})}$, so this lemma is proved.
 
-According to the preceding lemma, we would get the following corollary:
-<table><tr><td bgcolor="#B0C4DE"><b> Corollory </b> 
-Let $\mathscr{E}$ be a system of sets such that $\sigma(\mathscr{E})=\mathscr{B}(\mathbb{R})$. Then $\xi=\xi(w)$ is $\mathscr{F}$-mesaurable $\Leftrightarrow $ $\{w:\xi(w)\in E\} \in \mathscr{F}$ for all $E\in \mathscr{E}$.
+According to the preceding lemma, we would get the following corollary since $\sigma(E1)=\sigma(E2)=\mathscr{B}(\mathbb{R})$ where $E1=\{x:x<c, c\in \mathbb{r}\}, e2="\{x:x\leq" c, \mathbb{r}\}$ <table><tr><td bgcolor="#B0C4DE"><b> Corollory </b> 
+    $\xi =\xi(w)$ is a random variable $\Leftrightarrow$ $\{w:\xi(w)<x \}\in\mathscr{f}$ or $\{w:\xi(w)\leq x for every $x\in \mathbb{r}$. < td></x></td></tr>
+
+<p>Now, we know what’s random variable. The next thing we are going to do is to testifty wether a random variable under some operations still be random variable.</p>
+<table><tr><td bgcolor="#B0C4DE"><b> Lemma 2 </b> 
+    Let $\varphi=\varphi(x)$ be a Borel function and $\xi$ be a random variable, then
+    $\eta(w)=\varphi(\xi(w))$ is also a random variable.
 </td></tr></table>
 
-
-
-
-
-
-
-
-
+<p>Proof:<br><br>For any $B\in\mathscr{B}(\mathbb{R})$,</p>
+<script type="math/tex; mode=display">
+\{w:\eta(w)\in B\} =\{w:\varphi(\xi(w))\in B\}=\{w: \xi(w)\in\varphi^{-1}(B)\} \in\mathscr{F}</script><p>since $\varphi$ is Borel function, so $\varphi^{-1}(B)\in\mathscr{B}(\mathbb{R})$.</p>
+</c,>
     
   </div>
 
