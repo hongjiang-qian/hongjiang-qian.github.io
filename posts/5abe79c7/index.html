@@ -10,20 +10,21 @@
     <meta name="author" content="Hongjiang Qian">
   
   
-    <meta name="description" content="To be finished….">
+    <meta name="description" content="Definition 1   
+A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in \mathscr">
   
-  <meta name="description" content="To be finished….">
+  <meta name="description" content="Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in \mathscr">
 <meta name="keywords" content="Random Variable,Random Elements">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Random Variable and Random Elements">
 <meta property="og:url" content="http://yoursite.com/posts/5abe79c7/index.html">
 <meta property="og:site_name" content="Generator">
-<meta property="og:description" content="To be finished….">
+<meta property="og:description" content="Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in \mathscr">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T01:25:14.218Z">
+<meta property="og:updated_time" content="2019-08-20T16:35:44.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Variable and Random Elements">
-<meta name="twitter:description" content="To be finished….">
+<meta name="twitter:description" content="Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in \mathscr">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -88,9 +89,46 @@
 
   <div class="entry">
     
-      <p>To be finished….</p>
+      <table><tr><td bgcolor="#B0C4DE"><b> Definition 1  </b> 
+A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or <strong>random variable </strong> if for every $B\in \mathscr{B}(\mathbb{R})$, we have
+$$\{w: \xi(w)\in B\} =\xi^{-1}(B) \in \mathscr{F} \tag{1}$$.
+</td></tr></table>
+
+<table><tr><td bgcolor="#B0C4DE"><b> Definition 2 </b> 
+A probability measure $P_{\xi}$ on $(\mathbb{R},\mathscr{B}(\mathbb{R})$ with
+$$
+P_{\xi}(B)=P\{w: \xi(w)\in B\},\quad B\in \mathscr{B}(\mathbb{R})
+$$
+is called the <em>probability distribution</em> of $\xi$ on $(\mathbb{R},\mathscr{B}(\mathbb{R}))$
+</td></tr></table>
+
+<table><tr><td bgcolor="#B0C4DE"><b> Definition 3 </b> 
+    The function $$F_{\xi}(x)=P\{w: \xi(w)\leq x\}, \quad x\in \mathbb{R}$$
+    is called the <em>distribution fucntion </em> of $\xi$
+</td></tr></table>
+
 <a id="more"></a>
-<p><table><tr><td bgcolor="#B0C4DE"><b>Lemma 1</b> Content </td></tr></table><br><strong>Proof:</strong></p>
+<p>To estabilish that $\xi(w)$ is a random variable, we have to verify property $(1)$ for every $B\in\mathscr{B}(\mathbb{R})$. The following lemma shows that the class of such “test” sets can be narrowed.</p>
+<table><tr><td bgcolor="#B0C4DE"><b> Lemma 1 </b> 
+Let $\mathscr{E}$ be a system of sets such that $\sigma(\mathscr{E})=\mathscr{B}(\mathbb{R})$. Then $\xi=\xi(w)$ is $\mathscr{F}$-mesaurable $\Leftrightarrow $ $\{w:\xi(w)\in E\} \in \mathscr{F}$ for all $E\in \mathscr{E}$.
+</td></tr></table>
+
+<p>Proof:<br></p>
+<ul>
+<li>The necessity(“$\Rightarrow$”) is obvious;</li>
+<li>For the sufficient part, we will use <strong>the principle of appropriate sets</strong> (the appropriate sets are sets satisfying the property we would like to prove).</li>
+</ul>
+<p>Let $\mathscr{D}=\{D: D\in \mathscr{B}(\mathbb{R}) \text{ satisfying } \xi^{-1}(D)\in \mathscr{F}\}$. we could easily show that the operation “form the inverse image” preserve the set theoretic  operations of union, intersection and complement: i.e.</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\xi^{-1}\bigl(\bigcup_{\alpha}B_{\alpha}\bigr) &=\bigcup_{\alpha} \xi^{-1}(B_{\alpha}) \\
+\xi^{-1}\bigl(\bigcap_{\alpha}B_{\alpha}\bigr) &=\bigcap_{\alpha} \xi^{-1}(B_{\alpha})\\
+\overline{\xi^{-1}(B_{\alpha})} &= \xi^{-1}(\overline{B_{\alpha}})
+\end{align*}</script><p>Therefore it follows that $\mathscr{D}$ is a $\sigma$-algebra. Then we have</p>
+<script type="math/tex; mode=display">
+\mathscr{E}\subseteq \mathscr{D} \subseteq \mathscr{B}(\mathbb{R})</script><p>and </p>
+<script type="math/tex; mode=display">
+\sigma(\mathscr{E}) \subseteq \sigma(\mathscr{D})=\mathscr{D} \subseteq \mathscr{B}(\mathbb{R})</script><p>Therefore we have $\mathscr{D}=\mathscr{B(\mathbb{R})}$, so this lemma is proved.</p>
 
     
   </div>
