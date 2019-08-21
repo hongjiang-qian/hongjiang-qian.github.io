@@ -10,23 +10,23 @@
     <meta name="author" content="Hongjiang Qian">
   
   
-    <meta name="description" content="Part I
+    <meta name="description" content="Part I Random variables
 
  Definition 1   
-A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in">
+A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
   
-  <meta name="description" content="Part I   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in">
+  <meta name="description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
 <meta name="keywords" content="Random Variable,Random Elements">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Random Variable and Random Elements">
 <meta property="og:url" content="http://yoursite.com/posts/5abe79c7/index.html">
 <meta property="og:site_name" content="Generator">
-<meta property="og:description" content="Part I   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in">
+<meta property="og:description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-21T00:04:48.270Z">
+<meta property="og:updated_time" content="2019-08-21T00:43:52.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Variable and Random Elements">
-<meta name="twitter:description" content="Part I   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if for every $B\in">
+<meta name="twitter:description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -91,7 +91,7 @@ A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B
 
   <div class="entry">
     
-      <p><center>Part I</center></p>
+      <p><center>Part I Random variables</center></p>
 <hr>
 <table><tr><td bgcolor="#B0C4DE"><b> Definition 1  </b> 
 A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or <strong>random variable </strong> if for every $B\in \mathscr{B}(\mathbb{R})$, we have
@@ -144,7 +144,43 @@ Now, we know what's random variable. The next thing we are going to do is to tes
 <p>For any $B\in\mathscr{B}(\mathbb{R})$,</p>
 <script type="math/tex; mode=display">
 \{w:\eta(w)\in B\} =\{w:\varphi(\xi(w))\in B\}=\{w: \xi(w)\in\varphi^{-1}(B)\} \in\mathscr{F}</script><p>since $\varphi$ is Borel function, so $\varphi^{-1}(B)\in\mathscr{B}(\mathbb{R})$.</p>
-<p>If</p>
+<p>If $\xi$ is a random variable, so are $\xi^{n}, \xi^{+}, \xi^{-}, \lvert\xi\rvert$. If $\{\xi_k\}$ is a collection of random variables, so are $\sum_{k=1}^{\infty} \lvert \xi_k\rvert, \varlimsup\xi_k,\varliminf \xi_k$.</p>
+<p>The next theorem is vital important, it shows that we can approximate any random variable by simple random variables. This is the fundation to construct Lebesgue integral.<br></p>
+<table><tr><td bgcolor="#B0C4DE"><b> Theorem 1 </b> <br>
+    (a) For every random variable $\xi=\xi(w)$ (extended ones included i.e. $\xi\in [-\infty,+\infty]$), there exists a sequence of random variables $\{\xi_n\}$ s.t. $\lvert\xi_n\rvert \leq \lvert\xi\rvert$ and $\xi_n(w)\rightarrow\xi(w),\quad n\rightarrow$ for all $w\in \Omega$.<br>
+    (b) If for a nonnegative random variable $\xi(w)\geq 0$, there exists a sequence of random variables $\{\xi_n\}$ s.t. $\xi_n(w)\uparrow \xi(w)$.
+</td></tr></table>
+
+<p>Proof:</p>
+<p>(b) For $n=1,2,\cdots$, Let</p>
+<script type="math/tex; mode=display">
+\xi_n(w)=\sum_{k=1}^{n2^{n}} \frac{k-1}{2^n} I_{k,n}(w) +nI_{\xi(w)\geq n}(w)</script><p>where $I_{k,n}(w)=I_{(k-1)/2^n\leq \xi(w)\leq k/2^n}$.<br><br>The so have $\xi_n(w)\uparrow \xi(w)$.<br><br>For the general case in (a), since $\xi=\xi^{+}-\xi^{-}$, we could use simple random variables to approximate $\xi^{+}, \xi^{-}$ resepctively. Finally, we could use simple random variables to approxiamte $\xi$.</p>
+<p><center>Part II Random variables</center></p>
+<hr>
+<p>Before we preceed to random elements, we consider set $\{w:\xi(w)\in B\}$ for all $B\in \mathscr{B}(\mathbb{R})$. We could verify that such sets could form a $\sigma$-algebra called <strong>$\sigma$-algebra generated by $\xi$</strong> denoted by $\mathscr{F}_{\xi}$.</p>
+<p>In the previous Lemma 2, we show that $\varphi(\xi(w))$ is a random variable if $\varphi(x)$ is a Borel function. Now, we are able to say that the converse is true for $\mathscr{F}_{\xi}$ random variable.<br></p>
+<table><tr><td bgcolor="#B0C4DE"><b> Theorem 2 </b> 
+   Let $\eta$ be a $\mathscr{F}_{\xi}$ random variable. Then there exists a Borel function $\varphi(x)$ s.t. $\eta=\phi(\xi(w))$ for every $w\in \Omega$.
+</td></tr></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
   </div>
