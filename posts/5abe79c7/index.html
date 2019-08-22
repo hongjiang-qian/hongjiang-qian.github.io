@@ -23,7 +23,7 @@ A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-22T02:32:47.885Z">
+<meta property="og:updated_time" content="2019-08-22T16:12:33.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Variable and Random Elements">
 <meta name="twitter:description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
@@ -147,7 +147,7 @@ Now, we know what's random variable. The next thing we are going to do is to tes
 <p>If $\xi$ is a random variable, so are $\xi^{n}, \xi^{+}, \xi^{-}, \lvert\xi\rvert$. If $\{\xi_k\}$ is a collection of random variables, so are $\sum_{k=1}^{\infty} \lvert \xi_k\rvert, \varlimsup\xi_k,\varliminf \xi_k$.</p>
 <p>The next theorem is vital important, it shows that we can approximate any random variable by simple random variables. This is the fundation to construct Lebesgue integral.<br></p>
 <table><tr><td bgcolor="#B0C4DE"><b> Theorem 1 </b> <br>
-    (a) For every random variable $\xi=\xi(w)$ (extended ones included i.e. $\xi\in [-\infty,+\infty]$), there exists a sequence of random variables $\{\xi_n\}$ s.t. $\lvert\xi_n\rvert \leq \lvert\xi\rvert$ and $\xi_n(w)\rightarrow\xi(w),\quad n\rightarrow$ for all $w\in \Omega$.<br>
+    (a) For every random variable $\xi=\xi(w)$ (extended ones included i.e. $\xi\in [-\infty,+\infty]$), there exists a sequence of random variables $\{\xi_n\}$ s.t. $\lvert\xi_n\rvert \leq \lvert\xi\rvert$ and $\xi_n(w)\rightarrow\xi(w), n\rightarrow\infty$ for all $w\in \Omega$.<br>
     (b) If for a nonnegative random variable $\xi(w)\geq 0$, there exists a sequence of random variables $\{\xi_n\}$ s.t. $\xi_n(w)\uparrow \xi(w)$.
 </td></tr></table>
 
@@ -163,17 +163,17 @@ Now, we know what's random variable. The next thing we are going to do is to tes
    Let $\eta$ be a $\mathscr{F}_{\xi}$ random variable. Then there exists a Borel function $\varphi(x)$ s.t. $\eta=\varphi(\xi(w))$ for every $w\in \Omega$.
 </td></tr></table>
 
-<p>Proof:</p>
+<p><strong>Proof</strong>:</p>
 <p>Let $\Phi^{\xi}=\{\eta(w):\eta \text{ is } \mathscr{F}_{\xi}\text{-measurable}\}$ and $\tilde{\Phi}_{\xi} =\{\eta(w): \eta \text{ is }\mathscr{F}_{\xi}\text{-measurable and } \eta=\varphi(\xi(w)), \text{ where }\varphi \text{ is a Borel function } \}$, i.e. the class of $\mathscr{F}_{\xi}$-measurable functions represened in the form of $\varphi(\xi)$ where $\varphi$ is a Borel function. Therefore, $\tilde{\Phi}_{\xi} \subseteq \Phi^{\xi}$. Hence it’s sufficient to prove that $\Phi^{\xi} \subseteq \tilde{\Phi}_{\xi}$.</p>
-<p>Step 1: The first step is to prove that the indicator funtion $I_{A}(w) \in \Phi^{\xi}$ for every $A \in \mathscr{F}_{\xi}$. so we let $A\in \mathscr{F}_{\xi}$ and $\eta=I_{A}(w)$, then if $A\in \mathscr{F}_{\xi}$, there exist a $B\in \mathscr{B}(\mathbb{R})$ such that $A=\{w:\xi(w)\in B\}$. So <br><br>we let </p>
+<p><strong>Step 1</strong>: The first step is to prove that the indicator funtion $I_{A}(w) \in \Phi^{\xi}$ for every $A \in \mathscr{F}_{\xi}$. so we let $A\in \mathscr{F}_{\xi}$ and $\eta=I_{A}(w)$, then if $A\in \mathscr{F}_{\xi}$, there exist a $B\in \mathscr{B}(\mathbb{R})$ such that $A=\{w:\xi(w)\in B\}$. So <br><br>we let </p>
 <script type="math/tex; mode=display">
 \chi_B(x)=
 \begin{cases}
 1, \quad x\in B \\
 0, \quad x\notin B
 \end{cases}</script><p>Then we know that $I_{A(w)}=\chi_B(\xi(w))\in \tilde{\Phi}_{\xi}$.</p>
-<p>Step 2: according to Step 1, we know that the indicator function is in $\tilde{\Phi}_{\xi}$ for every $A\in \mathscr{F}_{\xi}$. So the simple $\mathscr{F}_{\xi}$-measurable function $\sum_{k=1}^{n} c_k I_{A_k}(w), \quad A_k \in\mathscr{F}_{\xi}$ belongs to $\tilde{\Phi}_{\xi}$.</p>
-<p>Step 3: For any arbitrary $\mathscr{F}_{\xi}$ function $\eta$, accordin to Theorem 1, there exists a sequence of simple $\mathscr{F}_{\xi}$-measurable function $\{\eta_n\}$ s.t. $\eta_n \rightarrow\eta(w)$. From Step 2, for each $\eta_n$, there exists Borel function $\varphi_n=\varphi_n(x)$ s.t. $\eta_n(w)=\varphi_n(\xi(w))$. Therefore $\varphi_n(\xi(w))\rightarrow \eta(w)$ as $n\rightarrow \infty, w\in \Omega$. Let $E=\{x\in \mathbb{R}: \lim_n\varphi_n(x) \text{ exists }\}$. It is a Borel set and the function below</p>
+<p><strong>Step 2</strong>: according to Step 1, we know that the indicator function is in $\tilde{\Phi}_{\xi}$ for every $A\in \mathscr{F}_{\xi}$. So the simple $\mathscr{F}_{\xi}$-measurable function $\sum_{k=1}^{n} c_k I_{A_k}(w), A_k \in\mathscr{F}_{\xi}$ belongs to $\tilde{\Phi}_{\xi}$.</p>
+<p><strong>Step 3</strong>: For any arbitrary $\mathscr{F}_{\xi}$ function $\eta$, accordin to Theorem 1, there exists a sequence of simple $\mathscr{F}_{\xi}$-measurable function $\{\eta_n\}$ s.t. $\eta_n \rightarrow\eta(w)$. From Step 2, for each $\eta_n$, there exists Borel function $\varphi_n=\varphi_n(x)$ s.t. $\eta_n(w)=\varphi_n(\xi(w))$. Therefore $\varphi_n(\xi(w))\rightarrow \eta(w)$ as $n\rightarrow \infty, w\in \Omega$. Let $E=\{x\in \mathbb{R}: \lim_n\varphi_n(x) \text{ exists }\}$. It is a Borel set and the function below</p>
 <script type="math/tex; mode=display">
 \varphi(x)=
 \begin{cases}
