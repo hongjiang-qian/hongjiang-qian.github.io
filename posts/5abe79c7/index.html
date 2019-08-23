@@ -12,21 +12,21 @@
   
     <meta name="description" content="Part I Random variables
 
- Definition 1   
-A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
+ Definition 1:   
+A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  i">
   
-  <meta name="description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
+  <meta name="description" content="Part I Random variables   Definition 1:    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  i">
 <meta name="keywords" content="Random Variable,Random Elements">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Random Variable and Random Elements">
 <meta property="og:url" content="http://yoursite.com/posts/5abe79c7/index.html">
 <meta property="og:site_name" content="Generator">
-<meta property="og:description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
+<meta property="og:description" content="Part I Random variables   Definition 1:    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  i">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-22T16:12:33.457Z">
+<meta property="og:updated_time" content="2019-08-23T02:08:59.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Variable and Random Elements">
-<meta name="twitter:description" content="Part I Random variables   Definition 1    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  if">
+<meta name="twitter:description" content="Part I Random variables   Definition 1:    A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or random variable  i">
   
   
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -93,18 +93,18 @@ A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B
     
       <p><center>Part I Random variables</center></p>
 <hr>
-<table><tr><td bgcolor="#B0C4DE"><b> Definition 1  </b> 
+<table><tr><td bgcolor="#B0C4DE"><b> Definition 1:  </b> 
 A real function $\xi=\xi(w): (\Omega,\mathscr{F}) \mapsto (\mathbb{R},\mathscr{B}(\mathbb{R}))$ is an $\mathscr{F}$-measurable function or <strong>random variable </strong> if for every $B\in \mathscr{B}(\mathbb{R})$, we have
 $$\{w: \xi(w)\in B\} =\xi^{-1}(B) \in \mathscr{F} \tag{1}$$.
 </td></tr></table>
-<table><tr><td bgcolor="#B0C4DE"><b> Definition 2 </b> 
+<table><tr><td bgcolor="#B0C4DE"><b> Definition 2: </b> 
 A probability measure $P_{\xi}$ on $(\mathbb{R},\mathscr{B}(\mathbb{R})$ with
 $$
 P_{\xi}(B)=P\{w: \xi(w)\in B\},\quad B\in \mathscr{B}(\mathbb{R})
 $$
 is called the <em>probability distribution</em> of $\xi$ on $(\mathbb{R},\mathscr{B}(\mathbb{R}))$.
 </td></tr></table>
-<table><tr><td bgcolor="#B0C4DE"><b> Definition 3 </b> 
+<table><tr><td bgcolor="#B0C4DE"><b> Definition 3: </b> 
     The function $$F_{\xi}(x)=P\{w: \xi(w)\leq x\}, \quad x\in \mathbb{R}$$
     is called the <em>distribution fucntion </em> of $\xi$.
 </td></tr></table>
@@ -181,7 +181,16 @@ Now, we know what's random variable. The next thing we are going to do is to tes
   0, \quad x\notin B
 \end{cases}</script><p>is a Borel function. Then $\eta(w)=\lim_n\varphi_n(\xi(w))=\varphi(\xi(w))$ for all $w\in \Omega$.</p>
 <p>Consequently, $\tilde{\Phi}_{\xi}=\Phi^{\xi}$.</p>
+<p><center> Part III Random Elements</center></p>
+<hr>
+<table><tr><td bgcolor="#B0C4DE"><b> Definition 4: </b> 
+  Let $(\Omega,\mathscr{F}), (E,\mathscr{E})$ be mesurable space. We say that $X=X(w):(\Omega,\mathscr{F})\rightarrow(E,\mathscr{E})$ is $\mathscr{F}/\mathscr{E}$-measurable function or is a <strong>random element</strong>( with values in E), if $\{w:X(w)\in B\}\in \mathscr{F}$, for every $B\in\mathscr{E}$.
+</td></tr></table>
 
+<p>If $(E,\mathscr{E})=(\mathbb{R},\mathscr{B}(\mathbb{R}))$, then the definition of a random element is the same as the definition of a random variable. We could see that random element is more general since $(E,\mathscr{E})$ is any measurable space.</p>
+<p>If $(E,\mathscr{E})=(\mathbb{R}^n,\mathscr{B}(\mathbb{R}^n))$. Then we call the random element $X(w)$ is a “random point” in $\mathbb{R}^n$. If $\pi_k$ is the projection of $\mathbb{R}^n$ on the $k$-th coordinate axis, then $X(w)$ has the representation $X(w)=(\xi_1(w),\xi_2(w),\cdots,\xi_n(w))$ where $\xi_k=\pi_k(X(w))$. That is a random element in $\mathbb{R}^n$ is an n-dimenional random vector( i.e. an ordered set of random variables). In fact, we could show that the converse is also true: every random vector $X(w)=(\xi_1(w),\xi_2(w),\cdots,\xi_n(w))$ is a random element in $\mathbb{R}^n$. Since for every $B\in \mathscr{\mathbb{R}^n}=\underbrace{\mathscr{B}(\mathbb{R})\otimes \cdots \otimes \mathscr{B}(\mathbb{R})}_{n}$, so there exists $B_k\in \mathscr{B}(\mathbb{R}), k=1,2,\cdots,n$ and according the definition of random element, we have</p>
+<script type="math/tex; mode=display">
+\{w: X(w)\in(B_1\times B_2\cdots B_n)\}=\prod_{k=1}^{n}\{w:\xi_k(w)\in B_k\}\in \mathscr{F}</script>
     
   </div>
 
