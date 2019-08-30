@@ -37,14 +37,7 @@
 </head>
 
 <link rel="stylesheet" href="/blog/css/font-awesome.css" media="screen" type="text/css">
-
-<style id="inline-css" type="text/css">
-#backtoTop{background-color:#eee;border-radius:100%;bottom:10%;height:48px;position:fixed;right:-100px;width:48px;transition:0.5s;-webkit-transition:0.5s}
-#backtoTop.button--show{right:10px}
-.per{font-size:16px;height:48px;line-height:48px;position:absolute;text-align:center;top:0;width:48px;color:#555;cursor:pointer}
-.per: before{content:attr(data-percent)}
-.per:hover: before{content:"\f0a6";font-family:FontAwesome;font-size:20px}
-</style></html>
+</html>
 <body>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="wrapper">
     <header id="header">
@@ -302,6 +295,31 @@ Let $\lvert\xi_n\rvert \leq \eta, E\eta <\infty$ and $\xi_n \rightarrow \xi$ (a.
 
 
 
+<div id="rightfix" style="display:none;">
+
+
+<a href="javascript:void(0)" id="gotop" class="fix_btn" onclick="gotop();" title="回到顶部"><i></i></a>
+<script>
+  function gotop(){
+    $('html,body').animate({
+        scrollTop : '0px'
+      }, 800);
+  }
+  $(function(){
+    _rightfix = $('#rightfix');
+    $(window).scroll(function(){
+      $sollTop = document.documentElement.scrollTop + document.body.scrollTop;
+      if($sollTop > 350){
+        _rightfix.show();
+      }else{
+        _rightfix.hide();
+      }
+    });
+  });
+</script>
+
+</div>
+
 
 <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
@@ -313,76 +331,6 @@ Let $\lvert\xi_n\rvert \leq \eta, E\eta <\infty$ and $\xi_n \rightarrow \xi$ (a.
 
 
 
-
-
-<script>
-var bigfa_scroll = {
-    drawCircle: function(id, percentage, color) {
-        var width = jQuery(id).width();
-        var height = jQuery(id).height();
-        var radius = parseInt(width / 2.20);
-        var position = width;
-        var positionBy2 = position / 2;
-        var bg = jQuery(id)[0];
-        id = id.split("#");
-        var ctx = bg.getContext("2d");
-        var imd = null;
-        var circ = Math.PI * 2;
-        var quart = Math.PI / 2;
-        ctx.clearRect(0, 0, width, height);
-        ctx.beginPath();
-        ctx.strokeStyle = color;
-        ctx.lineCap = "square";
-        ctx.closePath();
-        ctx.fill();
-        ctx.lineWidth = 3;
-        imd = ctx.getImageData(0, 0, position, position);
-        var draw = function(current, ctxPass) {
-            ctxPass.putImageData(imd, 0, 0);
-            ctxPass.beginPath();
-            ctxPass.arc(positionBy2, positionBy2, radius, -(quart), ((circ) * current) - quart, false);
-            ctxPass.stroke();
-        }
-        draw(percentage / 100, ctx);
-    },
-    backToTop: function($this) {
-        $this.click(function() {
-            jQuery("body,html").animate({
-                scrollTop: 0
-            },
-            800);
-            return false;
-        });
-    },
-    scrollHook: function($this, color) {
-        color = color ? color: "#000000";
-        $this.scroll(function() {
-            var docHeight = (jQuery(document).height() - jQuery(window).height()),
-            $windowObj = $this,
-            $per = jQuery(".per"),
-            percentage = 0;
-            defaultScroll = $windowObj.scrollTop();
-            percentage = parseInt((defaultScroll / docHeight) * 100);
-            var backToTop = jQuery("#backtoTop");
-            if (backToTop.length > 0) {
-                if ($windowObj.scrollTop() > 200) {
-                    backToTop.addClass("button--show");
-                } else {
-                    backToTop.removeClass("button--show");
-                }
-                $per.attr("data-percent", percentage);
-                bigfa_scroll.drawCircle("#backtoTopCanvas", percentage, color);
-            }
-        });
-    }
-}
-jQuery(document).ready(function() {
-    jQuery("body").append('<div id="backtoTop" data-action="gototop"><canvas id="backtoTopCanvas" width="48" height="48"></canvas><div class="per"></div></div>');
-    var T = bigfa_scroll;
-    T.backToTop(jQuery("#backtoTop"));
-    T.scrollHook(jQuery(window), "#336699");
-});
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
