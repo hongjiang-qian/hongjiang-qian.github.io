@@ -265,7 +265,7 @@ article header time {
 article header .title {
   font-size: 1em;
   font-weight: normal;
-  line-height: 1.5em;
+  line-height: 1.4em;
   margin: 0;
   padding: 0;
   text-shadow: rgba(255,255,255,0.9) 0 1px 0;
@@ -290,7 +290,7 @@ article .entry h6 {
   color: #222;
   padding: 0;
   margin: 0 0 20px;
-  line-height: 1.5em;
+  line-height: 1.4em;
 }
 article .entry p,
 article .entry ul,
@@ -545,7 +545,7 @@ article footer .tags:before {
   font-size: 1em;
 }
 #sidebar {
-  line-height: 1.5em;
+  line-height: 1.4em;
   background: #dedede;
 }
 #sidebar .widget {
