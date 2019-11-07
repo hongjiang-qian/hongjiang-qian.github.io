@@ -12,7 +12,7 @@ html {
   background: #6c7989 -o-linear-gradient(#6c7989, #434b55) fixed;
   background: #6c7989 -ms-linear-gradient(#6c7989, #434b55) fixed;
   background: #6c7989 linear-gradient(#6c7989, #434b55) fixed;
-  background-image: url("images/checker.png");
+  background-image: url("image-background");
 }
 body {
   padding: 50px 0;
@@ -95,7 +95,7 @@ strong {
 #header h1 {
   margin: 0;
   padding: 0;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: normal;
   line-height: 1.2;
   color: #069;
@@ -263,7 +263,7 @@ article header time {
   line-height: 1;
 }
 article header .title {
-  font-size: 1em;
+  font-size: 0.95em;
   font-weight: normal;
   line-height: 1.4em;
   margin: 0;
@@ -555,7 +555,7 @@ article footer .tags:before {
   color: #fff;
   padding: 5px 10px;
   margin: 0;
-  font-size: 1em;
+  font-size: 0.9em;
   border-bottom: 1px solid #eee;
   font-weight: normal;
   background: #666;
@@ -569,7 +569,7 @@ article footer .tags:before {
   }
 }
 #sidebar .widget .entry {
-  font-size: 0.73em;
+  font-size: 0.7em;
   padding: 13px 5px 13px 15px;
 }
 #sidebar .widget .entry a:hover {
