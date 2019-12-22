@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="This article will states various kinds of convergence of sequence of random variables, i.e. convergence almost sure(w.p.1), convergence in probability, convergence in distribution and convergence in m">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-22T20:53:55.938Z">
+<meta property="og:updated_time" content="2019-12-22T21:37:12.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Various kinds of convergence of sequence of random variables">
 <meta name="twitter:description" content="This article will states various kinds of convergence of sequence of random variables, i.e. convergence almost sure(w.p.1), convergence in probability, convergence in distribution and convergence in m">
@@ -88,6 +88,8 @@
     (2) $\xi_n$ converges to $\xi$ <strong>almost surely (with probability 1)</strong> denoted as $\xi_n\rightarrow \xi$ (P-a.s.) or $\xi_n\stackrel{a.s}{\rightarrow}\xi$, if $P\{w: \xi_n \nrightarrow \xi\}=0$.<br>
     (3) $\xi_n$ converges to $\xi$ <strong>in mean of order p</strong>, $0<p<\infty$ denoted as $\xi_n\stackrel{l^p}{\rightarrow}\xi$, if $e\lvert\xi_n-\xi\rvert^p\rightarrow 0$.<br>
     (4) $\xi_n$ converges to $\xi$ <strong>in distribution</strong> denoted as $\xi_n \stackrel{d}{\rightarrow}\xi$, if $Ef(\xi_n)\rightarrow Ef(\xi),\, n\rightarrow \infty$ for every bounded continous function $f=f(x)$.<br>
+
+
 </p<\infty$></td></tr></table>
 
 <a id="more"></a>
@@ -109,23 +111,20 @@
  $$\sum_{k=1}^{\infty} P\{|\xi_k-\xi|\geq \varepsilon\}< \infty$$
  is satisfied for every $\varepsilon>0$.
 </td></tr></table>
+Let $A_1, A_2, A_3,\cdots$ be a sequence of events in $\mathcal{F}$. Also we let $\{A_n, \text{i.o.}\}$ denote the event of $\varlimsup A_n$, then we have the following
+<table><tr><td bgcolor="#B0C4DE"><b>Borel-Cantelli Lemma</b><br>
+- If $\sum P(A_n)<\infty$, then $p\{a_n \text{i.o.}\}="0.$" - if $\sum p(a_n)="\infty$" and $a_1, a_2,\cdots$ are independent, < td></\infty$,></td></tr></table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>Proof:<br></p>
+<ul>
+<li>According to definition, we have<script type="math/tex; mode=display">
+\{A_n,\text{i.o.}\}=\varlimsup A_n=\cap_{n=1}^{\infty}\cup_{k\geq n} A_k.</script>Therefore,<script type="math/tex; mode=display">
+P\{A_n,\text{i.o.}\}=P\left\{\cap_{n=1}^{\infty}\cup_{k\geq n} A_k \right\}=\lim P\left(\cup_{k\geq n}\right) \leq \lim\sum_{k\geq n} P(A_k)</script>Then we have (a).</li>
+<li>If $A_1, A_2, A_3,\cdots$ are independent, then $\bar{A_1},\bar{A_2},\cdots$ are independent. Hence for $N\geq n$, we have <script type="math/tex; mode=display">
+P\left( \cap_{k=n}^{N}\bar{A_k}\right)=\Pi_{k=n}^{N}P(\bar{A_k})</script>then we can get<script type="math/tex; mode=display">
+P\left( \cap_{k=n}^{\infty}\bar{A_k}\right)=\Pi_{k=n}^{\infty}P(\bar{A_k})</script>Since $\log(1-x)\leq -x,\,0\leq x\leq 1$, then we are able to obtain<script type="math/tex; mode=display">
+\log\Pi_{k=n}^{\infty}[1-P(A_k)]=\sum_{k=n}^{\infty}\log[1-P(A_k)]\leq -\sum_{k=n}^{\infty} P(A_k)=-\infty.</script>Therefore, we have $P\left(\cap_{k=n}^{\infty}\bar{A_k}\right)=0$ for all n, then $P(A_n,\text{i.o.})=1$.</li>
+</ul>
 
     
   </div>
@@ -292,24 +291,9 @@
   (function($){
     $('.fancybox').fancybox();
   })(jQuery);
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
