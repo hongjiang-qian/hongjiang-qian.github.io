@@ -1,0 +1,178 @@
+@import url("../fonts/font.css");
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("fonts/fontawesome-webfont.woff") format('woff'), url("fonts/fontawesome-webfont.ttf") format('truetype'), url("fonts/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
+}
+
+body {
+  background: #6c7989;
+  background: #6c7989 -webkit-linear-gradient(#6c7989, #434b55) fixed;
+  background: #6c7989 -moz-linear-gradient(#6c7989, #434b55) fixed;
+  background: #6c7989 -o-linear-gradient(#6c7989, #434b55) fixed;
+  background: #6c7989 -ms-linear-gradient(#6c7989, #434b55) fixed;
+  background: #6c7989 linear-gradient(#6c7989, #434b55) fixed;
+  /**background-image: url("../images/checker.png");**/
+  padding: 50px 30px;
+  margin: 0;
+  font: 1em/1.5 "Verdana", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #333;
+  font-weight: 300;
+}
+
+/*Class: for a class of element*/
+.wrapper {
+  width: 760px;
+  margin: 0 auto;
+  background: #dedede;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0 0 0 1px, rgba(0,0,0,0.45) 0 3px 10px;
+  box-shadow: rgba(0,0,0,0.2) 0 0 0 1px, rgba(0,0,0,0.45) 0 3px 10px;
+}
+
+/**Header--id: for a specific element**/
+#header{
+  border-radius: 8px 8px 0 0;
+  background: #c6eafa -webkit-linear-gradient(#ddfbfc, #c6eafa);
+  background: #c6eafa -moz-linear-gradient(#ddfbfc, #c6eafa);
+  background: #c6eafa -o-linear-gradient(#ddfbfc, #c6eafa);
+  background: #c6eafa -ms-linear-gradient(#ddfbfc, #c6eafa);
+  background: #c6eafa linear-gradient(#ddfbfc, #c6eafa);
+  position: relative;
+  padding: 25px 30px;
+  border-bottom: 1px solid #b2d2e1;
+}
+#header .title{
+  float: left;
+}
+#header .nav{
+  float: right;
+  font-family: font-family: "Verdana", Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 2.5em;
+}
+#header .nav ul {
+  list-style: none;
+}
+#header .nav ul li{
+  font-size: 1.4em;
+  float: left;
+  margin-left: 30px;
+}
+#header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.0em;
+  font-weight: normal;
+  line-height: 1.2;
+  color: #069;
+  text-shadow: rgba(255,255,255,0.9) 0 1px 0;
+}
+
+#header.without-description h1 {
+  margin: 10px 0;
+}
+
+#header p {
+  margin: 0;
+  color: #61778b;
+  width: 500px;
+  font-size: 0.83em;
+  font-style: italic;
+}
+
+/**Start Content**/
+.content {
+  background: -webkit-linear-gradient(#fafafa, #dedede 700px);
+  background: -moz-linear-gradient(#fafafa, #dedede 700px);
+  background: -o-linear-gradient(#fafafa, #dedede 700px);
+  background: -ms-linear-gradient(#fafafa, #dedede 700px);
+  background: linear-gradient(#fafafa, #dedede 700px);
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #fff;
+  padding: 15px 30px;
+  position: relative;
+}
+/**For "Home, Research, Teaching, Biograph" in the main content**/
+.content header h1{
+  font-size: 1.8em;
+  text-align: justify;
+  color: #222;
+  padding: 0;
+  margin: 0 0 20px;
+  line-height: 1.4em;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+
+/*Main content -- class"page"*/
+
+.page{
+  font-size: 1.2em;
+  text-align: justify;
+  line-height: 1.63em;
+}
+.page h1, h2, h3, h4, h5, h6{
+  font-size: 1.2em;
+  color: #222;
+  padding: 0;
+  margin: 0 0 20px;
+  line-height: 1.4em;
+}
+.page p,ul,ol,table,dl{
+  font-size: 1.0em;
+  margin: 0 0 20px;
+}
+.page blockquote{
+  margin: 0 -30px 20px;
+  padding: 15px 20px 1px 40px;
+  font-style: italic;
+  background: #ccc;
+  background: rgba(0,0,0,0.06);
+  color: #222;
+}
+.page img,video{
+  max-width: 98%;
+  border-radius: 3px;
+  padding: 5px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 8px #aaa;
+  box-shadow: 0 0 8px #aaa;
+}
+
+
+#footer{
+  font-size: 0.8em;
+  border-top: 1px solid #aaa;
+  display: block;
+  color: #ccc;
+  overflow: hidden;
+  margin: 20px auto 0;
+  padding: 5px;
+  font-size: 11px;
+  color: #ccc;
+  text-align: center;
+}
+#footer a{
+  color: #ccc;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
