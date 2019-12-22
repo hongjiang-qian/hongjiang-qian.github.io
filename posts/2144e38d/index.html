@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Generator">
 <meta property="og:description" content="This post will states various kinds of convergence of sequence of random variables, i.e. convergence almost sure(w.p.1), convergence in probability, convergence in distribution and convergence in mean">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-22T21:47:36.271Z">
+<meta property="og:updated_time" content="2019-12-22T22:01:33.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Various kinds of convergence of sequence of random variables">
 <meta name="twitter:description" content="This post will states various kinds of convergence of sequence of random variables, i.e. convergence almost sure(w.p.1), convergence in probability, convergence in distribution and convergence in mean">
@@ -87,7 +87,6 @@
     (1) $\xi_n$ converges to $\xi$ in probability denoted as $\xi_n \stackrel{p}{\rightarrow} \xi$: if for every $\varepsilon>0, P\{\lvert\xi_n-\xi\rvert>\varepsilon\}\rightarrow 0,\, n\rightarrow \infty$.<br>
     (2) $\xi_n$ converges to $\xi$ almost surely (with probability 1) denoted as $\xi_n\rightarrow \xi$ (P-a.s.) or $\xi_n\stackrel{a.s}{\rightarrow}\xi$, if $P\{w: \xi_n \nrightarrow \xi\}=0$.<br>
     (3) $\xi_n$ converges to $\xi$ in mean of order p, $0<p< \infty$ denoted as $\xi_n \stackrel{l^p}{\rightarrow} \xi$, if $e \lvert\xi_n-\xi\rvert^p\rightarrow 0$.<br>
-
     (4) $\xi_n$ converges to $\xi$ in distribution denoted as $\xi_n \stackrel{d}{\rightarrow}\xi$, if $Ef(\xi_n)\rightarrow Ef(\xi),\, n\rightarrow \infty$ for every bounded continous function $f=f(x)$.
 
 
@@ -129,6 +128,15 @@ P\left( \cap_{k=n}^{N}\bar{A_k}\right)=\Pi_{k=n}^{N}P(\bar{A_k})</script>then we
 P\left( \cap_{k=n}^{\infty}\bar{A_k}\right)=\Pi_{k=n}^{\infty}P(\bar{A_k})</script>Since $\log(1-x)\leq -x,\,0\leq x\leq 1$, then we are able to obtain<script type="math/tex; mode=display">
 \log\Pi_{k=n}^{\infty}[1-P(A_k)]=\sum_{k=n}^{\infty}\log[1-P(A_k)]\leq -\sum_{k=n}^{\infty} P(A_k)=-\infty.</script>Therefore, we have $P\left(\cap_{k=n}^{\infty}\bar{A_k}\right)=0$ for all n, then $P(A_n,\text{i.o.})=1$.</li>
 </ul>
+<p>At the begining of this post, we demonstrates definitions of various kinds of convergence in Proability theory. Now we are going to see what are relationships between them.<br></p>
+<table><tr><td bgcolor="#B0C4DE"><b>Thoerem 2</b><br>
+    We have the following implications for various types of convergence:<br>
+    $$\xi_n \stackrel{a.s.}{\rightarrow}\xi \implies \xi_n\stackrel{P}{\rightarrow} \xi,$$
+    $$\xi_n\stackrel{L^p}{\rightarrow}\xi \implies \xi_n\stackrel{P}{\rightarrow}\xi,\quad p>0,$$
+    $$\xi_n\stackrel{P}{\rightarrow}\xi \implies \xi_n\stackrel{d}{\rightarrow}\xi.$$
+</td></tr></table>
+
+<p>Proof:<br></p>
 
     
   </div>
@@ -295,9 +303,24 @@ P\left( \cap_{k=n}^{\infty}\bar{A_k}\right)=\Pi_{k=n}^{\infty}P(\bar{A_k})</scri
   (function($){
     $('.fancybox').fancybox();
   })(jQuery);
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

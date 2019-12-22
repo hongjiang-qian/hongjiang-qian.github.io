@@ -86,7 +86,6 @@
     (1) $\xi_n$ converges to $\xi$ in probability denoted as $\xi_n \stackrel{p}{\rightarrow} \xi$: if for every $\varepsilon>0, P\{\lvert\xi_n-\xi\rvert>\varepsilon\}\rightarrow 0,\, n\rightarrow \infty$.<br>
     (2) $\xi_n$ converges to $\xi$ almost surely (with probability 1) denoted as $\xi_n\rightarrow \xi$ (P-a.s.) or $\xi_n\stackrel{a.s}{\rightarrow}\xi$, if $P\{w: \xi_n \nrightarrow \xi\}=0$.<br>
     (3) $\xi_n$ converges to $\xi$ in mean of order p, $0<p< \infty$ denoted as $\xi_n \stackrel{l^p}{\rightarrow} \xi$, if $e \lvert\xi_n-\xi\rvert^p\rightarrow 0$.<br>
-
     (4) $\xi_n$ converges to $\xi$ in distribution denoted as $\xi_n \stackrel{d}{\rightarrow}\xi$, if $Ef(\xi_n)\rightarrow Ef(\xi),\, n\rightarrow \infty$ for every bounded continous function $f=f(x)$.
 
 
@@ -507,9 +506,24 @@ is called the <em>probability distribution</em> of $\xi$ on $(\mathbb{R},\mathsc
   (function($){
     $('.fancybox').fancybox();
   })(jQuery);
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
