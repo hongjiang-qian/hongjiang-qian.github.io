@@ -24,23 +24,25 @@ body {
 
 #layout-menu {
 	/*background: #f7fcf0;*//*light yellow*/
-    /*background: #e2edf5;*/ /*light blue*/
-    background: #f4f4ff;
-    /*color: #081d58;*/
-    color: #5c7996;
+	/*background: #e2edf5;*/ /*light blue*/
+	/* background: #f4f4ff; */
+	background: #F3F3F2;
+	/*color: #081d58;*/
+	/* color: #5c7996; */
+	color: #7B7C7D;
 	/*border: 1px solid #dddddd;*/
-    border:0;
-    border-right: 1px #305080 dotted;
+	border:0;
+	border-right: 1px #305080 dotted;
 	padding-top: 5px;
 	padding-left: 8px;
 	padding-right: 8px;
 	font-size: 1.0em;
-    font-family: 'Lucida Grande',Verdana, Arial, Sans-Serif;
-    /*font-family: arial,verdana, sans-serif;*/
+	font-family: 'Lucida Grande',Verdana, Arial, Sans-Serif;
+	/*font-family: arial,verdana, sans-serif;*/
 	width: 120px;
 	white-space: nowrap;
-    text-align: left;
-    vertical-align: top;
+	text-align: left;
+	vertical-align: top;
 }
 
 #layout-menu td {
@@ -72,22 +74,25 @@ pre, tt {
 }
 
 a, a > tt {
-	color: #022BAD;
+	/* color: #022BAD; */
+	color: #2A17B1;
 	text-decoration: none;
 }
 
 a:hover {
-    color:#c60;
+    /* color:#c60; */
+	color: #a61c1c;
 	border-bottom: 1px gray dotted;
 }
 
 #layout-menu a.current:link, #layout-menu a.current:visited {
 	/*color: #022b6d;*/
-    color: #022bad;
+	color: #022bad;
+	/* color: #777777; */
 	border-bottom: 1px gray solid;
 }
 #layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
-	color: #022bad;
+	color: #444444;
 	text-decoration: none;
 }
 #layout-menu a:hover {
@@ -141,7 +146,8 @@ strong {
 
 
 h1, h2, h3 {
-	color: #5c7996;
+	/* color: #5c7996; */
+	color: #7B7C7D;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-bottom: 0.2em;
@@ -157,9 +163,10 @@ h1 {
 h2 {
     font-size: 14px;
     font-weight: bold;
-	padding-top: 0.8em;
+    padding-top: 0.8em;
     line-height: 15px;
-	/*font-size: 125%;*/
+    /*font-size: 125%;*/
+    color: #949495;
 }
 
 h2 + h3 {
@@ -200,7 +207,7 @@ div#footer {
 }
 
 div#footer a {
-	color: #80a0b0;
+	color: #c0c0c0;
 }
 
 div#footer-text {
