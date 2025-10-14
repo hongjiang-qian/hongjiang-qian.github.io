@@ -1,0 +1,41 @@
+# jemdoc: menu{MENU}{pub.html}
+= Publication
+
+Legend: (*) denotes corresponding author.
+
+== Publications
+. [https://www.sciencedirect.com/science/article/pii/S0304414925001036 Large Deviation Estimates for Nonlinear Filtering with Discontinuity and Small Noise] \n
+_H. Qian\*_, Y. Cao, and G. Yin \n
+/Stochastic Processes and their Applications/, 104662.
+. [https://www.sciencedirect.com/science/article/pii/S1751570X2400044X Numerical solutions of a class of optimal stopping problems] \n
+P. Ernst, X. Ma, M. H. Nazari, _H. Qian_, L. Y. Wang, and G. Yin \n
+/Nonlinear Analysis: Hybrid Systems/, *53*: 101507, 2024.
+. [https://www.aimsciences.org/article/doi/10.3934/dcdss.2024014?viewType=HTML A class of numerical algorithms for stochastic differential equations with randomly varying truncations inspired by a stochastic optimization problem]\n 
+_H. Qian_, F. Wu, and G. Yin \n
+/Discrete and Continuous Dynamical Systems - S/, *18*(3): 578-602, 2025.
+. [https://doi.org/10.1109/TAC.2022.3183147 Deep Filtering with Adaptive Learning Rates] \n
+_H. Qian_, G. Yin, and Q. Zhang \n
+/IEEE Transactions on Automatic Control/, *68* (6): 3285-3299, 2023.
+. [https://doi.org/10.1063/5.0095042 Moderate Deviations for the Langevin Equations: Strong Damping and Fast Markovian Switching]\n
+_H. Qian_ and G. Yin \n
+/Journal of Mathematical Physics/, *63*(12): 123304, 2022, 28 pp.
+. [https://doi.org/10.1016/j.automatica.2022.110376 Filtering with degenerate observation noise: A stochastic approximation approach] \n
+_H. Qian_, Q. Zhang and G. Yin \n
+/Automatica./ *142*: 110376, 2022, 9 pp.
+. [https://idp.springer.com/authorize/casa?redirect_uri=https://link.springer.com/article/10.1007/s11203-021-09267-z&casa_token=Wj_7qo4VYvUAAAAA:F7JlrzSq5DaNpXwsJrzlnEm3iwGdirHGhQuTJnbH7TecbRqcj0-VvKlHTqm3bg5EuaVUp7qg2kSF6FuA Numerical Solutions for Optimal Control of Stochastic Kolmogorov Systems with Regime-Switching and Random Jumps] \n 
+_H. Qian_, Z. Wen, and G. Yin \n
+/Statistical Inference for Stochastic Processes/, *25*(1): 105-125, 2022 (invited paper dedicated to the 90th birthday of Professor Rafail Khasminskii).
+. [https://link.springer.com/article/10.1007/s11424-021-1170-5 Numerical Solutions for Optimal Control of Stochastic Kolmogorov Systems]\n
+G. Yin, Z. Wen, _H. Qian_, and H. Nguyen \n
+/Journal of Systems Science and Complexity/, *34*(5), 1703-1722, 2021.
+
+
+== Preprints
+. _H. Qian_, G. Yin, Q. Zhang, A deep learning approach for optimal pairs trading, submitted.
+. _H. Qian\*_, Moderate Deviation Principles for Stochastic Differential Equations in a Fast Markovian Environment, submitted, [https://www.researchgate.net/publication/384467695_Moderate_Deviation_Principles_for_Stochastic_Differential_Equations_in_Fast-Varying_Markovian_Environment \[RG\]].
+. F. Bao, Y. Cao, and _H. Qian\*_, Numerical approximations for partially observed optimal control of stochastic partial differential equations, submitted, [https://arxiv.org/abs/2504.00381 \[arXiv\]].
+. Y. Cao, _H. Qian\*_, and G. Yin, Optimal Control of Stochastic Partial Differential Equations with Partial Observations: Stochastic Maximum Principles and Numerical Approximation, submitted, [https://arxiv.org/abs/2504.14431 \[arXiv\]].
+. _H. Qian_, G. Yin, Moderate Deviation Principles for Stochastic Reaction-Diffusion Equations in Random Environment, in preparation.
+\n
+
+
