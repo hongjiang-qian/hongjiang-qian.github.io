@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Misc</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Menu</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="bio.html">Biography</a></div>
+<div class="menu-item"><a href="pub.html">Publications</a></div>
+<div class="menu-item"><a href="teach.html">Teaching</a></div>
+<div class="menu-item"><a href="act.html">Activities</a></div>
+<div class="menu-category">Misc</div>
+<div class="menu-item"><a href="blog.html">Blog</a></div>
+<div class="menu-item"><a href="link.html">Links</a></div>
+<div class="menu-item"><a href="gallery.html">Gallery</a></div>
+<div class="menu-item"><a href="jem.html">Jemdoc</a></div>
+<div class="menu-item"><a href="misc.html" class="current">Misc</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Misc</h1>
+</div>
+<h2>BibDesk Auto Correction</h2>
+<p>Use Apple Script to auto correct bib file in BibDesk.
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+tell application "BibDesk"
+	activate
+
+	if (count of documents) = 0 then
+		return
+	end if
+
+	set theLibrary to document 1
+
+	repeat with i from 1 to (count of publications of theLibrary)
+		try
+			set aPub to publication i of theLibrary
+
+			-- If Fjournal exists and is not empty, copy it to journal.
+			try
+				set fjournalValue to value of field "Fjournal" of aPub
+				if fjournalValue is not missing value and fjournalValue is not "" then
+					set value of field "journal" of aPub to fjournalValue
+				end if
+			end try
+
+			-- Generate Ajournal based on the current journal.
+			try
+				set currentJournal to value of field "journal" of aPub
+				if currentJournal is not missing value and currentJournal is not "" then
+					set abbreviatedJournal to currentJournal
+
+					if currentJournal contains "SIAM Journal on Control and Optimization" then
+						set abbreviatedJournal to "SIAM J. Control Optim."
+					else if currentJournal contains "SIAM Journal on Control" then
+						set abbreviatedJournal to "SIAM J. Control"
+					else if currentJournal contains "Applied Mathematics and Optimization" or currentJournal contains "Applied Mathematics &amp; Optimization" then
+						set abbreviatedJournal to "Appl. Math. Optim."
+					else if currentJournal contains "SIAM Journal on Mathematical Analysis" then
+						set abbreviatedJournal to "SIAM J. Math. Anal."
+					else if currentJournal contains "SIAM Journal on Applied Mathematics" then
+						set abbreviatedJournal to "SIAM J. Appl. Math."
+					else if currentJournal contains "Annals of Probability" then
+						set abbreviatedJournal to "Ann. Probab."
+					else if currentJournal contains "SIAM Journal on Numerical Analysis" then
+						set abbreviatedJournal to "SIAM J. Numer. Anal."
+					else if currentJournal contains "Annals of Applied Probability" then
+						set abbreviatedJournal to "Ann. Appl. Probab."
+					else if currentJournal contains "Communications in Mathematical Physics" then
+						set abbreviatedJournal to "Comm. Math. Phys."
+					else if currentJournal contains "Stochastic Processes and their Applications" then
+						set abbreviatedJournal to "Stochastic Process. Appl."
+					else if currentJournal starts with "Stochastics and Partial Differential Equations" then
+						set abbreviatedJournal to "Stoch. Partial Differ. Equ. Anal. Comput."
+					else if currentJournal contains "Journal of Scientific Computing" then
+						set abbreviatedJournal to "J. Sci. Comput."
+					else if currentJournal contains "Journal of the Franklin Institute" then
+						set abbreviatedJournal to "J. Franklin Inst."
+					else if currentJournal contains "Journal of Applied Probability" then
+						set abbreviatedJournal to "J. Appl. Probab."
+					else if currentJournal contains "Mathematical Control and Related Fields" then
+						set abbreviatedJournal to "Math. Control Related Fields"
+					else if currentJournal contains "Statistical Inference for Stochastic Processes" then
+						set abbreviatedJournal to "Stat. Inference Stoch. Process."
+					else if currentJournal contains "Journal of Systems Science and Complexity" then
+						set abbreviatedJournal to "J. Syst. Sci. Complex."
+					else if currentJournal contains "IEEE Transactions on Automatic Control" then
+						set abbreviatedJournal to "IEEE Trans. Automat. Control"
+					else if currentJournal contains "Probability Theory and Related Fields" then
+						set abbreviatedJournal to "Probab. Theory Related Fields"
+					else if currentJournal contains "Stochastics" then
+						set abbreviatedJournal to "Stochastics"
+					else if currentJournal contains "Electronic Journal of Probability" then
+						set abbreviatedJournal to "Electron. J. Probab."
+					else if currentJournal contains "Electronic Communications in Probability" then
+						set abbreviatedJournal to "Electron. Commun. Probab."
+					else if currentJournal contains "Statistics &amp; Probability Letters" or currentJournal contains "Statistics and Probability Letters" then
+						set abbreviatedJournal to "Statist. Probab. Lett."
+					else if currentJournal contains "Bernoulli" then
+						set abbreviatedJournal to "Bernoulli"
+					else if currentJournal contains "Advances in Applied Probability" then
+						set abbreviatedJournal to "Adv. Appl. Probab."
+					else if currentJournal contains "Finance and Stochastics" then
+						set abbreviatedJournal to "Finance Stoch."
+					else if currentJournal contains "Applied Stochastic Models" then
+						set abbreviatedJournal to "Appl. Stoch. Models Bus. Ind."
+					else if currentJournal contains "Asian Journal of Control" then
+						set abbreviatedJournal to "Asian J. Control"
+					else if currentJournal contains "Journal of Differential Equations" then
+						set abbreviatedJournal to "J. Differential Equations"
+					else if currentJournal contains "Nonlinear Analysis" then
+						set abbreviatedJournal to "Nonlinear Anal."
+					else if currentJournal contains "Automatica" then
+						set abbreviatedJournal to "Automatica"
+					else if currentJournal contains "Systems &amp; Control Letters" or currentJournal contains "Systems and Control Letters" then
+						set abbreviatedJournal to "Systems Control Lett."
+					else if currentJournal contains "Journal of Functional Analysis" then
+						set abbreviatedJournal to "J. Funct. Anal."
+					else if currentJournal contains "Journal of Mathematical Analysis and Applications" then
+						set abbreviatedJournal to "J. Math. Anal. Appl."
+					else if currentJournal contains "Annales de l'Institut Henri Poincaré Probabilités et Statistiques" then
+						set abbreviatedJournal to "Ann. Inst. Henri Poincaré Prob. Stat."
+					else if currentJournal contains "Archive for Rational Mechanics and Analysis" then
+						set abbreviatedJournal to "Arch. Ration. Mech. Anal."
+					else if currentJournal contains "Journal of Optimization Theory and Applications" then
+						set abbreviatedJournal to "J. Optim. Theory Appl."
+					else if currentJournal contains "Transactions of the American Mathematical Society" then
+						set abbreviatedJournal to "Trans. Amer. Math. Soc."
+					else if currentJournal contains "Stochastic Analysis and Applications" then
+						set abbreviatedJournal to "Stoch. Anal. Appl."
+					end if
+
+					try
+						set value of field "Ajournal" of aPub to abbreviatedJournal
+					end try
+				end if
+			end try
+
+			-- Title Case Protection for Proper Nouns (Option 1: Multi-line list using the ¬ continuation character)
+			try
+				set titleValue to value of field "Title" of aPub
+				if titleValue is not missing value and titleValue is not "" then
+					set modifiedTitle to titleValue
+
+					set nameList to {¬
+						{"Kolmogorov", "{K}olmogorov"}, ¬
+						{"zakai", "{Z}akai"}, ¬
+						{"Wiener", "{W}iener"}, ¬
+						{"Itô", "{I}tô"}, ¬
+						{"Ito", "{I}to"}, ¬
+						{"Lévy", "{L}évy"}, ¬
+						{"Levy", "{L}evy"}, ¬
+						{"Arnold", "{A}rnold"}, ¬
+						{"Doob", "{D}oob"}, ¬
+						{"Stratonovich", "{S}tratonovich"}, ¬
+						{"Fokker", "{F}okker"}, ¬
+						{"Planck", "{P}lanck"}, ¬
+						{"Poisson", "{P}oisson"}, ¬
+						{"Brownian", "{B}rownian"}, ¬
+						{"Markov", "{M}arkov"}, ¬
+						{"Kalman", "{K}alman"}, ¬
+						{"Pontryagin", "{P}ontryagin"}, ¬
+						{"Girsanov", "{G}irsanov"}, ¬
+						{"Skorokhod", "{S}korokhod"}, ¬
+						{"Ornstein", "{O}rnstein"}, ¬
+						{"Uhlenbeck", "{U}hlenbeck"}, ¬
+						{"Bellman", "{B}ellman"}, ¬
+						{"Hamilton", "{H}amilton"}, ¬
+						{"Jacobi", "{J}acobi"}, ¬
+						{"spde", "{SPDE}"}, ¬
+						{"sde", "{SDE}"}, ¬
+						{"pde", "{PDE}"}, ¬
+						{"lyapunov ", "{L}yapunov"}, ¬
+						{"lipschitz", "{L}ipschitz"}, ¬
+						{"banach", "{B}anach"} ¬
+							}
+
+					repeat with namePair in nameList
+						set searchName to item 1 of namePair
+						set replaceName to item 2 of namePair
+						if modifiedTitle contains searchName then
+							set oldDelims to AppleScript's text item delimiters
+							set AppleScript's text item delimiters to searchName
+							set titleParts to text items of modifiedTitle
+							set AppleScript's text item delimiters to replaceName
+							set modifiedTitle to titleParts as text
+							set AppleScript's text item delimiters to oldDelims
+						end if
+					end repeat
+
+					if modifiedTitle is not equal to titleValue then
+						set value of field "Title" of aPub to modifiedTitle
+					end if
+				end if
+			end try
+
+		on error
+			-- Skip any entries with issues silently and ensure no changes are made.
+		end try
+	end repeat
+
+end tell
+</pre></div></div>
+<div id="footer">
+<div id="footer-text">
+Page generated 2026-01-03 23:22:24 CST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
