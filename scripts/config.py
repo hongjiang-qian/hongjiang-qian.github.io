@@ -10,8 +10,7 @@ BERNOULLI_MEETINGS_URL = "https://www.bernoullisociety.org/meetings"
 IEEE_CSS_FINANCIAL_URL = "https://www.ieeecss.org/conferences/financially-sponsored-conferences"
 
 # SIAM meetings that are broad/flagship or especially relevant to applied mathematics,
-# stochastic systems, computation, dynamics, or control. These official event pages
-# are parsed directly, so dates/locations are refreshed automatically.
+# stochastic systems, computation, dynamics, or control.
 SIAM_MAJOR_EVENT_URLS = [
     "https://www.siam.org/conferences-events/siam-conferences/cse27/",
     "https://www.siam.org/conferences-events/siam-conferences/ds27/",
@@ -20,7 +19,7 @@ SIAM_MAJOR_EVENT_URLS = [
     "https://www.siam.org/conferences-events/siam-conferences/uq28/",
 ]
 
-# Current JMM official page. Add the next JMM page here when AMS publishes it.
+# Current JMM official page.
 AMS_MAJOR_EVENT_URLS = [
     "https://meetings.ams.org/math/jmm2027/cfs.cgi",
 ]
@@ -56,7 +55,7 @@ SCHOOL_TITLE_PATTERNS = [
 ]
 
 # Current JMM seed because the AMS proposal portal does not always print meeting
-# dates/location in machine-readable form. The official URL is still used.
+# dates/location in machine-readable form.
 CURATED_SEED_EVENTS = [
     {
         "title": "2027 Joint Mathematics Meetings (JMM 2027)",
@@ -70,3 +69,27 @@ CURATED_SEED_EVENTS = [
         "manual": False,
     },
 ]
+
+# ----------------------------------------------------------------------
+# Funding sources.
+# These constants are required by scripts/update_funding.py.
+# ----------------------------------------------------------------------
+
+SIMONS_TRAVEL_LANDING = (
+    "https://www.simonsfoundation.org/mathematics-physical-sciences/"
+    "travel-support-for-mathematicians/"
+)
+
+NSF_CAREER_URL = (
+    "https://www.nsf.gov/funding/opportunities/"
+    "career-faculty-early-career-development-program"
+)
+
+NSF_MATHSCI_URL = (
+    "https://www.nsf.gov/funding/opportunities/"
+    "mps-mathsci-mps-mathematical-sciences-research-programs"
+)
+
+SIMONS_TARGETED_MPS_URL = (
+    "https://www.simonsfoundation.org/funding/targeted-grants-in-mps/"
+)
