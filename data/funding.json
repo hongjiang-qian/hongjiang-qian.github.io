@@ -24,18 +24,6 @@
     "last_verified": "2026-11-18"
   },
   {
-    "id": "simons-targeted-mps",
-    "title": "Targeted Grants in MPS",
-    "sponsor": "Simons Foundation",
-    "kind": "Theoretical mathematics and physical sciences",
-    "url": "https://www.simonsfoundation.org/funding/targeted-grants-in-mps/",
-    "deadline_type": "rolling",
-    "deadline_date": null,
-    "deadline_display": "Rolling letter of intent; may be submitted at any time",
-    "status": "Open",
-    "last_verified": "2026-11-18"
-  },
-  {
     "id": "nsf-mathsci",
     "title": "MPS Mathematical Sciences Research Programs (MPS MathSci)",
     "sponsor": "U.S. National Science Foundation",
@@ -44,6 +32,18 @@
     "deadline_type": "anytime",
     "deadline_date": null,
     "deadline_display": "Proposals accepted anytime",
+    "status": "Open",
+    "last_verified": "2026-11-18"
+  },
+  {
+    "id": "simons-targeted-mps",
+    "title": "Targeted Grants in MPS",
+    "sponsor": "Simons Foundation",
+    "kind": "Theoretical mathematics and physical sciences",
+    "url": "https://www.simonsfoundation.org/funding/targeted-grants-in-mps/",
+    "deadline_type": "rolling",
+    "deadline_date": null,
+    "deadline_display": "Rolling letter of intent; may be submitted at any time",
     "status": "Open",
     "last_verified": "2026-11-18"
   }
