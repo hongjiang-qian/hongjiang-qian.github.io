@@ -1,104 +1,25 @@
 [
   {
-    "title": "Combinatorics and Discrete Probability",
-    "start_date": "2026-11-23",
-    "end_date": "2026-11-27",
-    "location": "Luminy, France",
-    "url": "https://conferences.cirm-math.fr/3920.html",
-    "categories": [
-      "Probability"
-    ],
-    "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
+    "title": "65th IEEE Conference on Decision and Control (CDC 2026)",
+    "start_date": "2026-12-15",
+    "end_date": "2026-12-18",
+    "location": "Honolulu, Hawaii, U.S.",
+    "organization": "IEEE Control Systems Society",
+    "url": "https://www.ieeecss.org/conferences/financially-sponsored-conferences",
+    "event_type": "conference",
+    "source": "IEEE CSS",
     "last_verified": "2026-11-18",
     "manual": false
   },
   {
-    "title": "Lectures on Probability and Stochastic Processes",
-    "start_date": "2026-11-30",
-    "end_date": "2026-12-05",
-    "location": "Kanpur, India",
-    "url": "https://sites.google.com/view/lps-2026/",
-    "categories": [
-      "Schools",
-      "Probability"
-    ],
-    "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
-    "title": "Evolving Random Structures and Interactions",
-    "start_date": "2026-12-06",
-    "end_date": "2026-12-11",
-    "location": "Banff, Canada",
-    "url": "https://www.birs.ca/events/2026/5-day-workshops/26w5652",
-    "categories": [
-      "Probability"
-    ],
-    "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
-    "title": "Probability and Stochastic Analysis Trimester: Workshop 2",
-    "start_date": "2026-12-07",
-    "end_date": "2026-12-11",
-    "location": "SISSA Trieste, Italy",
-    "url": "https://sites.google.com/view/probsissa/workshop-2",
-    "categories": [
-      "Stochastic Analysis",
-      "Probability"
-    ],
-    "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
-    "title": "Stochastic Analysis and Stochastic Partial Differential Equations",
-    "start_date": "2026-12-07",
-    "end_date": "2026-12-11",
-    "location": "TSIMF Sanya, China",
-    "url": "https://tsimf.tsinghua.edu.cn/info/1590/1882.htm",
-    "categories": [
-      "SPDE",
-      "Stochastic Analysis",
-      "Probability"
-    ],
-    "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
-    "title": "Workshop: Numerical Analysis of Stochastic Partial Differential Equations",
-    "start_date": "2026-12-07",
-    "end_date": "2026-12-08",
-    "location": "Oxford, UK 7 - 11 December 2026, Logarithmic CFT, Loop Models, and Random Geometry ( Website ), Luminy, France",
-    "url": "https://people.maths.ox.ac.uk/djurdjevac/naspde2026/",
-    "categories": [
-      "SPDE",
-      "Probability"
-    ],
-    "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
-    "title": "Modern Trends in Probability and Statistics: Conference in Honor of Debabrata Basu and Raghu Raj Bahadur",
-    "start_date": "2026-12-18",
-    "end_date": "2026-12-22",
-    "location": "Kolkata, India 19 - 22 December 2026, International Conference on Advances in Applied Probability and Stochastic Processes ( Website ), Malappuram, Kerala, India",
-    "url": "https://sites.google.com/view/mtps-2026/",
-    "categories": [
-      "Probability"
-    ],
-    "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
+    "title": "2027 Joint Mathematics Meetings (JMM 2027)",
+    "start_date": "2027-01-12",
+    "end_date": "2027-01-15",
+    "location": "Chicago, Illinois, U.S.",
+    "organization": "AMS",
+    "url": "https://meetings.ams.org/math/jmm2027/cfs.cgi",
+    "event_type": "conference",
+    "source": "AMS",
     "last_verified": "2026-11-18",
     "manual": false
   },
@@ -106,28 +27,59 @@
     "title": "LiBERA Winter School on Stochastic Interacting Systems",
     "start_date": "2027-01-04",
     "end_date": "2027-01-09",
-    "location": "Kilpisjärvi, Finland 11 - 15 January 2027, Random Walks and Random Graphs ( Website ), Luminy, France 13 - 15 January 2027, Probability in South America ( Website ), San Joaquín, Chile 18 - 22 January 2027, Differential Equations in Mathematical Biology: Analysis, Stochasticity, and Modelling ( Website ), Bonn, Germany 25 - 29 January 2027, Mean-field Control, Mean-field Games and Applications ( Website ), Folgarida, Italy 9 - 12 February 2027, Manchester Workshop on Stein's Method and Statistics ( Website ), Manchester, UK 15 - 26 February 2027, From Richardson’s Diffusion to Spontaneous Stochasticity: A Century of Chasing Unpredictability in Turbulent Dispersion ( Website ), Bengaluru, India 15 - 19 February 2027, Quantum Fields, Probability, and Geometry ( Website ), Mittag-Leffler Institute, Sweden 16 - 18 February 2027, Stochastic Dynamics and Particle Systems ( Website ), Rome, Italy 17 - 19 February 2027, 2nd Workshop on spectral geometry, PDEs and mathematical physics ( Website ), Hagen, Germany 17 - 19 February 2027, Heavy-tailed phenomena in random discrete geometries ( Website ), Koln, Germany 25 - 28 January 2027, 3rd Dolomites Winter School on Mean-field Control, Mean-field Games and Applications ( Website ), Paris, France 1 - 5 March 2027, Interactions in incidence geometry, Fourier analysis, and geometric measure theory ( Website ), Cambridge, UK 1 - 5 March 2027, Algebraic Statistics 2027 ( Website ), Magdeburg, Germany 8 - 12 March 2027, Joint Annual Meeting of GAMM ( Website ), Ulm, Germany 9 - 12 March 2027, 18th German Probability and Statistics Days ( Website ), Bielefeld, Germany 17 - 21 May 2027, Quantum Fields, Probability, and Geometry ( Website ), Mittag-Leffler Institute, Sweden 22 - 26 March 2027, Stochastic Processes and Related Fields: conference in honor of Takashi Kumagai ( Website ), Kyoto, Japan 7 - 9 April 2027, Eurandom Workshop on Probabilistic Graphical Models ( W ebsite ), Eindhoven, The Netherlands 19 - 23 April 2027, Introductory School: Convexity and Information Theory ( Website ), CIRM Luminy, France 19 - 23 April 2027, UK Easter Probability Meeting ( Website ), Warwick, UK 26 - 30 April 2027, Stochastic Optimal Transport ( Website ), Cambridge, U K 2 - 7 May 2027, Statistical Physics and Random Surfaces (Website to come), Oberwolfach, Germany 9 - 20 May 2027, Mathematical Statistical Physics School ( Website ), Les Houches, France 10 - 14 May 2027, Workshop 1: Convexity and Information Theory ( Website ), Paris, France 10 - 21 May 202 7, Spring School in Mathematical Statistical Physics ( Website ), Les Houches, France 7 - 11 June 2027, Optimal Transport: Applications and Statistical Modelling ( Website ), Cambridge, UK 13 - 18 June 2027, Random Matrix Theory, KPZ Universality, and Integrable Structures ( Website ), Hangzhou, China 14 - 18 June 2027, School: Asymptotic geometric analysis and functional inequalities ( Website ), Paris, France 21 - 25 June 2027, Young European Probabilists XXI: Dynamics of and on Graphs ( Website ), Eindhoven, The Netherlands 28 June- 2 July 2027, Dynamics, Equations and Applications ( Website ), Kraków, Poland 5 - 9 July 2027, Workshop 2: Asymptotic geometric analysis and functional inequalities ( Website ), Paris, France 5 - 9 July 2027, Extreme Value Analysis conference ( Website ) 2027, Montreal, Canada. 5 - 9 July 2027, Conference on Stochastic Processes and their Applications (Website to come), Melbourne, Australia 12 July - 6 August 2027, PIMS-CRM Summer School in Probability ( Website ), Montreal, Canada 12 - 15 July 2027, VIASM-IAMP Summer School 2027 on Probability and Mathematical Physics ( Website ), Hanoi, Vietnam 12 - 15 July 2027, INFORMS Applied Probability Society ( Website ), Durham, UK 12 - 16 July 2027, P@W Summer School - Large-scale Universal Properties of Random Systems ( Website ), Warwick, UK 23 - 28 July 2027, VIASM-IAMP Summer School 2027 on Probability and Mathematical Physics ( Website ), Hanoi, Vietnam 26 - 30 July 2027, Monte Carlo Methods and Applications ( Website ), Passau, Germany 20 - 24 September 2027, CIME summer school on Hamilton-Jacobi equations, games, and percolation ( Website ), Cetraro, Italy 24 - 28 July 2028, Bernoulli-IMS 12th World Congress in Probability and Statistics (Website to come), Singapore, Republic of Singapore",
-    "url": "https://math.aalto.fi/en/research/stochastics/events/SIS2027/",
-    "categories": [
-      "Schools",
-      "Probability"
-    ],
+    "location": "Kilpisjärvi, Finland",
+    "organization": "School",
+    "url": "https://www.appliedprobability.org/community/events",
+    "event_type": "school",
     "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
     "last_verified": "2026-11-18",
     "manual": false
   },
   {
-    "title": "Recent advances in stochastic processes: theory and applications",
-    "start_date": "2027-05-27",
-    "end_date": "2027-05-27",
-    "location": "Edinburgh, UK",
-    "url": "https://rss.org.uk/training-events/events/events-2026/local-groups/recent-advances-in-stochastic-processes-theory-and/#eventoverview",
-    "categories": [
-      "Probability"
-    ],
+    "title": "SIAM Conference on Computational Science and Engineering (CSE27)",
+    "start_date": "2027-02-22",
+    "end_date": "2027-02-26",
+    "location": "Pittsburgh, Pennsylvania, U.S.",
+    "organization": "SIAM",
+    "url": "https://www.siam.org/conferences-events/siam-conferences/cse27/",
+    "event_type": "conference",
+    "source": "SIAM",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Introductory School: Convexity and Information Theory",
+    "start_date": "2027-04-19",
+    "end_date": "2027-04-23",
+    "location": "CIRM Luminy, France",
+    "organization": "School",
+    "url": "https://www.appliedprobability.org/community/events",
+    "event_type": "school",
     "source": "Applied Probability Trust",
-    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "SIAM Conference on Applications of Dynamical Systems (DS27)",
+    "start_date": "2027-05-23",
+    "end_date": "2027-05-27",
+    "location": "Atlanta, Georgia, U.S.",
+    "organization": "SIAM",
+    "url": "https://www.siam.org/conferences-events/siam-conferences/ds27/",
+    "event_type": "conference",
+    "source": "SIAM",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "PIMS-CRM Summer School in Probability",
+    "start_date": "2027-07-12",
+    "end_date": "2027-08-06",
+    "location": "Montreal, Canada",
+    "organization": "School",
+    "url": "https://www.appliedprobability.org/community/events",
+    "event_type": "school",
+    "source": "Applied Probability Trust",
     "last_verified": "2026-11-18",
     "manual": false
   },
@@ -136,26 +88,82 @@
     "start_date": "2027-07-05",
     "end_date": "2027-07-09",
     "location": "Melbourne, Australia",
-    "url": "https://www.spa2027.org",
-    "categories": [
-      "Probability"
-    ],
+    "organization": "Bernoulli Society",
+    "url": "https://www.bernoullisociety.org/meetings",
+    "event_type": "conference",
     "source": "Bernoulli Society",
-    "source_url": "https://www.bernoullisociety.org/meetings",
     "last_verified": "2026-11-18",
     "manual": false
   },
   {
-    "title": "RobStat Symposium 2027: Reliable and Trustworthy Inference in Modern Data Environments, Indian Statistical Institute, Kolkata, India, 5-7 February 2027, conference website 46th Conference on Stochastic Processes and their Applications (SPA)",
-    "start_date": "2027-07-05",
+    "title": "2027 American Control Conference (ACC 2027)",
+    "start_date": "2027-07-07",
     "end_date": "2027-07-09",
-    "location": "Melbourne, Australia",
-    "url": "https://sites.google.com/view/robstat27",
-    "categories": [
-      "Probability"
-    ],
+    "location": "Philadelphia, Pennsylvania, U.S.",
+    "organization": "IEEE Control Systems Society",
+    "url": "https://www.ieeecss.org/conferences/financially-sponsored-conferences",
+    "event_type": "conference",
+    "source": "IEEE CSS",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "International Congress for Industrial and Applied Mathematics 2027 (ICIAM 2027)",
+    "start_date": "2027-07-12",
+    "end_date": "2027-07-16",
+    "location": "The Hague, The Netherlands",
+    "organization": "ICIAM / SIAM",
+    "url": "https://www.siam.org/conferences-events/siam-conferences/iciam27/",
+    "event_type": "conference",
+    "source": "SIAM",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "INFORMS Applied Probability Society Conference 2027",
+    "start_date": "2027-07-12",
+    "end_date": "2027-07-15",
+    "location": "Durham, UK",
+    "organization": "INFORMS APS",
+    "url": "https://www.appliedprobability.org/community/events",
+    "event_type": "conference",
+    "source": "Applied Probability Trust",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "SIAM Conference on Control and Its Applications (CT27)",
+    "start_date": "2027-08-02",
+    "end_date": "2027-08-04",
+    "location": "Arlington, Virginia, U.S.",
+    "organization": "SIAM",
+    "url": "https://www.siam.org/conferences-events/siam-conferences/ct27/",
+    "event_type": "conference",
+    "source": "SIAM",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "11th IEEE Conference on Control Technology and Applications (CCTA 2027)",
+    "start_date": "2027-08-22",
+    "end_date": "2027-08-25",
+    "location": "Hiroshima, Japan",
+    "organization": "IEEE Control Systems Society",
+    "url": "https://www.ieeecss.org/conferences/financially-sponsored-conferences",
+    "event_type": "conference",
+    "source": "IEEE CSS",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Bernoulli-IMS 12th World Congress in Probability and Statistics",
+    "start_date": "2028-07-24",
+    "end_date": "2028-07-28",
+    "location": "Singapore",
+    "organization": "Bernoulli Society / IMS",
+    "url": "https://www.bernoullisociety.org/meetings",
+    "event_type": "conference",
     "source": "Bernoulli Society",
-    "source_url": "https://www.bernoullisociety.org/meetings",
     "last_verified": "2026-11-18",
     "manual": false
   }
