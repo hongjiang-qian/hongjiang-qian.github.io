@@ -7,7 +7,130 @@
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <link href="jemdoc.css" rel="stylesheet" type="text/css"/>
 <title>Funding Opportunities</title>
-</head>
+<style id="academic-auto-page-style">
+.auto-page-note {
+    color: #666666;
+    font-style: italic;
+    margin-bottom: 1.0em;
+}
+
+.auto-tabs {
+    margin: 0.9em 0 1.2em 0;
+    border-bottom: 1px solid #c8c8c8;
+    padding-bottom: 0.45em;
+}
+
+.auto-tab {
+    font-family: inherit;
+    font-size: 95%;
+    color: #555555;
+    background: #eeeeee;
+    border: 1px solid #c5c5c5;
+    border-bottom-color: #b8b8b8;
+    padding: 0.32em 0.9em;
+    margin-right: 0.35em;
+    cursor: pointer;
+}
+
+.auto-tab:hover {
+    background: #e5e5e5;
+}
+
+.auto-tab.active {
+    color: #224b8d;
+    background: #e9eef5;
+    border-color: #9fb0c6;
+    font-weight: bold;
+}
+
+.auto-panel {
+    display: none;
+}
+
+.auto-panel.active {
+    display: block;
+}
+
+.auto-conf-list,
+.auto-fund-list {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.auto-conf-item {
+    display: grid;
+    grid-template-columns: 145px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: start;
+    margin: 0;
+    padding: 0.45em 0 0.65em 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.auto-conf-item:last-child {
+    border-bottom: none;
+}
+
+.auto-conf-date {
+    color: #666666;
+    white-space: nowrap;
+}
+
+.auto-conf-title {
+    line-height: 1.25;
+}
+
+.auto-conf-meta {
+    color: #777777;
+    font-size: 95%;
+    margin-top: 0.08em;
+    line-height: 1.3;
+}
+
+.auto-fund-item {
+    margin: 0 !important;
+    padding: 0.62em 0 0.78em 0 !important;
+    border-bottom: 1px solid #dddddd;
+}
+
+.auto-fund-item:last-child {
+    border-bottom: none;
+}
+
+.auto-fund-title {
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.auto-fund-meta {
+    color: #666666;
+    font-size: 95%;
+    margin-top: 0.12em;
+}
+
+.auto-fund-deadline {
+    margin-top: 0.12em;
+}
+
+.auto-verified {
+    color: #888888;
+    font-size: 88%;
+    font-style: italic;
+    margin-top: 0.08em;
+}
+
+@media screen and (max-width: 700px) {
+    .auto-conf-item {
+        grid-template-columns: 1fr;
+        row-gap: 0.05em;
+    }
+
+    .auto-tab {
+        margin-bottom: 0.35em;
+    }
+}
+</style></head>
 <body>
 <table id="tlayout" summary="Table for page layout.">
 <tr valign="top">
@@ -17,8 +140,8 @@
 <div class="menu-item"><a href="bio.html">Biography</a></div>
 <div class="menu-item"><a href="pub.html">Publications</a></div>
 <div class="menu-item"><a href="teach.html">Teaching</a></div>
-<div class="menu-item"><a href="act.html">Activities</a></div><div class="menu-item"><a href="conf.html">Conferences</a></div><div class="menu-item"><a class="current" href="fund.html">Funding</a></div>
-<div class="menu-category">Misc</div>
+<div class="menu-item"><a href="act.html">Activities</a></div>
+<div class="menu-category">Misc</div><div class="menu-item"><a href="conf.html">Conferences</a></div><div class="menu-item"><a class="current" href="fund.html">Funding</a></div>
 <div class="menu-item"><a href="blog.html">Blog</a></div>
 <div class="menu-item"><a href="link.html">Links</a></div>
 <div class="menu-item"><a href="gallery.html">Gallery</a></div>
@@ -26,34 +149,36 @@
 <div class="menu-item"><a href="misc.html">Misc</a></div>
 </td>
 <td id="layout-content"><div id="toptitle"><h1>Funding Opportunities</h1></div><p>A selected list of external research and travel funding opportunities relevant to mathematics and the mathematical sciences.</p>
-<p><i>Only external funding is listed. Exact deadlines are taken from official program pages.</i></p>
-<h2>Upcoming Deadlines</h2><ul>
-<li><p>
-<a href="https://www.simonsfoundation.org/funding/travel-support-for-mathematicians-2027/" target="_blank"><b>Travel Support for Mathematicians - 2027</b></a><br/>
-Simons Foundation · Research and travel support<br/>
-<b>Deadline:</b> January 27, 2027, 12:00 p.m. ET
-<br/><i>Last verified: 2026-11-18</i>
-</p></li>
-<li><p>
-<a href="https://www.nsf.gov/funding/opportunities/career-faculty-early-career-development-program" target="_blank"><b>Faculty Early Career Development Program (CAREER)</b></a><br/>
-U.S. National Science Foundation · Early-career research and education<br/>
-<b>Deadline:</b> July 28, 2027, 5:00 p.m. submitting organization's local time
-<br/><i>Last verified: 2026-11-18</i>
-</p></li>
+<p class="auto-page-note">Only external funding is listed. Deadlines are verified from official program pages.</p>
+<h2>Upcoming Deadlines</h2>
+<ul class="auto-fund-list">
+<li class="auto-fund-item">
+<div class="auto-fund-title"><a href="https://www.simonsfoundation.org/funding/travel-support-for-mathematicians-2027/" target="_blank">Travel Support for Mathematicians - 2027</a></div>
+<div class="auto-fund-meta">Simons Foundation · Research and travel support</div>
+<div class="auto-fund-deadline"><b>Deadline:</b> January 27, 2027, 12:00 p.m. ET</div>
+<div class="auto-verified">Last verified: 2026-11-18</div>
+</li>
+<li class="auto-fund-item">
+<div class="auto-fund-title"><a href="https://www.nsf.gov/funding/opportunities/career-faculty-early-career-development-program" target="_blank">Faculty Early Career Development Program (CAREER)</a></div>
+<div class="auto-fund-meta">U.S. National Science Foundation · Early-career research and education</div>
+<div class="auto-fund-deadline"><b>Deadline:</b> July 28, 2027, 5:00 p.m. submitting organization's local time</div>
+<div class="auto-verified">Last verified: 2026-11-18</div>
+</li>
 </ul>
-<h2>Rolling or No Fixed Deadline</h2><ul>
-<li><p>
-<a href="https://www.simonsfoundation.org/funding/targeted-grants-in-mps/" target="_blank"><b>Targeted Grants in MPS</b></a><br/>
-Simons Foundation · Theoretical mathematics and physical sciences<br/>
-<b>Deadline:</b> Rolling letter of intent; may be submitted at any time
-<br/><i>Last verified: 2026-11-18</i>
-</p></li>
-<li><p>
-<a href="https://www.nsf.gov/funding/opportunities/mps-mathsci-mps-mathematical-sciences-research-programs" target="_blank"><b>MPS Mathematical Sciences Research Programs (MPS MathSci)</b></a><br/>
-U.S. National Science Foundation · Mathematical sciences research<br/>
-<b>Deadline:</b> Proposals accepted anytime
-<br/><i>Last verified: 2026-11-18</i>
-</p></li>
+<h2>Rolling or No Fixed Deadline</h2>
+<ul class="auto-fund-list">
+<li class="auto-fund-item">
+<div class="auto-fund-title"><a href="https://www.simonsfoundation.org/funding/targeted-grants-in-mps/" target="_blank">Targeted Grants in MPS</a></div>
+<div class="auto-fund-meta">Simons Foundation · Theoretical mathematics and physical sciences</div>
+<div class="auto-fund-deadline"><b>Deadline:</b> Rolling letter of intent; may be submitted at any time</div>
+<div class="auto-verified">Last verified: 2026-11-18</div>
+</li>
+<li class="auto-fund-item">
+<div class="auto-fund-title"><a href="https://www.nsf.gov/funding/opportunities/mps-mathsci-mps-mathematical-sciences-research-programs" target="_blank">MPS Mathematical Sciences Research Programs (MPS MathSci)</a></div>
+<div class="auto-fund-meta">U.S. National Science Foundation · Mathematical sciences research</div>
+<div class="auto-fund-deadline"><b>Deadline:</b> Proposals accepted anytime</div>
+<div class="auto-verified">Last verified: 2026-11-18</div>
+</li>
 </ul>
 <div id="footer"><div id="footer-text">Funding sources last verified 2026-11-18.</div></div></td>
 </tr>
