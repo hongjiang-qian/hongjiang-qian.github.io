@@ -343,43 +343,119 @@ def parse_ieee_css():
 
 
 def parse_bernoulli():
+    """Parse only individual flagship-meeting list items from Bernoulli Society.
+
+    Do not scan parent <div>/<article> containers. The Bernoulli meetings page
+    has large parent containers containing introductory prose plus many events;
+    parsing those containers makes the first date absorb the whole page as one
+    conference title.
+    """
     html = fetch(BERNOULLI_MEETINGS_URL)
     soup = BeautifulSoup(html, "html.parser")
     events = []
 
-    for element in soup.find_all(["li", "p", "article", "div"]):
+    flagship_pattern = re.compile(
+        r"Stochastic Processes and their Applications|"
+        r"\bSPA\b|"
+        r"Bernoulli[- ]IMS.*World Congress|"
+        r"World Congress in Probability and Statistics|"
+        r"ISI World Statistics Congress|"
+        r"European Meeting of Statisticians",
+        re.I,
+    )
+
+    seen = set()
+
+    # Only independent list items are eligible event records.
+    for element in soup.find_all("li", recursive=True):
         text = clean_text(element.get_text(" ", strip=True))
-        if not text or not matches_any(text, MAJOR_TITLE_PATTERNS):
+
+        if not text or not flagship_pattern.search(text):
             continue
+
         parsed = parse_date_range(text)
         if not parsed:
             continue
+
         start, end, begin, _ = parsed
+
         if not active_through(end):
             continue
 
-        # Keep only Bernoulli/SPA/EMS/world-level meetings from this page.
-        if not re.search(
-            r"Stochastic Processes and their Applications|Bernoulli[- ]IMS|"
-            r"World Congress in Probability and Statistics|European Meeting of Statisticians",
-            text,
-            re.I,
+        # The event description precedes the date on the Bernoulli page.
+        prefix = text[:begin].strip(" ,.-")
+
+        # Reject an accidentally selected container-like list item.
+        if (
+            len(prefix) > 350
+            or prefix.lower().startswith("the bernoulli society organizes")
+            or "upcoming meetings" in prefix.lower()
         ):
             continue
 
-        prefix = text[:begin].strip(" ,.-")
-        title = prefix if prefix else text
-        title = re.sub(r"^\W+", "", title)
+        title = prefix
+        location = ""
 
-        link = element.find("a", href=True)
-        event_url = urljoin(BERNOULLI_MEETINGS_URL, link["href"]) if link else BERNOULLI_MEETINGS_URL
+        # Typical form:
+        # "46th Conference on Stochastic Processes and their Applications (SPA)
+        #  in Melbourne, Australia, July 5-9, 2027"
+        if " in " in prefix:
+            maybe_title, maybe_location = prefix.rsplit(" in ", 1)
+
+            # Only accept the split when the left side is still the flagship title.
+            if flagship_pattern.search(maybe_title):
+                title = maybe_title.strip(" ,.-")
+                location = maybe_location.strip(" ,.-")
+
+        title = re.sub(r"^\W+", "", title).strip()
+
+        if not flagship_pattern.search(title):
+            continue
+
+        # Prefer a conference/website link from the same list item.
+        event_url = BERNOULLI_MEETINGS_URL
+        website_link = None
+
+        for link in element.find_all("a", href=True):
+            label = clean_text(link.get_text(" ", strip=True)).lower()
+
+            if "website" in label or "conference" in label:
+                website_link = link
+                break
+
+        if website_link is None:
+            website_link = element.find("a", href=True)
+
+        if website_link is not None:
+            event_url = urljoin(
+                BERNOULLI_MEETINGS_URL,
+                website_link["href"],
+            )
+
+        upper_title = title.upper()
+
+        if "WORLD STATISTICS CONGRESS" in upper_title:
+            organization = "ISI"
+        elif "BERNOULLI" in upper_title and "WORLD CONGRESS" in upper_title:
+            organization = "Bernoulli Society / IMS"
+        elif "EUROPEAN MEETING OF STATISTICIANS" in upper_title:
+            organization = "Bernoulli Society"
+        else:
+            organization = "Bernoulli Society"
+
+        key = (normalize_title(title), start)
+
+        if key in seen:
+            continue
+
+        seen.add(key)
 
         events.append({
             "title": title,
             "start_date": start,
             "end_date": end,
-            "location": "",
-            "organization": "Bernoulli Society",
+            "location": location,
+            "organization": organization,
             "url": event_url,
             "event_type": "conference",
             "source": "Bernoulli Society",
@@ -388,6 +464,7 @@ def parse_bernoulli():
         })
 
     return events
+
 
 
 def seeded_events():
