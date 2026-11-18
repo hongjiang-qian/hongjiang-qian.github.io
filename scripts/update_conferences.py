@@ -1,198 +1,273 @@
 from __future__ import annotations
 
 import re
+from datetime import date
 from difflib import SequenceMatcher
 
 from bs4 import BeautifulSoup
 
 from common import (
-    DATA_DIR, MONTH_PATTERN, absolute_url, clean_text, fetch, iso_date,
-    is_future_or_current, load_json, month_number, normalize_title,
-    save_json, today_iso,
+    DATA_DIR, MONTH_PATTERN, absolute_url, active_through, clean_text, fetch,
+    load_json, month_number, normalize_title, save_json, today_iso,
 )
-from config import CONFERENCE_EXCLUDE_KEYWORDS, CONFERENCE_KEYWORDS, CONFERENCE_SOURCES
+from config import (
+    CONFERENCE_EXCLUDE_KEYWORDS, CONFERENCE_KEYWORDS, CONFERENCE_SOURCES,
+)
 
 DATA_FILE = DATA_DIR / "conferences.json"
 
+
 def relevant(title: str) -> bool:
-    t = title.lower()
-    if any(k in t for k in CONFERENCE_EXCLUDE_KEYWORDS):
+    text = title.lower()
+    if any(word in text for word in CONFERENCE_EXCLUDE_KEYWORDS):
         return False
-    return any(k in t for k in CONFERENCE_KEYWORDS)
+    return any(word in text for word in CONFERENCE_KEYWORDS)
+
 
 def classify(title: str) -> list[str]:
-    t = title.lower()
+    text = title.lower()
     categories = []
-    rules = [
+    mapping = [
         ("Schools", ["school", "lectures"]),
-        ("Stochastic Control", ["stochastic control", "optimal control", "mean-field control", "mean field control", "mean-field game", "mean field game"]),
+        ("Stochastic Control", [
+            "stochastic control", "optimal control", "mean-field control",
+            "mean field control", "mean-field game", "mean field game",
+        ]),
         ("SPDE", ["spde", "stochastic partial differential"]),
-        ("Filtering", ["filtering", "nonlinear filter"]),
+        ("Filtering", ["filtering"]),
         ("Large Deviations", ["large deviation", "moderate deviation", "rare event"]),
         ("Stochastic Analysis", ["stochastic analysis", "stochastic differential", "diffusion"]),
-        ("Probability", ["probability", "probabilistic", "random", "stochastic", "markov", "monte carlo", "interacting"]),
+        ("Probability", ["probability", "probabilistic", "random", "stochastic", "markov"]),
     ]
-    for category, words in rules:
-        if any(w in t for w in words):
+    for category, terms in mapping:
+        if any(term in text for term in terms):
             categories.append(category)
     return categories or ["Probability"]
 
-def parse_start_date_prefix(text: str):
+
+def parse_leading_date(text: str):
     text = clean_text(text)
-    m = re.match(rf"^(\d{{1,2}})\s*-\s*(\d{{1,2}})\s+({MONTH_PATTERN})\s+(20\d{{2}})\s*,\s*(.+)$", text, re.I)
-    if m:
-        d1, d2, mon, year, rest = m.groups()
-        mm = month_number(mon)
-        return iso_date(int(year), mm, int(d1)), iso_date(int(year), mm, int(d2)), rest
-    m = re.match(rf"^(\d{{1,2}})\s+({MONTH_PATTERN})\s*-\s*(\d{{1,2}})\s+({MONTH_PATTERN})\s+(20\d{{2}})\s*,\s*(.+)$", text, re.I)
-    if m:
-        d1, mon1, d2, mon2, year, rest = m.groups()
-        yy = int(year)
-        return iso_date(yy, month_number(mon1), int(d1)), iso_date(yy, month_number(mon2), int(d2)), rest
-    m = re.match(rf"^(\d{{1,2}})\s+({MONTH_PATTERN})\s+(20\d{{2}})\s*,\s*(.+)$", text, re.I)
-    if m:
-        d1, mon, year, rest = m.groups()
-        dd = iso_date(int(year), month_number(mon), int(d1))
-        return dd, dd, rest
+
+    # 23 - 27 November 2026, Event title...
+    match = re.match(
+        rf"^(\d{{1,2}})\s*-\s*(\d{{1,2}})\s+({MONTH_PATTERN})\s+(20\d{{2}})\s*,\s*(.+)$",
+        text, re.I,
+    )
+    if match:
+        d1, d2, mon, year, rest = match.groups()
+        m = month_number(mon)
+        return (
+            date(int(year), m, int(d1)).isoformat(),
+            date(int(year), m, int(d2)).isoformat(),
+            rest,
+        )
+
+    # 28 June - 2 July 2027, Event title...
+    match = re.match(
+        rf"^(\d{{1,2}})\s+({MONTH_PATTERN})\s*-\s*(\d{{1,2}})\s+({MONTH_PATTERN})\s+(20\d{{2}})\s*,\s*(.+)$",
+        text, re.I,
+    )
+    if match:
+        d1, mon1, d2, mon2, year, rest = match.groups()
+        year = int(year)
+        return (
+            date(year, month_number(mon1), int(d1)).isoformat(),
+            date(year, month_number(mon2), int(d2)).isoformat(),
+            rest,
+        )
+
+    # 27 May 2027, Event title...
+    match = re.match(
+        rf"^(\d{{1,2}})\s+({MONTH_PATTERN})\s+(20\d{{2}})\s*,\s*(.+)$",
+        text, re.I,
+    )
+    if match:
+        day, mon, year, rest = match.groups()
+        d = date(int(year), month_number(mon), int(day)).isoformat()
+        return d, d, rest
+
     return None
 
-def title_location_from_apt(rest: str):
+
+def split_apt_title_location(rest: str):
     rest = clean_text(rest)
     marker = re.search(r"\(\s*W\s*e\s*b\s*s\s*i\s*t\s*e[^)]*\)", rest, re.I)
     if marker:
-        return rest[:marker.start()].strip(" ,."), rest[marker.end():].strip(" ,.")
+        return (
+            rest[:marker.start()].strip(" ,."),
+            rest[marker.end():].strip(" ,."),
+        )
     return rest.strip(" ,."), ""
 
-def candidate_url(element, source_url: str) -> str:
-    for a in element.find_all("a", href=True):
-        label = clean_text(a.get_text(" ", strip=True)).lower()
-        if "website" in label or "conference" in label or "workshop" in label:
-            return absolute_url(source_url, a.get("href"))
-    for a in element.find_all("a", href=True):
-        href = a.get("href", "")
-        if href and not href.startswith("#"):
-            return absolute_url(source_url, href)
+
+def best_link(element, source_url: str) -> str:
+    links = element.find_all("a", href=True)
+    for link in links:
+        label = clean_text(link.get_text(" ", strip=True)).lower()
+        if "website" in label:
+            return absolute_url(source_url, link["href"])
+    for link in links:
+        return absolute_url(source_url, link["href"])
     return source_url
 
-def parse_apt(raw_html: str, source: dict) -> list[dict]:
-    soup = BeautifulSoup(raw_html, "html.parser")
-    events, seen = [], set()
+
+def parse_apt(html: str, source: dict) -> list[dict]:
+    soup = BeautifulSoup(html, "html.parser")
+    events = []
+    seen = set()
+
     for element in soup.find_all(["li", "p"]):
         text = clean_text(element.get_text(" ", strip=True))
         if not text or text in seen:
             continue
         seen.add(text)
-        parsed = parse_start_date_prefix(text)
+        parsed = parse_leading_date(text)
         if not parsed:
             continue
         start, end, rest = parsed
-        title, location = title_location_from_apt(rest)
-        if not relevant(title) or not is_future_or_current(end):
+        title, location = split_apt_title_location(rest)
+        if not relevant(title) or not active_through(end):
             continue
         events.append({
-            "title": title, "start_date": start, "end_date": end, "location": location,
-            "url": candidate_url(element, source["url"]), "categories": classify(title),
-            "source": source["name"], "source_url": source["url"],
-            "last_verified": today_iso(), "manual": False,
+            "title": title,
+            "start_date": start,
+            "end_date": end,
+            "location": location,
+            "url": best_link(element, source["url"]),
+            "categories": classify(title),
+            "source": source["name"],
+            "source_url": source["url"],
+            "last_verified": today_iso(),
+            "manual": False,
         })
-    if not events:
-        for line in soup.get_text("\n").splitlines():
-            text = clean_text(line)
-            parsed = parse_start_date_prefix(text) if text else None
-            if not parsed:
-                continue
-            start, end, rest = parsed
-            title, location = title_location_from_apt(rest)
-            if relevant(title) and is_future_or_current(end):
-                events.append({
-                    "title": title, "start_date": start, "end_date": end, "location": location,
-                    "url": source["url"], "categories": classify(title), "source": source["name"],
-                    "source_url": source["url"], "last_verified": today_iso(), "manual": False,
-                })
     return events
 
+
 def parse_date_anywhere(text: str):
-    m = re.search(rf"({MONTH_PATTERN})\s+(\d{{1,2}})\s*-\s*(\d{{1,2}})\s*,?\s*(20\d{{2}})", text, re.I)
-    if m:
-        mon, d1, d2, year = m.groups()
-        mm = month_number(mon)
-        return iso_date(int(year), mm, int(d1)), iso_date(int(year), mm, int(d2)), m.start()
-    m = re.search(rf"(\d{{1,2}})\s*-\s*(\d{{1,2}})\s+({MONTH_PATTERN})\s*,?\s*(20\d{{2}})", text, re.I)
-    if m:
-        d1, d2, mon, year = m.groups()
-        mm = month_number(mon)
-        return iso_date(int(year), mm, int(d1)), iso_date(int(year), mm, int(d2)), m.start()
+    # July 5-9, 2027
+    match = re.search(
+        rf"({MONTH_PATTERN})\s+(\d{{1,2}})\s*-\s*(\d{{1,2}})\s*,?\s*(20\d{{2}})",
+        text, re.I,
+    )
+    if match:
+        mon, d1, d2, year = match.groups()
+        m = month_number(mon)
+        return (
+            date(int(year), m, int(d1)).isoformat(),
+            date(int(year), m, int(d2)).isoformat(),
+            match.start(), match.end(),
+        )
+
+    # 5-9 July 2027
+    match = re.search(
+        rf"(\d{{1,2}})\s*-\s*(\d{{1,2}})\s+({MONTH_PATTERN})\s*,?\s*(20\d{{2}})",
+        text, re.I,
+    )
+    if match:
+        d1, d2, mon, year = match.groups()
+        m = month_number(mon)
+        return (
+            date(int(year), m, int(d1)).isoformat(),
+            date(int(year), m, int(d2)).isoformat(),
+            match.start(), match.end(),
+        )
     return None
 
-def parse_bernoulli(raw_html: str, source: dict) -> list[dict]:
-    soup = BeautifulSoup(raw_html, "html.parser")
+
+def parse_bernoulli(html: str, source: dict) -> list[dict]:
+    soup = BeautifulSoup(html, "html.parser")
     events = []
-    for element in soup.find_all("li"):
+
+    for element in soup.find_all(["li", "p"]):
         text = clean_text(element.get_text(" ", strip=True))
         parsed = parse_date_anywhere(text)
         if not parsed:
             continue
-        start, end, pos = parsed
-        prefix = text[:pos].strip(" ,.")
-        title, location = prefix, ""
+        start, end, begin, finish = parsed
+        prefix = text[:begin].strip(" ,.")
+        title = prefix
+        location = ""
         if " in " in prefix:
             title, location = prefix.rsplit(" in ", 1)
-            title, location = title.strip(" ,."), location.strip(" ,.")
-        if not relevant(title) or not is_future_or_current(end):
+            title = title.strip(" ,.")
+            location = location.strip(" ,.")
+        if not relevant(title) or not active_through(end):
             continue
         events.append({
-            "title": title, "start_date": start, "end_date": end, "location": location,
-            "url": candidate_url(element, source["url"]), "categories": classify(title),
-            "source": source["name"], "source_url": source["url"],
-            "last_verified": today_iso(), "manual": False,
+            "title": title,
+            "start_date": start,
+            "end_date": end,
+            "location": location,
+            "url": best_link(element, source["url"]),
+            "categories": classify(title),
+            "source": source["name"],
+            "source_url": source["url"],
+            "last_verified": today_iso(),
+            "manual": False,
         })
     return events
 
+
 PARSERS = {"apt": parse_apt, "bernoulli": parse_bernoulli}
 
-def same_event(a: dict, b: dict) -> bool:
+
+def duplicate(a: dict, b: dict) -> bool:
     if a.get("start_date") != b.get("start_date"):
         return False
-    ta, tb = normalize_title(a.get("title", "")), normalize_title(b.get("title", ""))
-    return ta == tb or SequenceMatcher(None, ta, tb).ratio() >= 0.84
+    x = normalize_title(a.get("title", ""))
+    y = normalize_title(b.get("title", ""))
+    return x == y or SequenceMatcher(None, x, y).ratio() >= 0.84
+
 
 def deduplicate(events: list[dict]) -> list[dict]:
-    result = []
+    output = []
     for event in sorted(events, key=lambda x: (x.get("start_date", ""), x.get("title", ""))):
-        idx = next((i for i, old in enumerate(result) if same_event(old, event)), None)
-        if idx is None:
-            result.append(event)
+        found = None
+        for i, old in enumerate(output):
+            if duplicate(old, event):
+                found = i
+                break
+        if found is None:
+            output.append(event)
         else:
-            old = result[idx]
+            old = output[found]
+            old["categories"] = sorted(set(old.get("categories", []) + event.get("categories", [])))
             if event.get("url") and event.get("url") != event.get("source_url"):
                 old["url"] = event["url"]
-            old["categories"] = sorted(set(old.get("categories", []) + event.get("categories", [])))
-            old["last_verified"] = max(old.get("last_verified", ""), event.get("last_verified", ""))
-    return result
+    return output
 
-def main() -> None:
+
+def main():
     old = load_json(DATA_FILE, [])
-    manual = [x for x in old if x.get("manual") and is_future_or_current(x.get("end_date"))]
-    refreshed, failed_sources = [], set()
+    manual = [x for x in old if x.get("manual") and active_through(x.get("end_date"))]
+    refreshed = []
+    failed = set()
+
     for source in CONFERENCE_SOURCES:
         try:
-            events = PARSERS[source["parser"]](fetch(source["url"]), source)
-            if not events:
-                raise RuntimeError("No events parsed; preserving previous data for this source.")
-            refreshed.extend(events)
-            print(f"{source['name']}: {len(events)} events")
+            html = fetch(source["url"])
+            items = PARSERS[source["parser"]](html, source)
+            if not items:
+                raise RuntimeError("No events parsed.")
+            refreshed.extend(items)
+            print(f"{source['name']}: {len(items)} events")
         except Exception as exc:
-            print(f"WARNING: {source['name']} update failed: {exc}")
-            failed_sources.add(source["name"])
+            print(f"WARNING: {source['name']} failed: {exc}")
+            failed.add(source["name"])
+
     preserved = [
-        x for x in old if x.get("source") in failed_sources and not x.get("manual")
-        and is_future_or_current(x.get("end_date"))
+        x for x in old
+        if x.get("source") in failed
+        and not x.get("manual")
+        and active_through(x.get("end_date"))
     ]
-    combined = deduplicate(manual + refreshed + preserved)
-    combined = [x for x in combined if is_future_or_current(x.get("end_date"))]
-    combined.sort(key=lambda x: (x.get("start_date", "9999-12-31"), x.get("title", "")))
-    save_json(DATA_FILE, combined)
-    print(f"Saved {len(combined)} upcoming conferences.")
+
+    final = deduplicate(manual + refreshed + preserved)
+    final = [x for x in final if active_through(x.get("end_date"))]
+    final.sort(key=lambda x: (x.get("start_date", "9999-12-31"), x.get("title", "")))
+    save_json(DATA_FILE, final)
+    print(f"Saved {len(final)} upcoming conferences.")
+
 
 if __name__ == "__main__":
     main()

@@ -1,88 +1,41 @@
 from __future__ import annotations
 
-import html
-import re
 from collections import defaultdict
 from datetime import date
+from pathlib import Path
 
-from common import DATA_DIR, ROOT, date_display, load_json
-from config import (
-    CONFERENCE_HTML, CONFERENCE_JEMDOC, CONFERENCE_PAGE_INTRO, CONFERENCE_PAGE_TITLE,
-    FUNDING_HTML, FUNDING_JEMDOC, FUNDING_PAGE_INTRO, FUNDING_PAGE_TITLE,
-)
+from bs4 import BeautifulSoup
 
-CONF_START = "# AUTO-GENERATED-CONFERENCES-START"
-CONF_END = "# AUTO-GENERATED-CONFERENCES-END"
-FUND_START = "# AUTO-GENERATED-FUNDING-START"
-FUND_END = "# AUTO-GENERATED-FUNDING-END"
-MENU_PATH = ROOT / "MENU"
+from common import DATA_DIR, ROOT, event_date_display, load_json
+from config import CONF_HTML, FUND_HTML, TEMPLATE_HTML
 
-def escape_jemdoc(text: str) -> str:
-    return text.replace("[", r"\[").replace("]", r"\]")
 
-def ensure_menu_entries() -> None:
-    if MENU_PATH.exists():
-        lines = MENU_PATH.read_text(encoding="utf-8").splitlines()
-    else:
-        lines = [
-            "Menu", "Home [index.html]", "Biography [bio.html]", "Research [research.html]",
-            "Publications [pub.html]", "Teaching [teach.html]", "Prof Activities [act.html]",
-            "Misc", "Links [link.html]",
-        ]
-    targets = set()
-    for line in lines:
-        m = re.search(r"\[([^\]]+)\]", line)
-        if m:
-            targets.add(m.group(1))
-    additions = []
-    if CONFERENCE_HTML not in targets:
-        additions.append(f"Conferences [{CONFERENCE_HTML}]")
-    if FUNDING_HTML not in targets:
-        additions.append(f"Funding [{FUNDING_HTML}]")
-    if additions:
-        try:
-            idx = lines.index("Misc")
-        except ValueError:
-            idx = len(lines)
-        lines[idx:idx] = additions
-        MENU_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-def patch_or_create_jemdoc(path, title: str, intro: str, start: str, end: str, block: str) -> None:
-    if path.exists():
-        original = path.read_text(encoding="utf-8")
-    else:
-        original = f"# jemdoc: menu{{MENU}}{{{path.with_suffix('.html').name}}}\n\n= {title}\n\n{intro}\n"
-    replacement = f"{start}\n{block.rstrip()}\n{end}"
-    pattern = re.compile(re.escape(start) + r".*?" + re.escape(end), re.S)
-    result = pattern.sub(replacement, original) if pattern.search(original) else original.rstrip() + "\n\n" + replacement + "\n"
-    path.write_text(result, encoding="utf-8")
-
-def current_conferences():
-    items = load_json(DATA_DIR / "conferences.json", [])
+def visible_conferences():
     today = date.today()
-    out = []
-    for item in items:
+    output = []
+    for item in load_json(DATA_DIR / "conferences.json", []):
         try:
             end = date.fromisoformat(item.get("end_date") or item["start_date"])
         except Exception:
             continue
         if end >= today:
-            out.append(item)
-    return sorted(out, key=lambda x: (x["start_date"], x.get("title", "")))
+            output.append(item)
+    return sorted(output, key=lambda x: (x["start_date"], x.get("title", "")))
 
-def current_funding():
-    items = load_json(DATA_DIR / "funding.json", [])
+
+def visible_funding():
     today = date.today()
-    out = []
-    for item in items:
+    output = []
+    for item in load_json(DATA_DIR / "funding.json", []):
         if item.get("deadline_type") == "date" and item.get("deadline_date"):
             try:
                 if date.fromisoformat(item["deadline_date"]) < today:
                     continue
             except ValueError:
                 pass
-        out.append(item)
-    def key(item):
+        output.append(item)
+
+    def sort_key(item):
         if item.get("deadline_type") == "date" and item.get("deadline_date"):
             return (0, item["deadline_date"], item.get("title", ""))
         if item.get("deadline_type") == "rolling":
@@ -90,163 +43,252 @@ def current_funding():
         if item.get("deadline_type") == "anytime":
             return (2, "9999-01-02", item.get("title", ""))
         return (3, "9999-12-31", item.get("title", ""))
-    return sorted(out, key=key)
 
-def conference_jemdoc_block(items) -> str:
-    if not items:
-        return "No upcoming events are currently listed."
-    grouped = defaultdict(lambda: defaultdict(list))
-    for item in items:
-        d = date.fromisoformat(item["start_date"])
-        grouped[d.year][d.month].append(item)
-    month_names = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    lines = []
-    for year in sorted(grouped):
-        lines += [f"== {year}", ""]
-        for month in sorted(grouped[year]):
-            lines += [f"=== {month_names[month]}", ""]
-            for item in grouped[year][month]:
-                title = escape_jemdoc(item.get("title", "Untitled event"))
-                url = item.get("url") or item.get("source_url") or "#"
-                location = escape_jemdoc(item.get("location", ""))
-                dates = date_display(item["start_date"], item.get("end_date"))
-                lines.append(f"- *{dates}* \\")
-                lines.append(f"  [{url} {title}]")
-                if location:
-                    lines[-1] += r" \\" 
-                    lines.append(f"  {location}")
-                lines.append("")
-    return "\n".join(lines)
+    return sorted(output, key=sort_key)
 
-def funding_jemdoc_block(items) -> str:
-    if not items:
-        return "No currently open opportunities are listed."
-    lines = ["== Open and Upcoming", ""]
-    for item in items:
-        title = escape_jemdoc(item.get("title", "Funding opportunity"))
-        sponsor = escape_jemdoc(item.get("sponsor", ""))
-        kind = escape_jemdoc(item.get("kind", ""))
-        deadline = escape_jemdoc(item.get("deadline_display", "TBA"))
-        url = item.get("url", "#")
-        verified = item.get("last_verified")
-        lines.append(f"- [{url} {title}] \\")
-        if sponsor or kind:
-            lines.append(f"  {' · '.join(x for x in [sponsor, kind] if x)} \\")
-        lines.append(f"  *Deadline:* {deadline}")
-        if verified:
-            lines[-1] += r" \\" 
-            lines.append(f"  /Last verified: {verified}/")
-        lines.append("")
-    return "\n".join(lines)
 
-def parse_menu():
-    if not MENU_PATH.exists():
-        return []
-    out = []
-    for raw in MENU_PATH.read_text(encoding="utf-8").splitlines():
-        line = raw.strip()
-        if not line:
-            continue
-        m = re.match(r"(.+?)\s*\[([^\]]+)\]\s*$", line)
-        out.append(("item", m.group(1).strip(), m.group(2).strip()) if m else ("category", line, None))
-    return out
-
-def menu_html(current: str) -> str:
-    chunks = []
-    for kind, label, target in parse_menu():
-        if kind == "category":
-            chunks.append(f'<div class="menu-category">{html.escape(label)}</div>')
-        else:
-            css = ' class="current"' if target == current else ""
-            chunks.append(f'<div class="menu-item"><a href="{html.escape(target)}"{css}>{html.escape(label)}</a></div>')
-    return "\n".join(chunks)
-
-def page_shell(title: str, current_html: str, body: str, verified_dates) -> str:
-    dates = [x for x in verified_dates if x]
-    last_verified = max(dates) if dates else date.today().isoformat()
-    return '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+def fallback_template() -> BeautifulSoup:
+    return BeautifulSoup(
+        """<!DOCTYPE html>
+<html>
 <head>
-<meta name="generator" content="automatic academic opportunities updater" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>{title}</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="jemdoc.css" type="text/css">
+<title>Academic page</title>
 </head>
 <body>
-<table summary="Table for page layout." id="tlayout">
+<table id="tlayout" summary="Table for page layout.">
 <tr valign="top">
 <td id="layout-menu">
-{menu}
+<div class="menu-category">Menu</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="bio.html">Biography</a></div>
+<div class="menu-item"><a href="pub.html">Publications</a></div>
+<div class="menu-item"><a href="teach.html">Teaching</a></div>
+<div class="menu-item"><a href="act.html">Activities</a></div>
+<div class="menu-category">Misc</div>
 </td>
-<td id="layout-content">
-<div id="toptitle"><h1>{title}</h1></div>
-{body}
-<div id="footer"><div id="footer-text">
-Information automatically updated from public source pages. Last verified {verified}.
-</div></div>
-</td>
+<td id="layout-content"></td>
 </tr>
 </table>
 </body>
-</html>
-'''.format(title=html.escape(title), menu=menu_html(current_html), body=body, verified=html.escape(last_verified))
+</html>""",
+        "html.parser",
+    )
 
-def conference_html_body(items) -> str:
-    chunks = [f"<p>{html.escape(CONFERENCE_PAGE_INTRO)}</p>", "<p><i>This page is updated automatically.</i></p>"]
+
+def load_template() -> BeautifulSoup:
+    path = ROOT / TEMPLATE_HTML
+    if path.exists():
+        return BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+    return fallback_template()
+
+
+def ensure_extra_menu_links(soup: BeautifulSoup):
+    menu = soup.find(id="layout-menu")
+    if menu is None:
+        return
+
+    existing = {a.get("href") for a in menu.find_all("a", href=True)}
+    anchor_div = None
+
+    for a in menu.find_all("a", href=True):
+        text = a.get_text(" ", strip=True).lower()
+        href = (a.get("href") or "").lower()
+        if text == "activities" or href in {"act.html", "activities.html"}:
+            anchor_div = a.find_parent("div", class_="menu-item")
+            break
+
+    if anchor_div is None:
+        misc = None
+        for div in menu.find_all("div", class_="menu-category"):
+            if div.get_text(" ", strip=True).lower() == "misc":
+                misc = div
+                break
+        anchor_div = misc
+
+    def make_item(label, href):
+        div = soup.new_tag("div")
+        div["class"] = "menu-item"
+        a = soup.new_tag("a", href=href)
+        a.string = label
+        div.append(a)
+        return div
+
+    current_anchor = anchor_div
+    if CONF_HTML not in existing:
+        item = make_item("Conferences", CONF_HTML)
+        if current_anchor:
+            current_anchor.insert_after(item)
+        else:
+            menu.append(item)
+        current_anchor = item
+
+    if FUND_HTML not in existing:
+        item = make_item("Funding", FUND_HTML)
+        if current_anchor:
+            current_anchor.insert_after(item)
+        else:
+            menu.append(item)
+
+
+def mark_current(soup: BeautifulSoup, href: str):
+    menu = soup.find(id="layout-menu")
+    if not menu:
+        return
+    for a in menu.find_all("a"):
+        classes = [c for c in a.get("class", []) if c != "current"]
+        if classes:
+            a["class"] = classes
+        elif a.has_attr("class"):
+            del a["class"]
+        if a.get("href") == href:
+            a["class"] = a.get("class", []) + ["current"]
+
+
+def replace_content(soup: BeautifulSoup, title: str, body_html: str, current_href: str):
+    ensure_extra_menu_links(soup)
+    mark_current(soup, current_href)
+
+    if soup.title:
+        soup.title.string = title
+
+    content = soup.find(id="layout-content")
+    if content is None:
+        raise RuntimeError("Template does not contain #layout-content.")
+
+    content.clear()
+    fragment = BeautifulSoup(
+        f'<div id="toptitle"><h1>{title}</h1></div>{body_html}',
+        "html.parser",
+    )
+    for child in list(fragment.contents):
+        content.append(child)
+
+
+def conference_body(items) -> str:
+    pieces = [
+        "<p>A selected list of upcoming conferences, workshops, and schools in "
+        "probability, stochastic analysis, stochastic control, SPDEs, and related areas.</p>",
+        "<p><i>This page is updated automatically.</i></p>",
+    ]
+
+    if not items:
+        pieces.append("<p>No upcoming events are currently listed.</p>")
+        return "\n".join(pieces)
+
     grouped = defaultdict(lambda: defaultdict(list))
     for item in items:
         d = date.fromisoformat(item["start_date"])
         grouped[d.year][d.month].append(item)
+
     for year in sorted(grouped):
-        chunks.append(f"<h2>{year}</h2>")
+        pieces.append(f"<h2>{year}</h2>")
         for month in sorted(grouped[year]):
-            chunks.append(f"<h3>{date(2000, month, 1).strftime('%B')}</h3>")
-            chunks.append("<ul>")
+            month_name = date(2000, month, 1).strftime("%B")
+            pieces.append(f"<h3>{month_name}</h3>")
+            pieces.append("<ul>")
             for item in grouped[year][month]:
-                title = html.escape(item.get("title", "Untitled event"))
-                url = html.escape(item.get("url") or item.get("source_url") or "#", quote=True)
-                location = html.escape(item.get("location", ""))
-                dates = html.escape(date_display(item["start_date"], item.get("end_date")))
-                text = f'<li><p><b>{dates}</b><br /><a href="{url}" target="_blank">{title}</a>'
+                dates = event_date_display(item["start_date"], item.get("end_date"))
+                url = item.get("url") or item.get("source_url") or "#"
+                title = item.get("title", "Untitled event")
+                location = item.get("location", "")
+                pieces.append("<li><p>")
+                pieces.append(f"<b>{dates}</b><br />")
+                pieces.append(f'<a href="{url}" target="_blank">{title}</a>')
                 if location:
-                    text += f"<br />{location}"
-                chunks.append(text + "</p></li>")
-            chunks.append("</ul>")
-    return "\n".join(chunks)
+                    pieces.append(f"<br />{location}")
+                pieces.append("</p></li>")
+            pieces.append("</ul>")
 
-def funding_html_body(items) -> str:
-    chunks = [
-        f"<p>{html.escape(FUNDING_PAGE_INTRO)}</p>",
-        "<p><i>Only external funding is listed. Deadlines are taken from official program pages.</i></p>",
-        "<h2>Open and Upcoming</h2>", "<ul>",
+    verified = [x.get("last_verified") for x in items if x.get("last_verified")]
+    if verified:
+        pieces.append(
+            f'<div id="footer"><div id="footer-text">'
+            f'Conference sources last verified {max(verified)}.'
+            f'</div></div>'
+        )
+    return "\n".join(pieces)
+
+
+def funding_body(items) -> str:
+    dated = [x for x in items if x.get("deadline_type") == "date"]
+    flexible = [x for x in items if x.get("deadline_type") != "date"]
+
+    pieces = [
+        "<p>A selected list of external research and travel funding opportunities "
+        "relevant to mathematics and the mathematical sciences.</p>",
+        "<p><i>Only external funding is listed. Exact deadlines are taken from "
+        "official program pages.</i></p>",
     ]
-    for item in items:
-        title = html.escape(item.get("title", "Funding opportunity"))
-        url = html.escape(item.get("url", "#"), quote=True)
-        sponsor = html.escape(item.get("sponsor", ""))
-        kind = html.escape(item.get("kind", ""))
-        deadline = html.escape(item.get("deadline_display", "TBA"))
-        verified = html.escape(item.get("last_verified") or "")
-        text = f'<li><p><a href="{url}" target="_blank"><b>{title}</b></a><br />'
-        meta = " &middot; ".join(x for x in [sponsor, kind] if x)
-        if meta:
-            text += meta + "<br />"
-        text += f"<b>Deadline:</b> {deadline}"
-        if verified:
-            text += f"<br /><i>Last verified: {verified}</i>"
-        chunks.append(text + "</p></li>")
-    chunks.append("</ul>")
-    return "\n".join(chunks)
 
-def main() -> None:
-    ensure_menu_entries()
-    conferences, funding = current_conferences(), current_funding()
-    patch_or_create_jemdoc(ROOT / CONFERENCE_JEMDOC, CONFERENCE_PAGE_TITLE, CONFERENCE_PAGE_INTRO, CONF_START, CONF_END, conference_jemdoc_block(conferences))
-    patch_or_create_jemdoc(ROOT / FUNDING_JEMDOC, FUNDING_PAGE_TITLE, FUNDING_PAGE_INTRO, FUND_START, FUND_END, funding_jemdoc_block(funding))
-    (ROOT / CONFERENCE_HTML).write_text(page_shell(CONFERENCE_PAGE_TITLE, CONFERENCE_HTML, conference_html_body(conferences), [x.get("last_verified") for x in conferences]), encoding="utf-8")
-    (ROOT / FUNDING_HTML).write_text(page_shell(FUNDING_PAGE_TITLE, FUNDING_HTML, funding_html_body(funding), [x.get("last_verified") for x in funding]), encoding="utf-8")
-    print("Generated conferences.jemdoc/conferences.html and funding.jemdoc/funding.html")
+    if dated:
+        pieces.append("<h2>Upcoming Deadlines</h2><ul>")
+        for item in dated:
+            pieces.append("<li><p>")
+            pieces.append(
+                f'<a href="{item.get("url", "#")}" target="_blank">'
+                f'<b>{item.get("title", "Funding opportunity")}</b></a><br />'
+            )
+            meta = " &middot; ".join(
+                x for x in [item.get("sponsor", ""), item.get("kind", "")] if x
+            )
+            if meta:
+                pieces.append(meta + "<br />")
+            pieces.append(f'<b>Deadline:</b> {item.get("deadline_display", "TBA")}')
+            if item.get("last_verified"):
+                pieces.append(f'<br /><i>Last verified: {item["last_verified"]}</i>')
+            pieces.append("</p></li>")
+        pieces.append("</ul>")
+
+    if flexible:
+        pieces.append("<h2>Rolling or No Fixed Deadline</h2><ul>")
+        for item in flexible:
+            pieces.append("<li><p>")
+            pieces.append(
+                f'<a href="{item.get("url", "#")}" target="_blank">'
+                f'<b>{item.get("title", "Funding opportunity")}</b></a><br />'
+            )
+            meta = " &middot; ".join(
+                x for x in [item.get("sponsor", ""), item.get("kind", "")] if x
+            )
+            if meta:
+                pieces.append(meta + "<br />")
+            pieces.append(f'<b>Deadline:</b> {item.get("deadline_display", "TBA")}')
+            if item.get("last_verified"):
+                pieces.append(f'<br /><i>Last verified: {item["last_verified"]}</i>')
+            pieces.append("</p></li>")
+        pieces.append("</ul>")
+
+    if not items:
+        pieces.append("<p>No currently open opportunities are listed.</p>")
+
+    verified = [x.get("last_verified") for x in items if x.get("last_verified")]
+    if verified:
+        pieces.append(
+            f'<div id="footer"><div id="footer-text">'
+            f'Funding sources last verified {max(verified)}.'
+            f'</div></div>'
+        )
+    return "\n".join(pieces)
+
+
+def write_page(filename: str, title: str, body_html: str):
+    soup = load_template()
+    replace_content(soup, title, body_html, filename)
+    (ROOT / filename).write_text(str(soup), encoding="utf-8")
+
+
+def main():
+    conferences = visible_conferences()
+    funding = visible_funding()
+
+    write_page(CONF_HTML, "Conferences and Schools", conference_body(conferences))
+    write_page(FUND_HTML, "Funding Opportunities", funding_body(funding))
+
+    print(f"Generated {CONF_HTML} ({len(conferences)} events)")
+    print(f"Generated {FUND_HTML} ({len(funding)} opportunities)")
+
 
 if __name__ == "__main__":
     main()
