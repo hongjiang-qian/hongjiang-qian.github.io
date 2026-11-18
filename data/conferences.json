@@ -48,10 +48,10 @@
     "manual": false
   },
   {
-    "title": "46th Conference on Stochastic Processes and their Applications (SPA) in Melbourne, Australia",
+    "title": "46th Conference on Stochastic Processes and their Applications (SPA)",
     "start_date": "2027-07-05",
     "end_date": "2027-07-09",
-    "location": "",
+    "location": "Melbourne, Australia",
     "organization": "Bernoulli Society",
     "url": "https://www.spa2027.org",
     "event_type": "conference",
@@ -60,24 +60,12 @@
     "manual": false
   },
   {
-    "title": "RobStat Symposium 2027: Reliable and Trustworthy Inference in Modern Data Environments, Indian Statistical Institute, Kolkata, India, 5-7 February 2027, conference website 46th Conference on Stochastic Processes and their Applications (SPA) in Melbourne, Australia",
+    "title": "RobStat Symposium 2027: Reliable and Trustworthy Inference in Modern Data Environments, Indian Statistical Institute, Kolkata, India, 5-7 February 2027, conference website 46th Conference on Stochastic Processes and their Applications (SPA)",
     "start_date": "2027-07-05",
     "end_date": "2027-07-09",
-    "location": "",
+    "location": "Melbourne, Australia",
     "organization": "Bernoulli Society",
     "url": "https://sites.google.com/view/robstat27",
-    "event_type": "conference",
-    "source": "Bernoulli Society",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
-    "title": "The Bernoulli Society organizes or sponsors several meetings in the area of Mathematical Statistics and Probability, whether, physical, virtual, or mixed. Bernoulli sponsorship entails the following three stipulations: Displaying the Bernoulli logo in all publicity material, including webpages, posters, flyers, etc. Appointing a Bernoulli Society member to serve on the programme committee, who will ensure that the meeting is announced in Bernoulli News as a Bernoulli-sponsored event and who will provide a brief post-meeting report for Bernoulli News . Offering a reduced registration fee for Bernoulli Society members, unless a flat fee applies to all participants. Organisers seeking sponsorship should send their request to the Bernoulli Secretariat at This email address is being protected from spambots. You need JavaScript enabled to view it. . Requests should: (1) provide a concise context and scientific justification; (2) explicitly address the three points above; (3) signed letters from two Council members indicating their support for the proposal, to be sent directly to This email address is being protected from spambots. You need JavaScript enabled to view it. . The Council consists of the Executive Committee and the elected Council members. Committee, Ordinary Council Members, and Chairs of the Standing Committees. All Council members are listed on our web page under “ Who-is-who ”: Please note that advertising sponsored meetings in Bernoulli News and E-Briefs is subject to deadlines and space being available. Upcoming meetings RobStat Symposium 2027: Reliable and Trustworthy Inference in Modern Data Environments, Indian Statistical Institute, Kolkata, India, 5-7 February 2027, conference website 46th Conference on Stochastic Processes and their Applications (SPA) in Melbourne, Australia",
-    "start_date": "2027-07-05",
-    "end_date": "2027-07-09",
-    "location": "",
-    "organization": "Bernoulli Society",
-    "url": "mailto:secretariat@bernoullisociety.org",
     "event_type": "conference",
     "source": "Bernoulli Society",
     "last_verified": "2026-11-18",
@@ -92,6 +80,18 @@
     "url": "https://www.ieeecss.org/event/2027-american-control-conference",
     "event_type": "conference",
     "source": "IEEE CSS",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "66th ISI World Statistics Congress",
+    "start_date": "2027-07-11",
+    "end_date": "2027-07-15",
+    "location": "Lusaka, Zambia",
+    "organization": "ISI",
+    "url": "https://www.isi-next.org/conferences/isi-wsc2027/",
+    "event_type": "conference",
+    "source": "Bernoulli Society",
     "last_verified": "2026-11-18",
     "manual": false
   },
@@ -144,10 +144,10 @@
     "manual": false
   },
   {
-    "title": "36th European Meeting of Statisticians (EMS) in Warwick, UK",
+    "title": "36th European Meeting of Statisticians (EMS)",
     "start_date": "2027-08-23",
     "end_date": "2027-08-27",
-    "location": "",
+    "location": "Warwick, UK",
     "organization": "Bernoulli Society",
     "url": "https://www.bernoullisociety.org/meetings",
     "event_type": "conference",
