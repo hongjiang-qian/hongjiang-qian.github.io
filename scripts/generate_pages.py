@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 from collections import defaultdict
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from html import escape
 
 from bs4 import BeautifulSoup
@@ -163,6 +164,12 @@ TAB_SCRIPT = r"""
     });
 })();
 """
+
+
+def eastern_update_timestamp():
+    """Current America/Detroit time, including EST/EDT automatically."""
+    now = datetime.now(ZoneInfo("America/Detroit"))
+    return now.strftime("%Y-%m-%d %H:%M:%S %Z")
 
 
 def visible_events():
@@ -438,17 +445,11 @@ def conference_body(items):
         "</div>",
     ]
 
-    verified = [
-        item.get("last_verified")
-        for item in items
-        if item.get("last_verified")
-    ]
-    if verified:
-        pieces.append(
-            '<div id="footer"><div id="footer-text">'
-            f'Sources last verified {max(verified)}.'
-            '</div></div>'
-        )
+    pieces.append(
+        '<div id="footer"><div id="footer-text">'
+        + eastern_update_timestamp()
+        + '</div></div>'
+    )
 
     return "\n".join(pieces)
 
@@ -459,7 +460,6 @@ def funding_entry(item):
     sponsor = escape(item.get("sponsor", ""))
     kind = escape(item.get("kind", ""))
     deadline = escape(item.get("deadline_display", "TBA"))
-    verified = escape(item.get("last_verified", ""))
 
     pieces = ['<li class="auto-fund-item">']
     pieces.append(
@@ -474,10 +474,6 @@ def funding_entry(item):
     pieces.append(
         f'<div class="auto-fund-deadline"><b>Deadline:</b> {deadline}</div>'
     )
-    if verified:
-        pieces.append(
-            f'<div class="auto-verified">Last verified: {verified}</div>'
-        )
     pieces.append("</li>")
     return "\n".join(pieces)
 
@@ -513,17 +509,11 @@ def funding_body(items):
             pieces.append(funding_entry(item))
         pieces.append("</ul>")
 
-    verified = [
-        item.get("last_verified")
-        for item in items
-        if item.get("last_verified")
-    ]
-    if verified:
-        pieces.append(
-            '<div id="footer"><div id="footer-text">'
-            f'Funding sources last verified {max(verified)}.'
-            '</div></div>'
-        )
+    pieces.append(
+        '<div id="footer"><div id="footer-text">'
+        + eastern_update_timestamp()
+        + '</div></div>'
+    )
 
     return "\n".join(pieces)
 

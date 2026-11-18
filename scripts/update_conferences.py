@@ -343,88 +343,130 @@ def parse_ieee_css():
 
 
 def parse_bernoulli():
-    """Parse only individual flagship-meeting list items from Bernoulli Society.
+    """Parse flagship Bernoulli/IMS meetings by their dedicated series sections.
 
-    Do not scan parent <div>/<article> containers. The Bernoulli meetings page
-    has large parent containers containing introductory prose plus many events;
-    parsing those containers makes the first date absorb the whole page as one
-    conference title.
+    The Bernoulli meetings page contains a nested "Upcoming meetings" list, where
+    an outer <li> may contain several child meetings. Parsing arbitrary <li> nodes
+    can therefore merge RobStat, SPA, WSC, EMS, etc. into one title.
+
+    Instead, this parser locates the dedicated series headings and reads only the
+    first upcoming record under each series:
+      - Bernoulli-IMS World Congress
+      - Conference on Stochastic Processes and their Applications (SPA)
+      - ISI World Statistics Congress
+      - European Meeting of Statisticians (EMS)
     """
     html = fetch(BERNOULLI_MEETINGS_URL)
     soup = BeautifulSoup(html, "html.parser")
     events = []
 
-    flagship_pattern = re.compile(
-        r"Stochastic Processes and their Applications|"
-        r"\bSPA\b|"
-        r"Bernoulli[- ]IMS.*World Congress|"
-        r"World Congress in Probability and Statistics|"
-        r"ISI World Statistics Congress|"
-        r"European Meeting of Statisticians",
-        re.I,
-    )
+    series_specs = [
+        {
+            "heading": "Bernoulli-IMS World Congress in Probability and Statistics",
+            "title_suffix": "Bernoulli-IMS World Congress in Probability and Statistics",
+            "organization": "Bernoulli Society / IMS",
+        },
+        {
+            "heading": "Conference on Stochastic Processes and their Applications (SPA)",
+            "title_suffix": "Conference on Stochastic Processes and their Applications (SPA)",
+            "organization": "Bernoulli Society",
+        },
+        {
+            "heading": "ISI World Statistics Congress",
+            "title_suffix": "World Statistics Congress",
+            "organization": "ISI",
+        },
+        {
+            "heading": "European Meeting of Statisticians (EMS)",
+            "title_suffix": "European Meeting of Statisticians (EMS)",
+            "organization": "Bernoulli Society",
+        },
+    ]
 
-    seen = set()
+    for spec in series_specs:
+        heading_node = None
 
-    # Only independent list items are eligible event records.
-    for element in soup.find_all("li", recursive=True):
-        text = clean_text(element.get_text(" ", strip=True))
+        # Find an element whose own visible text is the series heading.
+        for candidate in soup.find_all(["h1", "h2", "h3", "h4", "p", "div"]):
+            text = clean_text(candidate.get_text(" ", strip=True))
+            if text == spec["heading"]:
+                heading_node = candidate
+                break
 
-        if not text or not flagship_pattern.search(text):
+        # Fallback: exact string search, then use its parent element.
+        if heading_node is None:
+            string_node = soup.find(
+                string=lambda s: isinstance(s, str)
+                and clean_text(s) == spec["heading"]
+            )
+            if string_node is not None:
+                heading_node = string_node.parent
+
+        if heading_node is None:
             continue
 
+        # The first <li> after the series heading is the next/current listed edition.
+        item = heading_node.find_next("li")
+        if item is None:
+            continue
+
+        text = clean_text(item.get_text(" ", strip=True))
         parsed = parse_date_range(text)
         if not parsed:
             continue
 
-        start, end, begin, _ = parsed
-
+        start, end, _, _ = parsed
         if not active_through(end):
             continue
 
-        # The event description precedes the date on the Bernoulli page.
-        prefix = text[:begin].strip(" ,.-")
+        # Edition number: "46th", "66th", "36th", "12th", ...
+        edition_match = re.match(r"^\s*(\d+(?:st|nd|rd|th))\b", text, re.I)
+        edition = edition_match.group(1) if edition_match else ""
 
-        # Reject an accidentally selected container-like list item.
-        if (
-            len(prefix) > 350
-            or prefix.lower().startswith("the bernoulli society organizes")
-            or "upcoming meetings" in prefix.lower()
-        ):
-            continue
+        # Location is the text between "in" and the date.
+        # Examples:
+        #   "46th 2027 in Melbourne, Australia, July 5-9, ..."
+        #   "66th World Statistics Congress in Lusaka, Zambia, July 11-15, ..."
+        date_token = re.search(
+            rf"(?:{MONTH_PATTERN})\s+\d{{1,2}}\s*-\s*\d{{1,2}}\s*,?\s*20\d{{2}}|"
+            rf"\d{{1,2}}\s*-\s*\d{{1,2}}\s+(?:{MONTH_PATTERN})\s*,?\s*20\d{{2}}",
+            text,
+            re.I,
+        )
 
-        title = prefix
         location = ""
+        if date_token:
+            before_date = text[:date_token.start()].strip(" ,.")
+            in_match = re.search(r"\bin\s+(.+)$", before_date, re.I)
+            if in_match:
+                location = in_match.group(1).strip(" ,.")
 
-        # Typical form:
-        # "46th Conference on Stochastic Processes and their Applications (SPA)
-        #  in Melbourne, Australia, July 5-9, 2027"
-        if " in " in prefix:
-            maybe_title, maybe_location = prefix.rsplit(" in ", 1)
+        # Build a clean canonical title from the series name.
+        if spec["heading"] == "ISI World Statistics Congress":
+            title = (
+                f"{edition} World Statistics Congress"
+                if edition
+                else "World Statistics Congress"
+            )
+        else:
+            title = (
+                f"{edition} {spec['title_suffix']}"
+                if edition
+                else spec["title_suffix"]
+            )
 
-            # Only accept the split when the left side is still the flagship title.
-            if flagship_pattern.search(maybe_title):
-                title = maybe_title.strip(" ,.-")
-                location = maybe_location.strip(" ,.-")
-
-        title = re.sub(r"^\W+", "", title).strip()
-
-        if not flagship_pattern.search(title):
-            continue
-
-        # Prefer a conference/website link from the same list item.
+        # Prefer the event website link inside this exact list item.
         event_url = BERNOULLI_MEETINGS_URL
         website_link = None
 
-        for link in element.find_all("a", href=True):
+        for link in item.find_all("a", href=True):
             label = clean_text(link.get_text(" ", strip=True)).lower()
-
             if "website" in label or "conference" in label:
                 website_link = link
                 break
 
         if website_link is None:
-            website_link = element.find("a", href=True)
+            website_link = item.find("a", href=True)
 
         if website_link is not None:
             event_url = urljoin(
@@ -432,30 +474,12 @@ def parse_bernoulli():
                 website_link["href"],
             )
 
-        upper_title = title.upper()
-
-        if "WORLD STATISTICS CONGRESS" in upper_title:
-            organization = "ISI"
-        elif "BERNOULLI" in upper_title and "WORLD CONGRESS" in upper_title:
-            organization = "Bernoulli Society / IMS"
-        elif "EUROPEAN MEETING OF STATISTICIANS" in upper_title:
-            organization = "Bernoulli Society"
-        else:
-            organization = "Bernoulli Society"
-
-        key = (normalize_title(title), start)
-
-        if key in seen:
-            continue
-
-        seen.add(key)
-
         events.append({
             "title": title,
             "start_date": start,
             "end_date": end,
             "location": location,
-            "organization": organization,
+            "organization": spec["organization"],
             "url": event_url,
             "event_type": "conference",
             "source": "Bernoulli Society",
