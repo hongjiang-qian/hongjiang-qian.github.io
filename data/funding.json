@@ -1,0 +1,54 @@
+[
+  {
+    "id": "simons-travel",
+    "title": "Travel Support for Mathematicians – 2027",
+    "sponsor": "Simons Foundation",
+    "url": "https://www.simonsfoundation.org/funding/travel-support-for-mathematicians-2027/",
+    "kind": "Research and travel support",
+    "parser": "simons_travel",
+    "deadline_type": "date",
+    "deadline_date": "2027-01-27",
+    "deadline_display": "January 27, 2027, 12:00 p.m. ET",
+    "status": "Open",
+    "last_verified": "2026-11-18"
+  },
+  {
+    "id": "nsf-career",
+    "title": "Faculty Early Career Development Program (CAREER)",
+    "sponsor": "U.S. National Science Foundation",
+    "url": "https://www.nsf.gov/funding/opportunities/career-faculty-early-career-development-program",
+    "kind": "Early-career research and education",
+    "parser": "nsf_career",
+    "deadline_type": "date",
+    "deadline_date": "2027-07-28",
+    "deadline_display": "July 28, 2027, 5:00 p.m. submitting organization's local time",
+    "status": "Open",
+    "last_verified": "2026-11-18"
+  },
+  {
+    "id": "nsf-mps-mathsci",
+    "title": "MPS Mathematical Sciences Research Programs (MPS MathSci)",
+    "sponsor": "U.S. National Science Foundation",
+    "url": "https://www.nsf.gov/funding/opportunities/mps-mathsci-mps-mathematical-sciences-research-programs",
+    "kind": "Mathematical sciences research",
+    "parser": "nsf_anytime",
+    "deadline_type": "anytime",
+    "deadline_date": null,
+    "deadline_display": "Proposals accepted anytime",
+    "status": "Open",
+    "last_verified": "2026-11-18"
+  },
+  {
+    "id": "simons-targeted-mps",
+    "title": "Targeted Grants in MPS",
+    "sponsor": "Simons Foundation",
+    "url": "https://www.simonsfoundation.org/funding/targeted-grants-in-mps/",
+    "kind": "High-risk theoretical mathematics and physical sciences",
+    "parser": "simons_rolling",
+    "deadline_type": "rolling",
+    "deadline_date": null,
+    "deadline_display": "Rolling letter of intent (LOI); may be submitted at any time",
+    "status": "Open",
+    "last_verified": "2026-11-18"
+  }
+]

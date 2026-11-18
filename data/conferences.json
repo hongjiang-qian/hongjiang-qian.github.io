@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Rencontres de Probabilités 2026",
+    "start_date": "2026-11-19",
+    "end_date": "2026-11-20",
+    "location": "Rouen, France",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["Probability"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Combinatorics and Discrete Probability",
+    "start_date": "2026-11-23",
+    "end_date": "2026-11-27",
+    "location": "Luminy, France",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["Probability"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Lectures on Probability and Stochastic Processes",
+    "start_date": "2026-11-30",
+    "end_date": "2026-12-05",
+    "location": "Kanpur, India",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["Probability", "Stochastic Analysis", "Schools"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Workshop: Numerical Analysis of Stochastic Partial Differential Equations",
+    "start_date": "2026-12-07",
+    "end_date": "2026-12-08",
+    "location": "Oxford, UK",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["SPDE", "Stochastic Analysis"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Stochastic Analysis and Stochastic Partial Differential Equations",
+    "start_date": "2026-12-07",
+    "end_date": "2026-12-11",
+    "location": "TSIMF, Sanya, China",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["Stochastic Analysis", "SPDE"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Mean-field Control, Mean-field Games and Applications",
+    "start_date": "2027-01-25",
+    "end_date": "2027-01-29",
+    "location": "Folgarida, Italy",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["Stochastic Control"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "Stochastic Optimal Transport",
+    "start_date": "2027-04-26",
+    "end_date": "2027-04-30",
+    "location": "Cambridge, UK",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["Stochastic Analysis", "Stochastic Control"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "46th Conference on Stochastic Processes and their Applications (SPA)",
+    "start_date": "2027-07-05",
+    "end_date": "2027-07-09",
+    "location": "Melbourne, Australia",
+    "url": "https://www.bernoullisociety.org/meetings",
+    "categories": ["Probability", "Stochastic Analysis"],
+    "source": "Bernoulli Society",
+    "source_url": "https://www.bernoullisociety.org/meetings",
+    "last_verified": "2026-11-18",
+    "manual": false
+  },
+  {
+    "title": "INFORMS Applied Probability Society Conference 2027",
+    "start_date": "2027-07-12",
+    "end_date": "2027-07-15",
+    "location": "Durham, UK",
+    "url": "https://www.appliedprobability.org/community/events",
+    "categories": ["Probability"],
+    "source": "Applied Probability Trust",
+    "source_url": "https://www.appliedprobability.org/community/events",
+    "last_verified": "2026-11-18",
+    "manual": false
+  }
+]
