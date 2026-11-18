@@ -1,10 +1,14 @@
 name: Update conferences and funding
 
-on:
+"on":
+  workflow_dispatch: {}
   schedule:
-    # Runs daily in GitHub's cloud. No computer needs to be online.
     - cron: "15 11 * * *"
-  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/update-academic-pages.yml"
 
 permissions:
   contents: write
