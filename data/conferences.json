@@ -48,30 +48,6 @@
     "manual": false
   },
   {
-    "title": "46th Conference on Stochastic Processes and their Applications (SPA)",
-    "start_date": "2027-07-05",
-    "end_date": "2027-07-09",
-    "location": "Melbourne, Australia",
-    "organization": "Bernoulli Society",
-    "url": "https://www.spa2027.org",
-    "event_type": "conference",
-    "source": "Bernoulli Society",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
-    "title": "RobStat Symposium 2027: Reliable and Trustworthy Inference in Modern Data Environments, Indian Statistical Institute, Kolkata, India, 5-7 February 2027, conference website 46th Conference on Stochastic Processes and their Applications (SPA)",
-    "start_date": "2027-07-05",
-    "end_date": "2027-07-09",
-    "location": "Melbourne, Australia",
-    "organization": "Bernoulli Society",
-    "url": "https://sites.google.com/view/robstat27",
-    "event_type": "conference",
-    "source": "Bernoulli Society",
-    "last_verified": "2026-11-18",
-    "manual": false
-  },
-  {
     "title": "2027 American Control Conference",
     "start_date": "2027-07-07",
     "end_date": "2027-07-07",
@@ -84,7 +60,7 @@
     "manual": false
   },
   {
-    "title": "66th ISI World Statistics Congress",
+    "title": "66th World Statistics Congress",
     "start_date": "2027-07-11",
     "end_date": "2027-07-15",
     "location": "Lusaka, Zambia",
@@ -144,12 +120,12 @@
     "manual": false
   },
   {
-    "title": "36th European Meeting of Statisticians (EMS)",
-    "start_date": "2027-08-23",
-    "end_date": "2027-08-27",
-    "location": "Warwick, UK",
-    "organization": "Bernoulli Society",
-    "url": "https://www.bernoullisociety.org/meetings",
+    "title": "12th Bernoulli-IMS World Congress in Probability and Statistics",
+    "start_date": "2028-07-24",
+    "end_date": "2028-07-28",
+    "location": "Singapore, Republic of Singapore",
+    "organization": "Bernoulli Society / IMS",
+    "url": "https://wc2028.com",
     "event_type": "conference",
     "source": "Bernoulli Society",
     "last_verified": "2026-11-18",
