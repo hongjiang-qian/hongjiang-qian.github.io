@@ -3,7 +3,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css");
 
 table#tlayout {
-	width: 930px;
+	width: 980px;
 	border: none;
 	margin-left: auto;
     margin-right: auto;
@@ -443,7 +443,7 @@ a[href*="researchgate"]::before {
 
 /* 限制整体页面最大宽度并居中，避免大屏全屏时行过长 */
 body {
-    max-width: 960px;        /* 你可以根据喜好改成 820px ~ 900px 之间 */
+    max-width: 980px;        /* 你可以根据喜好改成 820px ~ 900px 之间 */
     margin: 0 auto;          /* 左右自动居中 */
     padding: 20px;           /* 保持四周边缘有舒服的留白 */
 }
