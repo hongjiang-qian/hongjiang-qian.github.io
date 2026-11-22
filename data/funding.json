@@ -9,7 +9,7 @@
     "deadline_date": "2027-01-27",
     "deadline_display": "January 27, 2027, 12:00 p.m. ET",
     "status": "Open",
-    "last_verified": "2026-11-21"
+    "last_verified": "2026-11-22"
   },
   {
     "id": "nsf-career",
@@ -21,7 +21,7 @@
     "deadline_date": "2027-07-28",
     "deadline_display": "July 28, 2027, 5:00 p.m. submitting organization's local time",
     "status": "Open",
-    "last_verified": "2026-11-21"
+    "last_verified": "2026-11-22"
   },
   {
     "id": "nsf-mathsci",
@@ -33,7 +33,7 @@
     "deadline_date": null,
     "deadline_display": "Proposals accepted anytime",
     "status": "Open",
-    "last_verified": "2026-11-21"
+    "last_verified": "2026-11-22"
   },
   {
     "id": "simons-targeted-mps",
@@ -45,6 +45,6 @@
     "deadline_date": null,
     "deadline_display": "Rolling letter of intent; may be submitted at any time",
     "status": "Open",
-    "last_verified": "2026-11-21"
+    "last_verified": "2026-11-22"
   }
 ]
