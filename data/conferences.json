@@ -8,7 +8,7 @@
     "url": "https://www.ieeecss.org/event/65th-ieee-conference-decision-and-control",
     "event_type": "conference",
     "source": "IEEE CSS",
-    "last_verified": "2026-11-26",
+    "last_verified": "2026-11-27",
     "manual": false
   },
   {
@@ -21,7 +21,7 @@
     "event_type": "conference",
     "source": "AMS",
     "manual": false,
-    "last_verified": "2026-11-26"
+    "last_verified": "2026-11-27"
   },
   {
     "title": "SIAM Conference on Computational Science and Engineering (CSE27)",
@@ -56,7 +56,19 @@
     "url": "https://www.ieeecss.org/event/2027-american-control-conference",
     "event_type": "conference",
     "source": "IEEE CSS",
-    "last_verified": "2026-11-26",
+    "last_verified": "2026-11-27",
+    "manual": false
+  },
+  {
+    "title": "66th World Statistics Congress",
+    "start_date": "2027-07-11",
+    "end_date": "2027-07-15",
+    "location": "Lusaka, Zambia",
+    "organization": "ISI",
+    "url": "https://www.isi-next.org/conferences/isi-wsc2027/",
+    "event_type": "conference",
+    "source": "Bernoulli Society",
+    "last_verified": "2026-11-27",
     "manual": false
   },
   {
@@ -104,7 +116,19 @@
     "url": "https://www.ieeecss.org/event/11th-ieee-conference-control-technology-and-applications",
     "event_type": "conference",
     "source": "IEEE CSS",
-    "last_verified": "2026-11-26",
+    "last_verified": "2026-11-27",
+    "manual": false
+  },
+  {
+    "title": "12th Bernoulli-IMS World Congress in Probability and Statistics",
+    "start_date": "2028-07-24",
+    "end_date": "2028-07-28",
+    "location": "Singapore, Republic of Singapore",
+    "organization": "Bernoulli Society / IMS",
+    "url": "https://wc2028.com",
+    "event_type": "conference",
+    "source": "Bernoulli Society",
+    "last_verified": "2026-11-27",
     "manual": false
   },
   {
